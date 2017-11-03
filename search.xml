@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Win10-15063-目录]]></title>
+    <url>%2F2017%2F11%2F03%2F%E7%9B%AE%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[更新快捷启动之Win+R于(FloatingShuYin@2017-11-03 13:14:46)建议你按照目录顺序阅读，这会让你少在这些页面中来回跳转。 技巧篇 快捷启动之Win+R [SendTO][SendTO] [Listary一切的入口][Listary] [AutoHotkey热键脚本程序][AutoHotkey] [Bandizip解压缩][Bandizip] [ADSafe净化网络][ADSafe] [Snipaste强大而小巧的截图工具][Snipaste] [QTTabBar扩展资源管理器][QTTabBar] [Everything快速检索文件][Everything] [Ditto扩展你的剪切板][Ditto] [FreeDownload 强大的HTTP下载工具][FreeDownload] [Defraggler磁盘碎片整理][Defraggler] [CCleaner系统垃圾注册表清理][CCleaner] [Total Uninstall 6软件安装卸载监控][TotalUninstall] [Q-Dir四窗口资源管理器][Q-Dir] [Bandicam视频录制][Bandicam] [ScreenToGif动图录制][ScreenToGif] [rEFInd多系统引导工具][rEFInd] [IObit Unlocker解除占用][Unlocker] [Seer文件快速预览][Seer] [Icaros缩略图管理][Icaros] [Honeyview图片浏览器][Honeyview]美化篇 [UltraUXThemePatcher第三方主题破解][Theme] [StartlsBack开始菜单][StartlsBack] [iPack主题图标][iPack] [Rainmater][Rainmater] [Wallpaper][Wallpaper] [WindowsFx][WindowsFx6] [noMeiryoUI系统文字热替换][noMeiryoUI] [MacType字体渲染][MacType] [OldNewExplorer去掉资源管理器菜单栏][OldNewExplorer] [鼠标指针][CursorsSet] [FreeLaunchBar改变任务栏图标起始位置][FreeLaunchBar]奇淫巧技篇 [Tickey按键发声][Tickey] [Carnac按键演示][Carnac] [LeDimmer专心工具][LeDimmer] [iFocuzOn屏幕遮挡板][iFocuzOn]-]]></content>
+      <categories>
+        <category>Win10-15063</category>
+      </categories>
+      <tags>
+        <tag>Win10</tag>
+        <tag>目录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[快捷启动之Win+R]]></title>
     <url>%2F2017%2F11%2F02%2F%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8%E4%B9%8BWin%2BR%2F</url>
-    <content type="text"><![CDATA[写在前面的话为了方便你阅读本文档，我们先约定以下两点 被方括号&lt;&gt;包裹的内容为假设条件，你需要根据你的实际情况替换。 被小括号()包括的内容为实现前项操作的快捷键。 快速打开程序\文件\网站之Win+R你可以在这看到效果演示视频：Win10系统自带快捷启动之Win+R 实现步骤添加用户环境变量&lt;这里 假设 你的盘符为 X,用户名为 Admin &gt; 在非系统盘 X 的 根目录 新建文件夹(文档键+W+F ) =&gt; 重命名为 lnkSet 打开系统设置(Win+Pause ) =&gt; 左侧高级系统设置 =&gt; 环境变量(N ) =&gt; 在 Admin 的用户变量(U )中找到Path 或者 PATH(P ) 若有则编辑(Alt+E ):在变量值列的最下行添加(Alt+N ) X:\lnkSet 若无则新建(Alt+N )：变量名填: PATH 或者 path 都行，变量值填:X:\lnkSet 你还需要在 Admin 的用户变量(U )中找到 PATHEXT 若有则编辑(Alt+E )：在变量值末尾添加： ;.LNK 若无则新建(Alt+N )：变量名填: PATHEXT，变量值填:.LNK。 添加完毕后点击确定(Enter ) =&gt; 确定 =&gt; 应用 =&gt; 确定。 自定义命令名 将需要通过 Win+R =&gt; 键入命令名 =&gt; 回车快速打开的程序或文件的快捷方式重命名为你为其定义的命令名，并将其拖放至 X:\lnkSet 文件夹中。如将桌面的 腾讯QQ 快捷方式重命名为 QQ 并拖放至 X:\lnkSet 文件夹。 你可以通过 Win+R =&gt; QQ =&gt; 然后回车 QQ登陆程序将会被执行。 如果提示 Windows找不到文件”QQ” 你可以注销你的账户然后重新登陆重新测试如果还是不行请仔细核对以上步骤，有无遗漏。 Win+R的高级应用之Listary你可以在这看到效果演示视频：第三方快捷启动工具之Listary 需要下载的软件: Listary 可选的软件(建议下载)： AutoHotkey 几点建议 建议你新建专门存储此类辅助程序的文件夹，如：Download 建议你新建专门安装此类辅助程序的文件夹，如：auxiliaryProgram 如果你的系统盘是固态硬盘建议将下载的软件安装在系统盘，如果不是建议安装在非系统盘这是一个取舍问题。 如果你的系统盘是固态硬盘，建议你设置Listary开机自启动，这仍是一个取舍问题。关于Listary 你可以在这里获取更多关于Listary的使用技巧 TODO 本篇只实现Win+R启动Listary快速打开程序、网页、文档。 实现步骤设置Listary的快捷键 右键Listary的托盘图标 =&gt; 选项 =&gt; 选中左侧快捷键 =&gt; 在显示Listary工具条 设置 Win+Y 如此你就可以通过 双击Ctrl 或者 Win+Y 在任何地方显示\隐藏Listary工具条。 将我们的快捷方式库：X:\lnkSet 添加至 Listary 同样在Listary选项中 =&gt; 选中左侧的启动程序 =&gt; 点击左下角的 + 按钮，将我们的快捷方式库：X:\lnkSet 添加进去。 在底部扩展名的文本框中添加：lnk;exe;bat;ahk 你可以通过快捷键Win+Y或者双击Ctrl 然后在Listary工具条中键入 QQ 回车来快速启动QQ登陆程序 维护如果你需要添加其他程序的快捷启动命令，你只需要将快捷方式重命名并放置到我们的快捷方式库：X:\lnkSet中你可以在这里获取 扩展鼠标右键菜单：发送到你指定的文件夹 TODO 如果你下载了AutoHotkey如果你不知道AutoHotkey脚本程序基本的使用你可以在这了解AutoHotkey脚本程序基本的使用 TODO你可以通过以下AHK脚本将你Listary快捷键改为被Windows系统占用的Win+R 12345678910111213141516#r::Process, Exist, Listary.exe;检查 Listary是否运行ListaryPID = %ErrorLevel% ; 由于 ErrorLevel 会经常发生改变, 所以要立即保存这个值.if ListaryPID = 0&#123;;如果ListaryPID = 0,即Listary没运行 Run "S:\Program Files\Listary\Listary.exe" return &#125;Send,#&#123;y&#125; ;WinSet,AlwaysOnTop,ON,%ListaryPID% ;WinSet,Transparent,150,%ListaryPID%return 注意： 其中关于Run “S:\Program Files\Listary\Listary.exe” 中的路径 请更改为你Listary安装的路径。 这句代码主要是为了将Listary设置为开机不自动启动的时候，仍然可以通过快捷键 Win+R 快速使用Listary启动程序。 你可以在这获取更多我的AutoHotkey实例 TODO你还可以访问AutoHotkey中文文档之脚本展示获取更多实例 本文迭代于(FloatingShuYin@2017-11-02 15:40:18)]]></content>
+    <content type="text"><![CDATA[写在前面的话为了方便你阅读本文档，我们先约定以下两点 被方括号&lt;&gt;包裹的内容为假设条件，你需要根据你的实际情况替换。 被小括号()包括的内容为实现前项操作的快捷键。 快速打开程序\文件\网站之Win+R你可以在这看到效果演示视频：TODOWin10系统自带快捷启动之Win+R 实现步骤添加用户环境变量&lt;这里 假设 你的非系统盘的盘符为 X,用户名为 Admin &gt; 在 X 盘的 根目录 新建文件夹(文档键+W+F ) =&gt; 重命名为 lnkSet 打开系统设置(Win+Pause ) =&gt; 左侧高级系统设置 =&gt; 环境变量(N ) =&gt; 在 Admin 的用户变量(U )中找到Path 或者 PATH(P ) 若有则编辑(Alt+E ):在变量值列的最下行添加(Alt+N ) X:\lnkSet 若无则新建(Alt+N )：变量名填: PATH 或者 path 都行，变量值填:X:\lnkSet 你还需要在 Admin 的用户变量(U )中找到 PATHEXT 若有则编辑(Alt+E )：在变量值末尾添加： ;.LNK 若无则新建(Alt+N )：变量名填: PATHEXT，变量值填:.LNK。 添加完毕后点击确定(Enter ) =&gt; 确定 =&gt; 应用 =&gt; 确定。 自定义命令名 将需要通过 Win+R =&gt; 键入命令名 =&gt; 回车快速打开的程序或文件的快捷方式重命名为你为其定义的命令名，并将其拖放至 X:\lnkSet 文件夹中。如将桌面的 腾讯QQ 快捷方式重命名为 QQ 并拖放至 X:\lnkSet 文件夹。 你可以通过 Win+R =&gt; QQ =&gt; 然后回车 QQ登陆程序将会被执行。 如果提示 Windows找不到文件”QQ” 你可以注销你的账户然后重新登陆重新测试如果还是不行请仔细核对以上步骤，有无遗漏。 Win+R的高级应用之Listary你可以在这看到效果演示视频：第三方快捷启动工具之Listary TODO 需要下载的软件: Listary 可选的软件(建议下载)： AutoHotkey 几点建议 建议你新建专门存储此类辅助程序的文件夹，如：Download 建议你新建专门安装此类辅助程序的文件夹，如：auxiliaryProgram 如果你的系统盘是固态硬盘建议将下载的软件安装在系统盘，如果不是建议安装在非系统盘这是一个取舍问题。 如果你的系统盘是固态硬盘，建议你设置Listary开机自启动，这仍是一个取舍问题。 关于Listary 你可以在这里获取更多关于Listary的使用技巧 TODO 本篇只实现Win+R启动Listary快速打开程序、网页、文档。 实现步骤设置Listary的快捷键 右键Listary的托盘图标 =&gt; 选项 =&gt; 选中左侧快捷键 =&gt; 在显示Listary工具条 设置 Win+Y 如此你就可以通过 双击Ctrl 或者 Win+Y 在任何地方显示\隐藏Listary工具条。 将我们的快捷方式库：X:\lnkSet 添加至 Listary 同样在Listary选项中 =&gt; 选中左侧的启动程序 =&gt; 点击左下角的 + 按钮，将我们的快捷方式库：X:\lnkSet 添加进去。 在底部扩展名的文本框中添加：lnk;exe;bat;ahk 你可以通过快捷键Win+Y或者双击Ctrl 然后在Listary工具条中键入 QQ 回车来快速启动QQ登陆程序 扩展与维护如果你需要添加其他程序的快捷启动命令，你只需要将快捷方式重命名并放置到我们的快捷方式库：X:\lnkSet中 使用下面这个方法你可以快速的将你已经重命名的快捷方式右键发送到快捷方式库：X:\lnkSet中**你可以在这里获取 扩展鼠标右键菜单：发送到你指定的文件夹 TODO 你还可以为你的快捷方式库：X:\lnkSet 新建快捷方式，并重命名为 ls，将其拖放到你的快捷方式库：X:\lnkSet 中，你就可以通过命令 ls 来快速打开你的快捷方式库。 如果你下载了AutoHotkey如果你不知道AutoHotkey脚本程序基本的使用你可以在这了解AutoHotkey脚本程序基本的使用 TODO你可以通过以下AHK脚本将你Listary快捷键改为被Windows系统占用的Win+R 12345678910111213141516#r::Process, Exist, Listary.exe;检查 Listary是否运行ListaryPID = %ErrorLevel% ; 由于 ErrorLevel 会经常发生改变, 所以要立即保存这个值.if ListaryPID = 0&#123;;如果ListaryPID = 0,即Listary没运行 Run "S:\Program Files\Listary\Listary.exe" return &#125;Send,#&#123;y&#125; ;WinSet,AlwaysOnTop,ON,%ListaryPID% ;WinSet,Transparent,150,%ListaryPID%return 注意： 其中关于Run “S:\Program Files\Listary\Listary.exe” 中的路径 请更改为你Listary安装的路径。 这句代码主要是为了将Listary设置为开机不自动启动的时候，仍然可以通过快捷键 Win+R 快速使用Listary启动程序。 你可以在这获取更多我的AutoHotkey实例 TODO你还可以访问AutoHotkey中文文档之脚本展示获取更多实例 本文迭代于(FloatingShuYin@2017-11-02 15:40:18)]]></content>
       <categories>
         <category>Win10-15063</category>
         <category>技巧篇</category>
@@ -41,17 +53,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[语录]]></title>
-    <url>%2F2017%2F10%2F26%2F%E8%AF%AD%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[(FloatingShuYin@2017-10-26 15:01:20)永远不要轻易去尝试走入别人的世界。(FloatingShuYin@2017-10-29 15:39:38)欲望是第一原动力。(FloatingShuYin@2017-10-30 20:41:01)真正的鸡汤不是给你虚构美好的未来，而是让你看清不努力的结果。]]></content>
-      <categories>
-        <category>语录</category>
-      </categories>
-      <tags>
-        <tag>语录</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[致敬乔布斯]]></title>
     <url>%2F2017%2F10%2F24%2F%E8%87%B4%E6%95%AC%E4%B9%94%E5%B8%83%E6%96%AF%2F</url>
     <content type="text"><![CDATA[史蒂夫·乔布斯 美国苹果公司联合创始人 上图是乔布斯在斯坦福大学演讲 这是乔布斯的生平: 1955年 史蒂夫·乔布斯出生在美国旧金山。刚刚出世就被父母遗弃了。幸运的是,一对好心的夫妻领养了他.乔布斯生活在美国“硅谷“附近，邻居都是惠普公司的职员。在这些人的影响下，乔布斯从小迷恋电子学。上初中时，乔布斯在一次同学聚会上与斯蒂夫·沃兹尼亚克见面，两人一见如故。斯蒂夫·沃兹尼亚克是学校电子俱乐部的会长，对电子有很大的兴趣. 1974年 乔布斯只念了一学期就因为经济因素而休学，成为雅达利电视游戏机公司的一名职员。借住沃兹家的车库，常到社区大学旁听书法课等课程。 1976年 在旧金山威斯康星计算机产品展销会上买到了6502芯片，带着6502芯片，乔布斯和沃兹尼亚克在乔布斯家的车库里装好了第一台电脑。乔布斯为筹集批量生产的资金，卖掉了自己的大众牌小汽车，同时沃兹也卖掉了他的惠普65型计算器。就这样，他们有了1300美元。 1976年4月 乔布斯、沃兹及乔布斯的朋友龙·韦恩签署了一份合同，决定成立一家电脑公司。随后，21岁的乔布斯与26岁的斯蒂夫·沃兹尼亚克在自家的车房里成立了苹果公司。公司的名称由乔布斯定为苹果。而他们的自制电脑则被追认为“苹果Ⅰ号“电脑了。苹果公司成立初期，“苹果“机的生意清淡。 1976年7月 一个偶然的机遇给“苹果“公司带来了转机。零售商保罗·特雷尔（Paul Jay Terrell）来到了乔布斯的车库，当看完乔布斯演示完电脑后，决定订购50台整机，这是做成的第一笔生意。之后“苹果“公司开始了小批量生产。 1976年10月 马尔库拉前来拜访沃兹和他们的车库工场。马尔库拉是位电气工程师，擅长推销工作，他主动帮助他们制定一份商业计划，给他们贷款69万美元，有了这笔资金，“苹果“公司的发展速度大大加快了。 1977年4月 乔布斯在美国第一次计算机展览会展示了苹果Ⅱ号样机。 1980年12月 苹果公司股票公开上市，在不到一个小时内，460万股全被抢购一空，当日以每股29美元收市。按这个收盘价计算，苹果公司高层产生了4名亿万富翁和40名以上的百万富翁。乔布斯作为公司创办人排名第一。 1983年 Lisa数据库和Apple Iie发布，售价分别为9998美元和1395美元。但是Lisa的昂贵的售价是没有多少市场的，而Lisa又侵吞了Apple大量研发经费。由于乔布斯经营理念与当时大多数管理人员不同，加上IBM公司推出个人电脑，抢占大片市场，总经理和董事们便把这一失败归罪于董事长乔布斯 1985年4月 董事会决议撤销了他的经营大权。乔布斯几次想夺回权力均未成功，便在1985年9月17日离开苹果公司。 1986年 乔布斯花1000万美元从乔治·卢卡斯手中收购了Lucasfilm旗下位于加利福尼亚州Emeryville的电脑动画效果工作室，并成立独立公司皮克斯动画工作室。之后该公司成为了众所周知的3D电脑动画公司 1995年 推出全球首部全3D立体动画电影《玩具总动员》。公司在2006年被迪士尼收购，乔布斯也因此成为迪斯尼最大个人股东。 1996年 苹果公司经营陷入困局，其市场份额也由鼎盛的16%跌到4%。与之相对应的是乔布斯公司由于《玩具总动员》而名声大振，个人身价达到10亿美元。但是乔布斯还是于苹果危难之中重新回来，回来后的乔布斯大刀阔斧改革，停止了不合理的研发和生产，结束了微软和苹果多年的专利纷争，并开始研发新产品iMac和OS X操作系统。 1997年 苹果推出iMac，创新的外壳颜色透明设计使得产品大卖，并让苹果度过财政危机。随后苹果又推出Mac OS X操作系统。 2000年 科技股泡沫，乔布斯又提出将PC设计成“数字中枢“先进理念，并先后开发出iTunes和iPod，同时也开始在黄金地段开设专卖店并大获成功。随后Apple TV和iTunes Store等一系列产品受到了市场的好评和认可。 2007年6月 苹果公司又推出自有设计的iPhone手机，使用iOS系统，随后发布新一代iPhone 3G以及iPhone 3GS。 2010年6月 发布第四代产品iPhone 4，每次上市都引得了世界极大的疯狂和销售热潮。 除了iPhone系列之外，发布使用iOS系统的iPad平板电脑，这一起先不被众人看好的产品，最后获得了巨大的成功。 2011年8月24日 史蒂夫·乔布斯向苹果董事会提交辞职申请。他还在辞职信中建议由首席营运长蒂姆·库克接替他的职位。乔布斯在辞职信中表示，自己无法继续担任行政总裁，不过自己愿意担任公司董事长、董事或普通职员。苹果公司股票暂停盘后交易。乔布斯在信中并没有指明辞职原因，但他一直都在与胰腺癌作斗争。 2011年8月25日 苹果宣布他辞职，并立即生效，职位由蒂姆·库克接任。同时苹果宣布任命史蒂夫·乔布斯为公司董事长，蒂姆·库克担任CEO。 2011年10月5日 苹果董事会宣布前行政总裁乔布斯逝世，，终年56岁，葬礼于10月7日举行。 关于乔布斯在斯坦福大学演讲视频，你可以在这看到他 乔布斯斯坦福大学演讲（高清 中英文字幕）. coded by Quincy Larson.]]></content>
@@ -71,8 +72,8 @@
         <category>Makedown</category>
       </categories>
       <tags>
-        <tag>Makedown语法</tag>
         <tag>笔记</tag>
+        <tag>Makedown语法</tag>
       </tags>
   </entry>
 </search>
