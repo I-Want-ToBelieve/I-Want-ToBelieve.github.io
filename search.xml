@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[目录]]></title>
-    <url>%2F2017%2F11%2F03%2F%E7%9B%AE%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[更新快捷启动之Win+R于(FloatingShuYin@2017-11-03 13:14:46)建议你按照目录顺序阅读，这会让你少在这些页面中来回跳转。 技巧篇 快捷启动之Win+R [SendTO][SendTO] [Listary一切的入口][Listary] [AutoHotkey热键脚本程序][AutoHotkey] [Bandizip解压缩][Bandizip] [ADSafe净化网络][ADSafe] [Snipaste强大而小巧的截图工具][Snipaste] [QTTabBar扩展资源管理器][QTTabBar] [Everything快速检索文件][Everything] [Ditto扩展你的剪切板][Ditto] [FreeDownload 强大的HTTP下载工具][FreeDownload] [Defraggler磁盘碎片整理][Defraggler] [CCleaner系统垃圾注册表清理][CCleaner] [Total Uninstall 6软件安装卸载监控][TotalUninstall] [Q-Dir四窗口资源管理器][Q-Dir] [Bandicam视频录制][Bandicam] [ScreenToGif动图录制][ScreenToGif] [rEFInd多系统引导工具][rEFInd] [IObit Unlocker解除占用][Unlocker] [Seer文件快速预览][Seer] [Icaros缩略图管理][Icaros] [Honeyview图片浏览器][Honeyview]美化篇 [UltraUXThemePatcher第三方主题破解][Theme] [StartlsBack开始菜单][StartlsBack] [iPack主题图标][iPack] [Rainmater][Rainmater] [Wallpaper][Wallpaper] [WindowsFx][WindowsFx6] [noMeiryoUI系统文字热替换][noMeiryoUI] [MacType字体渲染][MacType] [OldNewExplorer去掉资源管理器菜单栏][OldNewExplorer] [鼠标指针][CursorsSet] [FreeLaunchBar改变任务栏图标起始位置][FreeLaunchBar]奇淫巧技篇 [Tickey按键发声][Tickey] [Carnac按键演示][Carnac] [LeDimmer专心工具][LeDimmer] [iFocuzOn屏幕遮挡板][iFocuzOn]-]]></content>
-      <categories>
-        <category>Win10-15063</category>
-        <category>目录</category>
-      </categories>
-      <tags>
-        <tag>Win10</tag>
-        <tag>目录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[快捷启动之Win+R]]></title>
-    <url>%2F2017%2F11%2F02%2F%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8%E4%B9%8BWin%2BR%2F</url>
-    <content type="text"><![CDATA[写在前面的话为了方便你阅读本文档，我们先约定以下两点 被方括号&lt;&gt;包裹的内容为假设条件，你需要根据你的实际情况替换。 被小括号()包括的内容为实现前项操作的快捷键。 快速打开程序\文件\网站之Win+R你可以在这看到效果演示视频：TODOWin10系统自带快捷启动之Win+R 实现步骤添加用户环境变量&lt;这里 假设 你的非系统盘的盘符为 X,用户名为 Admin &gt; 在 X 盘的 根目录 新建文件夹(文档键+W+F ) =&gt; 重命名为 lnkSet 打开系统设置(Win+Pause ) =&gt; 左侧高级系统设置 =&gt; 环境变量(N ) =&gt; 在 Admin 的用户变量(U )中找到Path 或者 PATH(P ) 若有则编辑(Alt+E ):在变量值列的最下行添加(Alt+N ) X:\lnkSet 若无则新建(Alt+N )：变量名填: PATH 或者 path 都行，变量值填:X:\lnkSet 你还需要在 Admin 的用户变量(U )中找到 PATHEXT 若有则编辑(Alt+E )：在变量值末尾添加： ;.LNK 若无则新建(Alt+N )：变量名填: PATHEXT，变量值填:.LNK。 添加完毕后点击确定(Enter ) =&gt; 确定 =&gt; 应用 =&gt; 确定。 自定义命令名 将需要通过 Win+R =&gt; 键入命令名 =&gt; 回车快速打开的程序或文件的快捷方式重命名为你为其定义的命令名，并将其拖放至 X:\lnkSet 文件夹中。如将桌面的 腾讯QQ 快捷方式重命名为 QQ 并拖放至 X:\lnkSet 文件夹。 你可以通过 Win+R =&gt; QQ =&gt; 然后回车 QQ登陆程序将会被执行。 如果提示 Windows找不到文件”QQ” 你可以注销你的账户然后重新登陆重新测试如果还是不行请仔细核对以上步骤，有无遗漏。 Win+R的高级应用之Listary你可以在这看到效果演示视频：第三方快捷启动工具之Listary TODO 需要下载的软件: Listary 可选的软件(建议下载)： AutoHotkey 几点建议 建议你新建专门存储此类辅助程序的文件夹，如：Download 建议你新建专门安装此类辅助程序的文件夹，如：auxiliaryProgram 如果你的系统盘是固态硬盘建议将下载的软件安装在系统盘，如果不是建议安装在非系统盘这是一个取舍问题。 如果你的系统盘是固态硬盘，建议你设置Listary开机自启动，这仍是一个取舍问题。 关于Listary 你可以在这里获取更多关于Listary的使用技巧 TODO 本篇只实现Win+R启动Listary快速打开程序、网页、文档。 实现步骤设置Listary的快捷键 右键Listary的托盘图标 =&gt; 选项 =&gt; 选中左侧快捷键 =&gt; 在显示Listary工具条 设置 Win+Y 如此你就可以通过 双击Ctrl 或者 Win+Y 在任何地方显示\隐藏Listary工具条。 将我们的快捷方式库：X:\lnkSet 添加至 Listary 同样在Listary选项中 =&gt; 选中左侧的启动程序 =&gt; 点击左下角的 + 按钮，将我们的快捷方式库：X:\lnkSet 添加进去。 在底部扩展名的文本框中添加：lnk;exe;bat;ahk 你可以通过快捷键Win+Y或者双击Ctrl 然后在Listary工具条中键入 QQ 回车来快速启动QQ登陆程序 扩展与维护如果你需要添加其他程序的快捷启动命令，你只需要将快捷方式重命名并放置到我们的快捷方式库：X:\lnkSet中 使用下面这个方法你可以快速的将你已经重命名的快捷方式右键发送到快捷方式库：X:\lnkSet中**你可以在这里获取 扩展鼠标右键菜单：发送到你指定的文件夹 TODO 你还可以为你的快捷方式库：X:\lnkSet 新建快捷方式，并重命名为 ls，将其拖放到你的快捷方式库：X:\lnkSet 中，你就可以通过命令 ls 来快速打开你的快捷方式库。 如果你下载了AutoHotkey如果你不知道AutoHotkey脚本程序基本的使用你可以在这了解AutoHotkey脚本程序基本的使用 TODO你可以通过以下AHK脚本将你Listary快捷键改为被Windows系统占用的Win+R 12345678910111213141516#r::Process, Exist, Listary.exe;检查 Listary是否运行ListaryPID = %ErrorLevel% ; 由于 ErrorLevel 会经常发生改变, 所以要立即保存这个值.if ListaryPID = 0&#123;;如果ListaryPID = 0,即Listary没运行 Run "S:\Program Files\Listary\Listary.exe" return &#125;Send,#&#123;y&#125; ;WinSet,AlwaysOnTop,ON,%ListaryPID% ;WinSet,Transparent,150,%ListaryPID%return 注意： 其中关于Run “S:\Program Files\Listary\Listary.exe” 中的路径 请更改为你Listary安装的路径。 这句代码主要是为了将Listary设置为开机不自动启动的时候，仍然可以通过快捷键 Win+R 快速使用Listary启动程序。 你可以在这获取更多我的AutoHotkey实例 TODO你还可以访问AutoHotkey中文文档之脚本展示获取更多实例 本文迭代于(FloatingShuYin@2017-11-02 15:40:18)]]></content>
+    <title><![CDATA[扩展右键菜单发送到之SendTo]]></title>
+    <url>%2F2017%2F11%2F05%2F%E6%89%A9%E5%B1%95%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E5%8F%91%E9%80%81%E5%88%B0%E4%B9%8BSendTo%2F</url>
+    <content type="text"><![CDATA[扩展右键菜单发送到之SendToWindows系统本身就有这样一个功能，可以通过右键菜单快速的发送到蓝牙设备或者邮件收件人。我们可以通过以下步骤，将我们需要频繁接纳文件的文件夹添加进 发送到列表。这样我们在扩展快捷方式库的时候就会方便许多。 你可以在这看到效果演示视频：TODO[扩展右键菜单发送到之SendTo][SendToVideo] 实现步骤添加到发送到列表 复制右边这段路径 ： %APPDATA%\Microsoft\Windows\SendTo 打开你的资源管理器(Win+E ) =&gt; 定位到地址栏(F4 ) =&gt; 全选然后替换成你刚才复制的那段地址(Ctrl+A )(Ctrl+V ) =&gt; 然后回车 呈现在你眼前的正是 发送到列表所有的列 聪明的你肯定已经想到，我们只需要将我们指定的文件夹的快捷方式，拖入到这里就可以将其添加到 发送到列表 了 在这之前我们先把SendTo文件夹本身的快捷方式，添加进 发送到列表 按退格键定位到当前文件夹的的父文件夹(BackSpace ) =&gt; 定位到SendTo文件夹(S )，并新建快捷方式(菜单键+S ) =&gt; 将快捷方式重命名为 SendTO =&gt; 然后将其剪切到 SendTO文件夹 中。 然后定位(F4 )到我们的快捷方式库 X:\lnkSet 并为其新建快捷方式(菜单键+S )，重名为 lnkSet 然后发送到 SendTo (菜单键+N+S) 如果你需要经常修改你的 发送到列表 你可以将 SendTo文件夹 的 快捷方式 重命名为 ST 发送到快捷方式库 lnkSet 中，这样你就可以通过 Win+R + ST + 回车 快速的打开SendTo文件夹。 本文迭代于(FloatingShuYin@2017-11-05 11:55:33)]]></content>
       <categories>
         <category>Win10-15063</category>
         <category>技巧篇</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>Win10</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[目录]]></title>
+    <url>%2F2017%2F11%2F03%2F%E7%9B%AE%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[更新扩展右键菜单发送到之SendTo于(FloatingShuYin@2017-11-05 12:04:14)更新快捷启动之Win+R于(FloatingShuYin@2017-11-03 13:14:46)建议你按照目录顺序阅读，这会让你少在这些页面中来回跳转。 技巧篇 快捷启动之Win+R 扩展右键菜单发送到之SendTo [Listary一切的入口][Listary] [AutoHotkey热键脚本程序][AutoHotkey] [Bandizip解压缩][Bandizip] [ADSafe净化网络][ADSafe] [Snipaste强大而小巧的截图工具][Snipaste] [QTTabBar扩展资源管理器][QTTabBar] [Everything快速检索文件][Everything] [Ditto扩展你的剪切板][Ditto] [FreeDownload 强大的HTTP下载工具][FreeDownload] [Defraggler磁盘碎片整理][Defraggler] [CCleaner系统垃圾注册表清理][CCleaner] [Total Uninstall 6软件安装卸载监控][TotalUninstall] [Q-Dir四窗口资源管理器][Q-Dir] [Bandicam视频录制][Bandicam] [ScreenToGif动图录制][ScreenToGif] [rEFInd多系统引导工具][rEFInd] [IObit Unlocker解除占用][Unlocker] [Seer文件快速预览][Seer] [Icaros缩略图管理][Icaros] [Honeyview图片浏览器][Honeyview]美化篇 [UltraUXThemePatcher第三方主题破解][Theme] [StartlsBack开始菜单][StartlsBack] [iPack主题图标][iPack] [Rainmater][Rainmater] [Wallpaper][Wallpaper] [WindowsFx][WindowsFx6] [noMeiryoUI系统文字热替换][noMeiryoUI] [MacType字体渲染][MacType] [OldNewExplorer去掉资源管理器菜单栏][OldNewExplorer] [鼠标指针][CursorsSet] [FreeLaunchBar改变任务栏图标起始位置][FreeLaunchBar]奇淫巧技篇 [Tickey按键发声][Tickey] [Carnac按键演示][Carnac] [LeDimmer专心工具][LeDimmer] [iFocuzOn屏幕遮挡板][iFocuzOn]-]]></content>
+      <categories>
+        <category>Win10-15063</category>
+        <category>目录</category>
+      </categories>
+      <tags>
+        <tag>目录</tag>
+        <tag>Win10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[快捷启动之Win+R]]></title>
+    <url>%2F2017%2F11%2F02%2F%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8%E4%B9%8BWin%2BR%2F</url>
+    <content type="text"><![CDATA[写在前面的话为了方便你阅读本文档，我们先约定以下几点 被方括号&lt;&gt;包裹的内容为假设条件，你需要根据你的实际情况替换。 被小括号()包括的内容为实现前项操作的快捷键。 如有标明 TODO 字样，表示内容未补充。 快速打开程序\文件\网站之Win+R你可以在这看到效果演示视频：TODOWin10系统自带快捷启动之Win+R 实现步骤添加用户环境变量&lt;这里 假设 你的非系统盘的盘符为 X,用户名为 Admin &gt; 打开你的资源管理器(Win+E )在 X 盘的 根目录 新建文件夹(菜单键+W+F 菜单键在右Ctrl的左边) =&gt; 重命名(F2 )为 lnkSet 然后打开 lnkSet 文件夹，在里面新建3个文件夹，分别重命名为 bat vbs reg 打开系统设置(Win+Pause ) =&gt; 左侧高级系统设置 =&gt; 环境变量(N ) =&gt; 在 Admin 的用户变量(U )中找到Path(P ) 或者 PATH(P ) 若有则编辑(Alt+E ):在变量值列的最下行依次添加(Alt+N ) X:\lnkSet X:\lnkSet\bat X:\lnkSet\vbs X:\lnkSet\reg 若无则新建(Alt+N )：变量名填: PATH 或者 path 都行，变量值填:X:\lnkSet;X:\lnkSet\bat;X:\lnkSet\vbs;X:\lnkSet\reg 你还需要在 Admin 的用户变量(U )中找到 PATHEXT 若有则编辑(Alt+E )：在变量值末尾添加： ;.LNK;.REG;.BAT;.VBS 若无则新建(Alt+N )：变量名填: PATHEXT，变量值填:.LNK;.REG;.BAT;.VBS。 添加完毕后点击确定(Enter ) =&gt; 确定 =&gt; 应用 =&gt; 确定。 自定义命令名 将需要通过 Win+R =&gt; 键入命令名 =&gt; 回车快速打开的程序或文件的快捷方式重命名为你为其定义的命令名，并将其拖放至 X:\lnkSet 文件夹中。如将桌面的 腾讯QQ 快捷方式重命名为 QQ 并拖放至 X:\lnkSet 文件夹。 你可以通过 Win+R =&gt; QQ =&gt; 然后回车 QQ登陆程序将会被执行。 如果提示 Windows找不到文件”QQ” 你可以注销你的账户然后重新登陆重新测试如果还是不行请仔细核对以上步骤，有无遗漏。 Win+R的高级应用之Listary你可以在这看到效果演示视频：第三方快捷启动工具之Listary TODO 需要下载的软件: Listary 可选的软件(建议下载)： AutoHotkey 几点建议 建议你新建专门存储此类辅助程序的文件夹，如：Download 建议你新建专门安装此类辅助程序的文件夹，如：auxiliaryProgram 如果你的系统盘是固态硬盘建议将下载的软件安装在系统盘，如果不是建议安装在非系统盘这是一个取舍问题。 如果你的系统盘是固态硬盘，建议你设置Listary开机自启动，这仍是一个取舍问题。 关于Listary 你可以在这里获取更多关于Listary的使用技巧 TODO 本篇只实现Win+R启动Listary快速打开程序、网页、文档。 实现步骤设置Listary的快捷键 右键Listary的托盘图标 =&gt; 选项 =&gt; 选中左侧快捷键 =&gt; 在显示Listary工具条 设置 Win+Y 如此你就可以通过 双击Ctrl 或者 Win+Y 在任何地方显示\隐藏Listary工具条。 将我们的快捷方式库：X:\lnkSet 添加至 Listary 同样在Listary选项中 =&gt; 选中左侧的启动程序 =&gt; 点击左下角的 + 按钮，将我们的快捷方式库：X:\lnkSet 添加进去。 在底部扩展名的文本框中添加：lnk;exe;bat;ahk 你可以通过快捷键Win+Y或者双击Ctrl 然后在Listary工具条中键入 QQ 回车来快速启动QQ登陆程序 扩展与维护如果你需要添加其他程序的快捷启动命令，你只需要将快捷方式重命名并放置到我们的快捷方式库：X:\lnkSet中 你可以为你的快捷方式库：X:\lnkSet 新建快捷方式，并重命名为 ls，将其拖放到你的快捷方式库：X:\lnkSet 中，你就可以通过命令 ls 来快速打开你的快捷方式库。 使用下面这个方法你可以快速的将你已经重命名的快捷方式右键发送到快捷方式库：X:\lnkSet中**你可以在这里获取 扩展鼠标右键菜单：发送到你指定的文件夹 我们还在 lnkSet 中新建了三个文件夹，他们主要是分别用来存储一些脚本文件和注册表文件。你可以在这里了解一些我在网上收集的脚本库，如果你喜欢，你可以得到他。 如果你下载了AutoHotkey如果你不知道AutoHotkey脚本程序基本的使用你可以在这了解AutoHotkey脚本程序基本的使用 TODO你可以通过以下AHK脚本将你Listary快捷键改为被Windows系统占用的Win+R 12345678910111213141516#r::Process, Exist, Listary.exe;检查 Listary是否运行ListaryPID = %ErrorLevel% ; 由于 ErrorLevel 会经常发生改变, 所以要立即保存这个值.if ListaryPID = 0&#123;;如果ListaryPID = 0,即Listary没运行 Run "S:\Program Files\Listary\Listary.exe" return &#125;Send,#&#123;y&#125; ;WinSet,AlwaysOnTop,ON,%ListaryPID% ;WinSet,Transparent,150,%ListaryPID%return 注意： 其中关于Run “S:\Program Files\Listary\Listary.exe” 中的路径 请更改为你Listary安装的路径。 这句代码主要是为了将Listary设置为开机不自动启动的时候，仍然可以通过快捷键 Win+R 快速使用Listary启动程序。 你可以在这获取更多我的AutoHotkey实例 TODO你还可以访问AutoHotkey中文文档之脚本展示获取更多实例 本文迭代于(FloatingShuYin@2017-11-05 11:56:01)]]></content>
+      <categories>
+        <category>Win10-15063</category>
+        <category>技巧篇</category>
+      </categories>
+      <tags>
+        <tag>Win10</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -35,9 +48,9 @@
         <category>正则表达式</category>
       </categories>
       <tags>
+        <tag>正则表达式语法</tag>
         <tag>笔记</tag>
         <tag>JavaScript</tag>
-        <tag>正则表达式语法</tag>
       </tags>
   </entry>
   <entry>
