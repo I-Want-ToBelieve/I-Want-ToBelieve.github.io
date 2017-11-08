@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="笔记,Makedown语法," />
+  <meta name="keywords" content="Makedown语法,笔记," />
 
 
 
@@ -78,14 +78,14 @@
 
 
 <meta name="description" content="去Makedown语法说明。 去繁体版 看看繁体版的原始檔:来自GitHub 下载本文的原始档:来自微云网盘的分享   写在前面的话 此文档是我学习Makedown语法时候的练习笔记 参考自 Makedown语法说明 此文档内容来自Makedown语法说明。   代码引用 先看如何在Makedown中插入代码 如果要标记一小段行内代码，就需要用反引号把它包起来 反引号就是ESC下面的那个键，值得">
-<meta name="keywords" content="笔记,Makedown语法">
+<meta name="keywords" content="Makedown语法,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Makedown语法一览">
 <meta property="og:url" content="http://yoursite.com/2017/10/22/Makedown语法一览/index.html">
 <meta property="og:site_name" content="FloatingShuYin">
 <meta property="og:description" content="去Makedown语法说明。 去繁体版 看看繁体版的原始檔:来自GitHub 下载本文的原始档:来自微云网盘的分享   写在前面的话 此文档是我学习Makedown语法时候的练习笔记 参考自 Makedown语法说明 此文档内容来自Makedown语法说明。   代码引用 先看如何在Makedown中插入代码 如果要标记一小段行内代码，就需要用反引号把它包起来 反引号就是ESC下面的那个键，值得">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T05:49:37.708Z">
+<meta property="og:updated_time" content="2017-11-08T09:24:04.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makedown语法一览">
 <meta name="twitter:description" content="去Makedown语法说明。 去繁体版 看看繁体版的原始檔:来自GitHub 下载本文的原始档:来自微云网盘的分享   写在前面的话 此文档是我学习Makedown语法时候的练习笔记 参考自 Makedown语法说明 此文档内容来自Makedown语法说明。   代码引用 先看如何在Makedown中插入代码 如果要标记一小段行内代码，就需要用反引号把它包起来 反引号就是ESC下面的那个键，值得">
@@ -460,6 +460,25 @@
 <p><code>Please don&#39;t use any `&lt;blink&gt;` tags.</code><br>解析成<br><code>&lt;p&gt;Please don&#39;t use any &lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;</code><br>可以这样写：<br><code>`&amp;#8212;` is the decimal-encoded equivalent of `&amp;mdash;`.</code><br>以产生<br><code>&lt;p&gt;&lt;code&gt;&amp;amp;#8212;&lt;/code&gt; is the decimal-encoded
 equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;</code></p>
 <hr>
+<h2 id="页内跳转"><a href="#页内跳转" class="headerlink" title="页内跳转"></a>页内跳转</h2><ul>
+<li>有两种方式可以在MarkDown中实现页内跳转</li>
+</ul>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- [1.语法示例](#1)</div><div class="line"></div><div class="line">- [1.1图片](#1.1)</div><div class="line"></div><div class="line">- [1.2换行](#1.2)</div><div class="line"></div><div class="line">- [1.3强调](#1.3)</div></pre></td></tr></table></figure>
+<p>生成效果:</p>
+<pre><code>1.语法示例
+    1.1图片
+    1.2换行
+    1.3强调
+</code></pre><p>在正文中，只要将章节标题的id对应上去即可:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;h2 id=&quot;1&quot;&gt;1.语法示例&lt;/h2&gt;</div><div class="line"></div><div class="line">这是第一段</div><div class="line"></div><div class="line">&lt;h3 id=&quot;1.1&quot;&gt;1.1图片&lt;/h3&gt;</div><div class="line">这是第一段第一节</div><div class="line">&lt;h3 id=&quot;1.2&quot;&gt;1.2换行&lt;/h3&gt;</div><div class="line">这是第一段第二节</div><div class="line">&lt;h3 id=&quot;1.1&quot;&gt;1.3强调&lt;/h3&gt;</div><div class="line"></div><div class="line">这是第一段第三节</div><div class="line"></div><div class="line">这是第一段第三节</div><div class="line"></div><div class="line">这是第一段第三节</div><div class="line"></div><div class="line">这是第一段第三节</div><div class="line"></div><div class="line">这是第一段第三节</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><ul>
+<li>使用html标签实现</li>
+</ul>
+<ol>
+<li>定义一个锚(id)：<code>&lt;span id=&quot;jump&quot;&gt;跳转到的地方&lt;/span&gt;</code></li>
+<li>使用markdown语法：<code>[点击跳转](#jump)</code></li>
+</ol>
+<hr>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="兼容-HTML"><a href="#兼容-HTML" class="headerlink" title="兼容 HTML"></a>兼容 HTML</h2><ul>
 <li>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。</li>
 <li>要制约的只有一些 HTML <em>区块元素</em></li>
@@ -698,12 +717,16 @@ id sem consectetuer libero luctus adipiscing.
 <ul>
 <li>很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：</li>
 </ul>
-<pre><code>&lt;ol&gt;
-&lt;li&gt;Bird&lt;/li&gt;
-&lt;li&gt;McHale&lt;/li&gt;
-&lt;li&gt;Parish&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre><ul>
+<pre style="text-align: left;margin-left: 22%">
+    <code>
+    <ol>
+    <li>Bird</li>
+    <li>McHale</li>
+    <li>Parish</li>
+    </ol></code>
+</pre>
+
+<ul>
 <li>如果你的列表标记写成：</li>
 </ul>
 <pre style="text-align: left;margin-left: 22%">
@@ -828,11 +851,7 @@ sayhello()
 </li>
 <li>Markdown 会转换成：</li>
 </ul>
-<p><code>&lt;p&gt;这是一个普通段落：&lt;/p&gt;</code><br><code>&lt;pre&gt;
-&lt;code&gt;
-这是一个代码区块。
-&lt;/code&gt;
-&lt;/pre&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;这是一个普通段落：&lt;/p&gt;</div><div class="line">&lt;pre&gt;</div><div class="line">&lt;code&gt;</div><div class="line">这是一个代码区块。</div><div class="line">&lt;/code&gt;</div><div class="line">&lt;/pre&gt;</div></pre></td></tr></table></figure>
 <ul>
 <li>这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</li>
 </ul>
@@ -843,31 +862,18 @@ end tell
 </code></pre><ul>
 <li>会被转换为:</li>
 </ul>
-<p><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;</code></p>
-<p><code>&lt;pre&gt;&lt;code&gt;tell application &quot;Foo&quot;
-    beep
-end tell
-&lt;/code&gt;&lt;/pre&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;pre&gt;&lt;code&gt;tell application &quot;Foo&quot;</div><div class="line">    beep</div><div class="line">end tell</div><div class="line">&lt;/code&gt;&lt;/pre&gt;</div></pre></td></tr></table></figure>
 <ul>
-<li>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。<ul>
-<li>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体<ul>
+<li>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</li>
+<li>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体</li>
 <li>这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码</li>
-</ul>
-</li>
-</ul>
-</li>
 <li>只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</li>
 </ul>
 <pre><code>&lt;div class=&quot;footer&quot;&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/div&gt;
 </code></pre><p>会被转换为：</p>
-<p><code>&lt;pre&gt;
-&lt;code&gt;&amp;lt;div class=&quot;footer&quot;&amp;gt;
-    &amp;amp;copy; 2004 Foo Corporation
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;
-&lt;/pre&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;pre&gt;</div><div class="line">&lt;code&gt;&amp;lt;div class=&quot;footer&quot;&amp;gt;</div><div class="line">    &amp;amp;copy; 2004 Foo Corporation</div><div class="line">&amp;lt;/div&amp;gt;</div><div class="line">&lt;/code&gt;</div><div class="line">&lt;/pre&gt;</div></pre></td></tr></table></figure>
 <ul>
 <li>代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</li>
 </ul>
@@ -909,7 +915,7 @@ title attribute.&lt;/p&gt;</code></p>
 <pre><code>[foo]: http://example.com/  &quot;Optional Title Here&quot;
  [foo]: http://example.com/  &apos;Optional Title Here&apos;
  [foo]: http://example.com/  (Optional Title Here)
-</code></pre><p><strong><em>请注意：</em></strong>有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。<br>链接网址也可以用方括号包起来：<br><code>[id]: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;</code><br>你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：<br><code>[id]: http://example.com/longish/path/to/resource/here
+</code></pre><p><strong><em>请注意：</em></strong> 有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。<br>链接网址也可以用方括号包起来：<br><code>[id]: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;</code><br>你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：<br><code>[id]: http://example.com/longish/path/to/resource/here
     &quot;Optional Title Here&quot;</code><br>网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。<br>链接辨别标签可以有字母、数字、空白和标点符号，但是并不区分大小写，因此下面两个链接是一样的:<br>        [link text][a]<br>        [link text][A]<br>隐式链接标记功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：</p>
 <p><code>[Google][]</code></p>
 <p>然后定义链接内容：</p>
@@ -987,19 +993,8 @@ than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
 <p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <code>&lt;em&gt;</code> 标签），你可以在星号的前面加上反斜杠：</p>
 <p><code>\*literal asterisks\*</code></p>
 <p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
-<pre><code>\   反斜线
-`   反引号
-*   星号
-_   底线
-{}  花括号
-[]  方括号
-()  括弧
-#   井字号
-+   加号
--   减号
-.   英文句点
-!   惊叹号
-</code></pre><h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>感谢 leafy7382 协助翻译，hlb、Randylien 帮忙润稿，ethantw 的汉字标准格式・CSS Reset， WM 回报文字错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">\   反斜线</div><div class="line">`   反引号</div><div class="line">*   星号</div><div class="line">_   底线</div><div class="line">&#123;&#125;  花括号</div><div class="line">[]  方括号</div><div class="line">()  括弧</div><div class="line">#   井字号</div><div class="line">+   加号</div><div class="line">-   减号</div><div class="line">.   英文句点</div><div class="line">!   惊叹号</div></pre></td></tr></table></figure>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>感谢 leafy7382 协助翻译，hlb、Randylien 帮忙润稿，ethantw 的汉字标准格式・CSS Reset， WM 回报文字错误。</p>
 <p>感谢 fenprace，addv。</p>
 <hr>
 <ul>
@@ -1026,9 +1021,9 @@ _   底线
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
-          
             <a href="/tags/Makedown语法/" rel="tag"># Makedown语法</a>
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
         </div>
       
@@ -1140,7 +1135,7 @@ _   底线
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1151,7 +1146,7 @@ _   底线
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1162,7 +1157,7 @@ _   底线
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1197,7 +1192,7 @@ _   底线
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面的话"><span class="nav-number">1.</span> <span class="nav-text">写在前面的话</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码引用"><span class="nav-number">1.1.</span> <span class="nav-text">代码引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容-HTML"><span class="nav-number">2.1.</span> <span class="nav-text">兼容 HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊字符自动转换"><span class="nav-number">2.2.</span> <span class="nav-text">特殊字符自动转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块元素"><span class="nav-number">2.3.</span> <span class="nav-text">区块元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#段落和换行"><span class="nav-number">2.3.1.</span> <span class="nav-text">段落和换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">2.3.2.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块引用-Blockquotes"><span class="nav-number">2.3.3.</span> <span class="nav-text">区块引用 Blockquotes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在引用的区块内测试使用标题"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">在引用的区块内测试使用标题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">2.3.4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码区块"><span class="nav-number">2.3.5.</span> <span class="nav-text">代码区块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分隔线"><span class="nav-number">2.3.6.</span> <span class="nav-text">分隔线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区段元素"><span class="nav-number">2.4.</span> <span class="nav-text">区段元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">2.4.1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强调"><span class="nav-number">2.4.2.</span> <span class="nav-text">强调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">2.4.3.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动链接"><span class="nav-number">2.4.4.</span> <span class="nav-text">自动链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢"><span class="nav-number">2.5.</span> <span class="nav-text">感谢</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面的话"><span class="nav-number">1.</span> <span class="nav-text">写在前面的话</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码引用"><span class="nav-number">1.1.</span> <span class="nav-text">代码引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页内跳转"><span class="nav-number">1.2.</span> <span class="nav-text">页内跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.2.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容-HTML"><span class="nav-number">2.1.</span> <span class="nav-text">兼容 HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊字符自动转换"><span class="nav-number">2.2.</span> <span class="nav-text">特殊字符自动转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块元素"><span class="nav-number">2.3.</span> <span class="nav-text">区块元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#段落和换行"><span class="nav-number">2.3.1.</span> <span class="nav-text">段落和换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">2.3.2.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块引用-Blockquotes"><span class="nav-number">2.3.3.</span> <span class="nav-text">区块引用 Blockquotes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在引用的区块内测试使用标题"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">在引用的区块内测试使用标题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">2.3.4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码区块"><span class="nav-number">2.3.5.</span> <span class="nav-text">代码区块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分隔线"><span class="nav-number">2.3.6.</span> <span class="nav-text">分隔线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区段元素"><span class="nav-number">2.4.</span> <span class="nav-text">区段元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">2.4.1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强调"><span class="nav-number">2.4.2.</span> <span class="nav-text">强调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">2.4.3.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动链接"><span class="nav-number">2.4.4.</span> <span class="nav-text">自动链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢"><span class="nav-number">2.5.</span> <span class="nav-text">感谢</span></a></li></ol></li></ol></div>
             
 
           </div>
