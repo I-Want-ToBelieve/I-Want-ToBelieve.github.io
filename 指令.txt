@@ -1,11 +1,17 @@
 ﻿#新建博文指令
-hexo new page title
+hexo new layout title
 #更新博客指令
 hexo clean #清除缓存 
 hexo g #生成文件
 hexo d #提交到githubpage
 
-#在新主机上的环境配置步骤
-git clone https://github.com/FloatingShuYin/FloatingShuYin.GitHub.git #clone至本地 
-cd /FloatingShuYin.GitHub.git #进入项目根目录
-npm install #下载依赖
+#在新主机上的环境配置步骤 
+
+1. git clone git@github.com:FloatingShuYin/FloatingShuYin.GitHub.git  #clone仓库 默认分支为hexo
+2. cd /FloatingShuYin.GitHub.git  #进入项目根目录
+3.依次执行下列指令：
+npm install hexo
+npm install
+npm install hexo-deployer-git
+
+
