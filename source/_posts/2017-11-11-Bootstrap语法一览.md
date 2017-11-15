@@ -9,25 +9,6 @@ categories:
 - BootstrapV3.3.7
 ---
 
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<style>
-a {
-  color: #3d3b3b;
-}
-a:hover
-{
-color: #3d3b3b;
-text-decoration:none;
-}
-code {
-   background-color: #2d2d2d;
-   color: #fdfcf8;
-}
-pre {
-  color: #d5d3cb;
-}  
-</style>
 
 ## 说在前面的话
 
@@ -73,6 +54,7 @@ pre {
 </html>
 ```
 在上面的模板中，由于bootstrap依赖jquery库，所以在引入bootstrap之前必须先引入jquery
+<!--more-->
 ## 实例
 
 - 可以在这获取[Bootstrap源码][源代码],里面包含有实例。
@@ -249,3 +231,64 @@ h1=36px，h2=30px，h3=24px，h4=18px，h5=14px和h6=12px。
 <div class="h4">h4. Bootstrap heading</div>
 <div class="h5">h5. Bootstrap heading</div>
 <div class="h6">h6. Bootstrap heading</div>
+
+</br>
+#### 副标题
+
+- 在标题内还可以包含 <small> 标签或赋予 .small 类的元素，可以用来标记副标题。
+
+bootstrap.css中也重置了 **副标题small** 的样式
+1. 行高都是1，而且font-weight设置了normal变成了常规效果（不加粗），同时颜色被设置为灰色（#999）。
+
+2. 由于<small>内的文本字体在h1~h3内，其大小都设置为当前字号的65%；而在h4~h6内的字号都设置为当前字号的75%；
+
+<div style="float：left">
+```html
+<h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+<h2>h2. Bootstrap heading <small>Secondary text</small></h2>
+<h3>h3. Bootstrap heading <small>Secondary text</small></h3>
+<h4>h4. Bootstrap heading <small>Secondary text</small></h4>
+<h5>h5. Bootstrap heading <small>Secondary text</small></h5>
+<h6>h6. Bootstrap heading <small>Secondary text</small></h6>
+```
+</div>
+```html
+<div class="h1">h1. Bootstrap heading<small>Secondary text</small></div>
+<div class="h2">h2. Bootstrap heading<small>Secondary text</small></div>
+<div class="h3">h3. Bootstrap heading<small>Secondary text</small></div>
+<div class="h4">h4. Bootstrap heading<small>Secondary text</small></div>
+<div class="h5">h5. Bootstrap heading<small>Secondary text</small></div>
+<div class="h6">h6. Bootstrap heading<small>Secondary text</small></div>
+```
+以上代码的呈现效果是一致的，如下
+
+<div class="h1">h1. Bootstrap heading<small>Secondary text</small></div>
+<div class="h2">h2. Bootstrap heading<small>Secondary text</small></div>
+<div class="h3">h3. Bootstrap heading<small>Secondary text</small></div>
+<div class="h4">h4. Bootstrap heading<small>Secondary text</small></div>
+<div class="h5">h5. Bootstrap heading<small>Secondary text</small></div>
+<div class="h6">h6. Bootstrap heading<small>Secondary text</small></div>
+
+### 段落
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<style>
+a {
+  color: #3d3b3b;
+}
+a:hover
+{
+color: #3d3b3b;
+text-decoration:none;
+}
+/*
+code {
+   background-color: #2d2d2d;
+   color: #fdfcf8;
+}
+pre {
+  color: #d5d3cb;
+}
+*/
+</style>
