@@ -7,11 +7,15 @@ hexo d #提交到githubpage
 
 #在新主机上的环境配置步骤 
 
-1. git clone git@github.com:FloatingShuYin/FloatingShuYin.GitHub.git  #clone仓库 默认分支为hexo
-2. cd /FloatingShuYin.GitHub.git  #进入项目根目录
-3.依次执行下列指令：
+# 1.
+git clone git@github.com:FloatingShuYin/FloatingShuYin.GitHub.git  #clone仓库 默认分支为hexo
+# 2.
+cd /FloatingShuYin.GitHub.git  #进入项目根目录
+# 3.
+# 依次执行下列指令：
 npm install hexo
 npm install
-npm install hexo-deployer-git
+
+# npm install hexo-deployer-git
 
 
