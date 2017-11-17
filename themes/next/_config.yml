@@ -136,11 +136,16 @@ scheme: Pisces
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
+# /* 社交链接*/
+social:
+  GitHub: https://github.com/FloatingShuYin
 
 social_icons:
   enable: true
+  GitHub: heartbeat
   icons_only: false
   transition: false
+
 
 # Blog rolls
 links_icon: link
@@ -304,6 +309,7 @@ font:
   global:
     external: true
     family: Monda
+    size: 16
 
   # 标题字体 (h1, h2, h3, h4, h5, h6)
   headings:
@@ -319,7 +325,7 @@ font:
   logo:
     external: true
     family: Lobster Two
-    size: 24
+    size: 26
 
   # 代码字体，应用于 code 以及代码块
   codes:
