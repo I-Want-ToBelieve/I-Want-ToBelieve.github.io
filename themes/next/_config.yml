@@ -139,12 +139,11 @@ scheme: Pisces
 # /* 社交链接*/
 social:
   GitHub: https://github.com/FloatingShuYin
-
 social_icons:
   enable: true
-  GitHub: heartbeat
+  GitHub: github
   icons_only: false
-  transition: false
+  transition: true
 
 
 # Blog rolls
@@ -331,6 +330,7 @@ font:
   codes:
     external: true
     family: PT Mono
+    size: 12
 
 
 # ---------------------------------------------------------------

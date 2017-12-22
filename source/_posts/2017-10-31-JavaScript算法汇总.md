@@ -66,3 +66,43 @@ sumPrimes(10);
 ```
 关于正则表达式，也许这能解释一二
 [正则表达式 ^(?!(xx+)\1+$) 的含义？](https://www.zhihu.com/question/22571865/answer/21824402 "正则表达式 ^(?!(xx+)\1+$) 的含义？")
+
+## 系统时间（System Time）
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>当前系统时间</title>
+<script>
+ window.onload = function(){
+    showTime();
+  }
+  function showTime(){
+    var now=new Date();
+    var year=  now.getFullYear();
+    var month=  now.getMonth()+1;
+    var day = now.getDate();
+    var h =  now.getHours();
+    var m = now.getMinutes();
+    var s =  now.getSeconds();
+    m=m<10?"0"+m:m;
+    s=s<10?"0"+s:s;
+
+    var weekday='星期'+'日一二三四五六'.charAt(now.getDay());
+
+    document.getElementById("show").innerHTML=""+year+"年"+month+"月"+day+"日 "+ weekday +h+":"+m+":"+s;
+    t=setTimeout('showTime()',500);
+  }
+
+</script>
+</head>
+<body>
+<div class="content1">
+  <div id="show">显示时间的位置</div>
+  <!-- 2017年12月12日 星期二 24:00:00-->
+</div>
+</body>
+</html>
+```

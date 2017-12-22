@@ -5,6 +5,39 @@
 // 出现目录和顶部锚点绝对定位BUG
 //}
 
+body {
+  background-color: #F3F1E9;
+}
+// 文章内容容器宽度修改 主题：Pisces
+
+
+/* 偏移bug
+header{ width: 80%; }
+.container .main-inner { width: 50%; }
+.content-wrap { width: calc(100% - 260px); }
+*/
+
+// 点击折叠显示内容
+
+.fold_hider{
+  //float:left;
+}
+
+.hider_title{
+      font-family: "Microsoft Yahei";
+      cursor: pointer;
+      font-size: 20px;
+}
+.close:after{
+    content: "▼";
+    color: blue;
+}
+.open:after{
+    content: "▲";
+    color: red;
+}
+
+// 网易云音乐单曲iframe容器
 .parent {
     display: flex;
     width: 100%;
@@ -12,15 +45,34 @@
     //background-color: red;
     align-items: center;
     justify-content: center;
-    margin-bottom:200px;
-    margin-top:100px;
+    margin-bottom:120px;
+    margin-top:80px;
 }
 
 .child {
     margin:20px auto;
     width: 320px;
-    height: 80px;
-  //  background-color: black;
+    height: 86px;
+    //background-color: black;
+}
+
+// 网易云音乐歌单iframe容器
+.parentset {
+    display: flex;
+    width: 100%;
+    height: 230px;
+    //background-color: red;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:200px;
+    margin-top:180px;
+}
+
+.childset {
+    margin:20px auto;
+    width: 420px;
+    height: 450px;
+  //background-color: black;
 }
 
 // 主页文章添加阴影效果
