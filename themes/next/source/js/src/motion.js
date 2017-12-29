@@ -350,12 +350,20 @@ $(document).ready(function () {
   };
 
   // myjs start
+
+  // 折叠
   $(document).on('click', '.fold_hider', function(){
       $('>.fold', this.parentNode).slideToggle();
       $('>:first', this).toggleClass('open');
   });
-  //默认情况下折叠
+  // 默认情况下折叠
   $("div.fold").css("display","none");
+
+  // a标签 新窗口打开
+  Array.prototype.slice.call(document.getElementsByTagName('a')).forEach(function(a){
+  a.setAttribute('target', '_blank');
+  });
+
   // myjs end
 
 });
