@@ -694,9 +694,6 @@ code {
    background-color: #2d2d2d;
    color: #fdfcf8;
 }
-br{
-  display:none;
-}
 
 
 </style>
