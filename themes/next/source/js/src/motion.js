@@ -361,7 +361,10 @@ $(document).ready(function () {
 
   // a标签 新窗口打开
   Array.prototype.slice.call(document.getElementsByTagName('a')).forEach(function(a){
-  a.setAttribute('target', '_blank');
+      // 排除
+      if($(a).attr('class') !== 'popup-trigger'){
+          a.setAttribute('target', '_blank');
+      }
   });
 
   // myjs end
