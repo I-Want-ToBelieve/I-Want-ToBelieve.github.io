@@ -1,6 +1,9 @@
-﻿#新建博文指令
+﻿
+#新建博文指令
 hexo new layout title
 #更新博客指令
+使用 --config source/_data/next.yml 参数启动服务器, 生成或者部署。
+  例如: hexo clean --config source/_data/next.yml && hexo g --config source/_data/next.yml
 hexo clean #清除缓存 
 hexo g #生成文件
 hexo d #提交到githubpage
@@ -17,5 +20,4 @@ npm install hexo
 npm install
 
 # npm install hexo-deployer-git
-
 

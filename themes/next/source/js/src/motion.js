@@ -360,12 +360,12 @@ $(document).ready(function () {
   $("div.fold").css("display","none");
 
   // a标签 新窗口打开
-  Array.prototype.slice.call(document.getElementsByTagName('a')).forEach(function(a){
-      // 排除
-      if($(a).attr('class') !== 'popup-trigger'){
-          a.setAttribute('target', '_blank');
-      }
-  });
+  // Array.prototype.slice.call(document.getElementsByTagName('a')).forEach(function(a){
+  //     // 排除
+  //     if($(a).attr('class') !== 'popup-trigger'){
+  //         a.setAttribute('target', '_blank');
+  //     }
+  // });
 
   // myjs end
 

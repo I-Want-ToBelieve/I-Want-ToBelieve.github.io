@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://floatsyi.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -28,7 +28,6 @@ i18n_dir: :lang
 skip_render: 'README.md'
 
 # Writing
-# /* 文章文件名 */
 new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
@@ -75,7 +74,17 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
-# 微搜索
+# feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
+# 本地搜索
 search:
   path: search.xml
   field: post

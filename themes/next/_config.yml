@@ -1,6 +1,13 @@
+# ===============================================================
+# ========================= ATTENTION! ==========================
+# ===============================================================
+# NexT repository is moving here: https://github.com/theme-next
+# ===============================================================
+# It's rebase to v6.0.0 and future maintenance will resume there
+# ===============================================================
+
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
-# Link:http://theme-next.iissnan.com/getting-started.html
 # ---------------------------------------------------------------
 
 # Set to true, if you want to fully override the default configuration.
@@ -33,7 +40,7 @@ keywords: "Hexo, NexT"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: /atom.xml
 
 footer:
   # Specify the date when the site was setup.
@@ -84,22 +91,20 @@ index_with_subtitle: false
 # Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
-#菜单栏-栏目
 menu:
   home: / || home
-  about: /about/ || user
   #about: /about/ || user
   #tags: /tags/ || tags
-  tags: /tags/ || tags
-  categories: /categories/ || th
   #categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
-  #commonweal: /404.html || heartbeat
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
 
-# Enable/Disable menu icons. /* 是否使用菜单栏图标 */
+# Enable/Disable menu icons.
 menu_icons:
   enable: true
 
@@ -108,9 +113,8 @@ menu_icons:
 # Scheme Settings
 # ---------------------------------------------------------------
 
-# Schemes /* 主题选择：默认 紧凑 双栏 */
+# Schemes Muse
 scheme: Gemini
-#scheme: Muse /*this is default*/
 #scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
@@ -136,14 +140,25 @@ scheme: Gemini
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-# /* 社交链接*/
 social:
-  GitHub: https://github.com/FloatingShuYin
+  GitHub: https://github.com/FloatingShuYin || github
+  JueJin: https://juejin.im/user/5a5476edf265da3e484bb107 ||
+  ZhiHu: https://www.zhihu.com/people/FloatingShuYin/activities ||
+  JianShu: https://www.jianshu.com/users/0191a5d758dd/timeline ||
+ #GitHub: https://github.com/FloatingShuYin || github
+  #E-Mail: mailto:yourname@gmail.com || envelope
+ #Google: https://plus.google.com/yourname || google
+ #Twitter: https://twitter.com/yourname || twitter
+#FB Page: https://www.facebook.com/yourname || facebook
+ #VK Group: https://vk.com/yourname || vk
+ #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
+ #YouTube: https://youtube.com/yourname || youtube  #Instagram: https://instagram.com/yourname || instagram
+  #Skype: skype:yourname?call|chat || skype
+
 social_icons:
   enable: true
-  GitHub: github
   icons_only: false
-  transition: true
+  transition: false
 
 
 # Blog rolls
@@ -158,7 +173,6 @@ links_layout: block
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
 #avatar: /images/avatar.gif
-#  /* 头像 */
 avatar: /uploads/avatar.png
 
 # Table Of Contents in the Sidebar
@@ -176,7 +190,7 @@ toc:
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 #creative_commons: by-nc-sa
 #creative_commons:
-# /* 侧栏位置 */
+
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
   position: left
@@ -278,12 +292,11 @@ custom_logo:
   enabled: false
   image:
 
-# // 代码高亮 主题
 # Code Highlight theme
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night
 
 
 # ---------------------------------------------------------------
@@ -299,38 +312,47 @@ highlight_theme: normal
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: true
+  enable: false
 
-  # 外链字体库地址，例如 //fonts.googleapis.com (默认值)
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host:
 
-  # 全局字体，应用在 body 元素上
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: xx`. Use `px` as unit.
+
+  # Global font settings used on <body> element.
   global:
     external: true
-    family: Monda
-    size: 16
+    family: Lato
+    size:
 
-  # 标题字体 (h1, h2, h3, h4, h5, h6)
+  # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
+  # Fallback to `global` font settings.
   headings:
     external: true
-    family: Roboto Slab
+    family:
+    size:
 
-  # 文章字体
+  # Font settings for posts.
+  # Fallback to `global` font settings.
   posts:
     external: true
     family:
 
-  # Logo 字体
+  # Font settings for Logo.
+  # Fallback to `global` font settings.
   logo:
     external: true
-    family: Lobster Two
-    size: 26
+    family:
+    size:
 
-  # 代码字体，应用于 code 以及代码块
+  # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: PT Mono
-    size: 14
+    family:
+    size:
 
 
 # ---------------------------------------------------------------
@@ -349,15 +371,15 @@ han: false
 # Swiftype Search API Key
 #swiftype_key:
 
-# Baidu Analytics ID // 开启百度统计
-baidu_analytics: 6627bf559dd1b421c4a4b1876a36b5f7
+# Baidu Analytics ID
+#baidu_analytics:
 
 # Duoshuo ShortName
 #duoshuo_shortname:
 
-# Disqus /* 是否开启评论 */
+# Disqus
 disqus:
-  enable: true
+  enable: false
   shortname:
   count: true
 
@@ -373,14 +395,18 @@ changyan:
 
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
-# more info please open https://github.com/xCss/Valine
+# more info please open https://valine.js.org
 valine:
   enable: false
   appid:  # your leancloud application appid
   appkey:  # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Comment input placeholder
+  placeholder: Just go go # comment box placeholder
+  avatar: mm # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
+
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
@@ -392,6 +418,7 @@ valine:
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
+# You can get your Github ID from https://api.github.com/users/<Github username>
 gitment:
   enable: false
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
@@ -401,7 +428,7 @@ gitment:
   language: # Force language, or auto switch by theme
   github_user: # MUST HAVE, Your Github ID
   github_repo: # MUST HAVE, The repo you use to store Gitment comments
-  client_id:   # MUST HAVE, Github client id for the Gitment
+  client_id: # MUST HAVE, Github client id for the Gitment
   client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
@@ -417,11 +444,10 @@ gitment:
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-#  /* jiathis 内容分享服务 */
-#jiathis:true
+#jiathis:
   ##uid: Get this uid from http://www.jiathis.com/
 #add_this_id:
-
+jiathis: true
 # Share
 #duoshuo_share: true
 
@@ -527,6 +553,16 @@ leancloud_visitors:
   enable: false
   app_id: #<app_id>
   app_key: #<app_key>
+
+# Another tool to show number of visitors to each article.
+# visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
+# visit https://firebase.google.com/docs/firestore/ to get more information about firestore
+firestore:
+  enable: false
+  collection: articles #required, a string collection name to access firestore database
+  apiKey: #required
+  projectId: #required
+  bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -635,9 +671,9 @@ tabs:
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
 #! ---------------------------------------------------------------
 
-# Use velocity to animate everything. /* 是否使用动画 */
+# Use velocity to animate everything.
 motion:
-  enable: false
+  enable: true
   async: false
   transition:
     # Transition variants:
@@ -677,8 +713,7 @@ pace: false
 # pace_theme: pace-theme-center-simple
 pace_theme: pace-theme-minimal
 
-# /* 背景动画 */
-# Canvas-nest /* 线条跟随 */
+# Canvas-nest
 canvas_nest: false
 
 # three_waves /* 粒子浮动 */
@@ -793,8 +828,8 @@ css: css
 js: js
 images: images
 
+# Theme version
+version: 5.1.4
+
 # /* 站点建立时间 */
 since: 2017
-
-# Theme version
-version: 5.1.3
