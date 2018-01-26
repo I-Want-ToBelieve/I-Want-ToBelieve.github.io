@@ -109,7 +109,7 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes /* 主题选择：默认 紧凑 双栏 */
-scheme: Mist
+scheme: Gemini
 #scheme: Muse /*this is default*/
 #scheme: Mist
 #scheme: Pisces
@@ -330,7 +330,7 @@ font:
   codes:
     external: true
     family: PT Mono
-    size: 12
+    size: 14
 
 
 # ---------------------------------------------------------------
@@ -679,10 +679,10 @@ pace_theme: pace-theme-minimal
 
 # /* 背景动画 */
 # Canvas-nest /* 线条跟随 */
-canvas_nest: true
+canvas_nest: false
 
 # three_waves /* 粒子浮动 */
-three_waves: false
+three_waves: true
 
 # canvas_lines
 canvas_lines: false
