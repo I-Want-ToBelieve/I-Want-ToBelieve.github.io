@@ -16,7 +16,8 @@ git clone git@github.com:FloatingShuYin/FloatingShuYin.GitHub.git  #clone仓库 
 cd /FloatingShuYin.GitHub.git  #进入项目根目录
 # 3.
 # 依次执行下列指令：
-npm install hexo
+npm install -g hexo-cli
+npm install 
 npm install
 
 # npm install hexo-deployer-git
