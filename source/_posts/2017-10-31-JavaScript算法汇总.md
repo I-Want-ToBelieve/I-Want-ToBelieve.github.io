@@ -7,7 +7,7 @@ tags:
 - JavaScript
 categories:
 - 笔记
-- JavaScript算法汇总
+- JavaScript
 ---
 
 ## 转换HTML实体（Convert HTML Entities）

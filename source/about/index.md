@@ -26,7 +26,7 @@ comments: false
 
 ## 联系
 
-- [知乎@喻智勇](http://www.zhihu.com/people/FloatingShuYin)
+- QQ:2675579033
 
 <div class="parentset">
     <div class="childset">
