@@ -200,7 +200,7 @@ o.publicMethod();
 
 ## 构造函数模式+原型模式实现自定义类型（类）
 
-```js
+​```js
 'use strict'
 // define 定义 类
 function ObjName( arg0,arg1,... ){
@@ -465,7 +465,7 @@ fArr[9](); // 10
 // 函数数组中的所有函数的 返回值 都为 10
 ```
 
-给闭包函数添加闭包函数，让这个函数数组中的函数的返回值符合预期。如下：
+让函数return一个闭包函数，让这个函数数组中的函数的返回值符合预期。如下：
 
 ```js
 function f() {
@@ -476,7 +476,7 @@ function f() {
   for( i = 0; i < 10; i++ ){
     // 循环添加函数到数组
     result[i] = function ( num ) {
-      // 再添加一个匿名的闭包函数
+      // return一个匿名的闭包函数
       return function() {
         return num;
       };
@@ -540,5 +540,5 @@ var Obj = {
 }
 
 // 调用 调用 getValue() 返回后的 匿名闭包函数
-Obj.getValue()(); // B
+Obj.getValue()(Obj); // B
 ```
