@@ -95,5 +95,5 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/FloatingShuYin/FloatingShuYin.GitHub.io.git
+  repo: git@github.com:FloatingShuYin/FloatingShuYin.GitHub.io.git
   branch: master
