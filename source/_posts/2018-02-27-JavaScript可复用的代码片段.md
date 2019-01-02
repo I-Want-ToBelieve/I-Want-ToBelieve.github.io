@@ -31,13 +31,13 @@ categories:
  }
 ```
 
-## 树状分流
+## 分流
 
 ```js
 shunt (fo, fn) {
        if (typeof fo[fn] !== 'function') {
                 return false
-       }      
+       }
         return fo[fn]()
 }
 const obj = {
@@ -51,7 +51,7 @@ const obj = {
         // do something
     }
 }
-// 辅助模拟调用
+// 模拟调用
 function RandomNumBoth (Min, Max) {
       var Range = Max - Min
       var Rand = Math.random()
@@ -59,5 +59,48 @@ function RandomNumBoth (Min, Max) {
       return num
 }
 shunt ( obj, RandomNumBoth(1, 3) )
+```
+
+```js
+let x = {
+    'b': 'love',
+    'c': 1
+}
+
+if (x['b'] === 'love') {
+    return 'you'
+} else if (x['b'] === 'apple') {
+    if (x['c'] % 2 === 1) {
+        x.g = 233
+        return 'odd'
+    }
+} else {
+    return 'something'
+}
+
+let a = function(o) {
+    return {
+        // 倒写
+        __default__: () = >'something',
+        [o['b'] === 'apple'] : {
+            __other__: () = >{
+                x.g = 233
+            },
+            [o['c'] % 2 === 1] : () = >'odd'
+        },
+        [o['b'] === 'love'] : () = >'you'
+    }
+}
+
+let obj = a(x)
+
+let shunt = function(o) {
+    o['__other__'] && o['__other__']()
+    if (is.function(o[true])) return o[true]()
+    if (!is.object(o[true]) && is.function(o['__default__'])) return o['__default__']()
+    return shunt(o[true])
+}
+
+shunt(obj)
 ```
 
