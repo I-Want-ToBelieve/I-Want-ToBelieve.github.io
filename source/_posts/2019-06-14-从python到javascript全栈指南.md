@@ -481,6 +481,14 @@ p.say_hi() // Hello, my name is Swaroop
 
 -----------------------
 
+## 开发环境搭建
+
+- [development-environment-manual ------ @github 时长: 10分钟](https://github.com/FloatingShuYin/development-environment-manual)
+- [javascript 开发环境搭建(windows 10) ------ @github 时长: 10分钟](https://github.com/FloatingShuYin/development-environment-manual/blob/master/javascript.md)
+- [python 开发环境搭建(windows 10) ------ @github 时长: 10分钟](https://github.com/FloatingShuYin/development-environment-manual/blob/master/python.md)
+
+-------------------------
+
 ## JS 与 node 以及 python 的运行环境
 
 
@@ -803,8 +811,6 @@ html {
 ### node 的事件循环(Event Loop)
 
 ### node 的 pip: npm (node package manager)
-
-### 编辑器: vscode
 
 ### JS 代码规范
 

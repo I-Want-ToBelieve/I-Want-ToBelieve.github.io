@@ -5,6 +5,7 @@
 yarn.lock
 package-lock.json
 node_modules/
+bash.exe.stackdump
 
 # Ignore optional external libraries
 source/lib/*
