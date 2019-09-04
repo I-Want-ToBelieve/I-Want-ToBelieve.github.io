@@ -16,6 +16,9 @@ categories:
 - [developer-roadmap ------ @github](https://github.com/kamranahmedse/developer-roadmap)
 - [简明python ------ @gitbook](https://bop.mol.uno/04.about_python.html)
 
+## 资源
+- [JavaScript 资源大全中文版，内容包括：包管理器、加载器、测试框架、运行器、QA、MVC框架和库、模板引擎等](https://github.com/jobbole/awesome-javascript-cn)
+
 ---------
 
 ## 计算机是如何计算的,编译器是如何编译的
@@ -657,7 +660,10 @@ css 总想改变树的样子,
 
 ##### CSS 代码规范
 
-[CSS编码规范 ------ @github 时长: 10分钟](https://github.com/ecomfe/spec/blob/master/css-style-guide.md)
+> 计算机科学中只有两个难题: 缓存失效和命名 ——Phil Karlton
+
+[CSS 命名规范](http://getbem.com/naming/)
+[CSS 编码规范 ------ @github 时长: 10分钟](https://github.com/ecomfe/spec/blob/master/css-style-guide.md)
 
 --------------------------------------
 
@@ -669,17 +675,6 @@ JS 眼中的树是抽象的.
 
 浏览器把 HTML 这株树给抽象成了 DOM,
 JS 通过调用 DOM 获得了 创建与毁灭 HTML 这株树的能力.
-
-> 不要关注太多的细节,
-不要在这些黑色盒子里迷路,
-你只需要知道:
-JS 通过调用 DOM API,
-可以选择树的节点,
-可以创建树的节点,
-可以销毁树的节点,
-可以改变树的节点,
-可以查看树的节点,
-CURD, 如此而已.
 
 [DOM 模型 ------ @JavaScript 标准参考教程（alpha）(第6章) 时长: 20分钟](http://javascript.ruanyifeng.com/#dom)
 [DOM 脑图](http://naotu.baidu.com/file/066f228731f401d54b19d033e660310d?token=c250785699717806)
@@ -748,6 +743,8 @@ JS 通过调用 BOM 获得了感知其载体------浏览器的能力.
 
 [前端安全系列之一：如何防止XSS攻击？ ------ 知乎 时长: 25分钟](https://zhuanlan.zhihu.com/p/45568315)
 [前端安全系列之二：如何防止CSRF攻击？------ 知乎 时长: 40分钟](https://zhuanlan.zhihu.com/p/46592479)
+
+[了解OWASP十大安全风险,以及使用 node 的解决方案](https://github.com/OWASP/NodeGoat)
 
 #### 性能优化
 
@@ -879,9 +876,6 @@ ESLints 的配置文件一般包含在脚手架提供的项目模板中,
 #### Lodash.JS
 
 #### Ramda.JS
-
-#### is.JS
-
 ......
 
 ## JavaScript !!!
