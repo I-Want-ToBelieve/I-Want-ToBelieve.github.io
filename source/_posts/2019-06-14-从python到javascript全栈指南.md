@@ -777,10 +777,14 @@ JS 通过调用 BOM 获得了感知其载体------浏览器的能力.
 
 ### 移动端适配
 
-[基于vw与rem的移动端适配方案 ------ @auto.io 时长: 10分钟](https://aotu.io/notes/2017/04/28/2017-4-28-CSS-viewport-units/index.html)
+[前端基础知识概述 -- 移动端开发的屏幕、图像、字体与布局的兼容适配 ------ @juejin 时长: 10分钟](https://juejin.im/post/5d70747cf265da03e16897c8)
 
-让设计师根据iphone 6 750px 的视口宽度设计 UI,
-然后使用以下scss适配代码,
+让设计师根据 iphone 6 750px 的视口宽度设计 UI,
+
+
+#### REM
+
+使用以下 scss 适配代码,
 此时设计图的 1px = 0.01rem.
 
 ```scss
@@ -792,6 +796,30 @@ html {
   body{
     font-size: 0.16rem; /* 1rem = 100px */
   }
+}
+```
+
+#### VM
+
+使用 postcss 插件: postcss-px-to-viewport
+```js
+// .postcssrc.js
+
+module.exports = {
+  "plugins": {
+      // ...
+    "postcss-px-to-viewport": {
+      viewportWidth: 750, // 视口宽度，这里设置为跟设计稿宽度一致；
+      viewportHeight: 1334, // 视口高度
+      unitPrecision: 3, // 转换后值的精度(小数位)
+      viewportUnit: 'vw', // 输出单位
+      selectorBlackList: ['.usepixel'], // 黑名单
+      minPixelValue: 1, // 触发转换的最小值, 大于等于这个值才会转换
+      mediaQuery: false // 是否转换媒体查询中的像素
+    },
+    // ...
+  }
+
 }
 ```
 
