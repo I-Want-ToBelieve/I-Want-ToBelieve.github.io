@@ -883,7 +883,7 @@ ESLints 的配置文件一般包含在脚手架提供的项目模板中,
 
 [eslint-config-standard](https://github.com/standard/eslint-config-standard)
 
-###### 在 vscode 编辑器中配置 [Prettier-Standard](https://marketplace.visualstudio.com/items?itemName=numso.prettier-standard-vscode) 和 ESlint(https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 扩展
+###### 在 vscode 编辑器中配置 [Prettier-Standard](https://marketplace.visualstudio.com/items?itemName=numso.prettier-standard-vscode) 和 [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 扩展
 
 ```json
 /*
