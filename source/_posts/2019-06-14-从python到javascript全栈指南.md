@@ -827,15 +827,15 @@ module.exports = {
 
 [ES7 ES8 ES9 ES10 新特性总结思考 ------ @知乎 时长: 15分钟](https://zhuanlan.zhihu.com/p/67492465)
 
-## 有类型的 JS: TypeScript
-
-[TypeScript 高级技巧 ------ @掘金 时长: 20分钟](https://juejin.im/post/5cffb431f265da1b7401f466)
-
 ## 在服务器运行的 JS: Node
 
 ### node 的事件循环(Event Loop)
 
 ### node 的 pip: npm (node package manager)
+
+## 有类型的 JS: TypeScript
+
+[TypeScript 高级技巧 ------ @掘金 时长: 20分钟](https://juejin.im/post/5cffb431f265da1b7401f466)
 
 ### JS 代码规范
 
@@ -882,6 +882,54 @@ ESLints 的配置文件一般包含在脚手架提供的项目模板中,
 ###### 在 ESLints 中使用 Standard 规范
 
 [eslint-config-standard](https://github.com/standard/eslint-config-standard)
+
+###### 在 vscode 编辑器中配置 [Prettier-Standard](https://marketplace.visualstudio.com/items?itemName=numso.prettier-standard-vscode) 和 ESlint(https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 扩展
+
+```json
+/*
+   * 插件名： ESLint插件的配置
+   * 描述：根据定义的规则对相应的语言的语法风格进行严格的约束，以统一编码风格降低阅读沟通成本
+   * 详情：https: //marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+   */
+  // 禁用默认 vscode 的 js 格式化
+  "javascript.validate.enable": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "eslint.autoFixOnSave": true, //  启用保存时自动修复,默认只支持 .js 文件
+  "eslint.validate": [
+    "javascript", //  用 eslint 的规则检测 js 文件
+    {
+      "language": "vue", // 检测vue文件
+      "autoFix": true //  为 vue 文件开启保存自动修复的功能
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    },
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  /*
+   * 插件名：prettier
+   * 描述：按照设定的规则格式化对应的文档
+   * 详情：https: //marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+   * 注意：此插件被 Vetur 插件依赖
+   */
+  // 使用单引号？
+  "prettier.singleQuote": true,
+  // 要分号？
+  "prettier.semi": false,
+  //将>多行JSX元素放在最后一行的末尾，而不是单独放在下一行
+  "prettier.jsxBracketSameLine": true,
+```
 
 ### 工程化的前端, 打包工具: webpack
 
