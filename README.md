@@ -27,8 +27,3 @@ hexo d
 3. `npm install -g hexo-cli`
 4. `npm install `
 
-
-
-## 依赖的插件
-
-1. `npm install hexo-deployer-git`
