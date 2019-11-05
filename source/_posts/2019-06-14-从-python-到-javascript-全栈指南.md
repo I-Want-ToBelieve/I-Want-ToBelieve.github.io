@@ -833,104 +833,19 @@ module.exports = {
 
 ### node 的事件循环(Event Loop)
 
+- [一次弄懂Event Loop](https://zhuanlan.zhihu.com/p/55511602)
+
 ### node 的 pip: npm (node package manager)
+
+- [node 包管理工具: npm 与 yarn](https://floatsyi.com/2019/10/30/node-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-npm-%E4%B8%8E-yarn/)
 
 ## 有类型的 JS: TypeScript
 
 [有类型的 JS: TypeScript](https://floatsyi.com/2019/10/07/%E6%9C%89%E7%B1%BB%E5%9E%8B%E7%9A%84-javascript-typescript/)
 ### JS 代码规范
 
-[你可能不知道的 JavaScript 代码规范 ------ 掘金 时长: 10分钟](https://juejin.im/entry/5a02d18d6fb9a045076f178e)
-
-#### Standard
-
-[Standard](https://github.com/standard/standard) 是现在 JS 最流行的规范, 也是能让你的代码最简洁的规范.
-
-细则如下:
-
-- 使用两个空格 – 进行缩进
-- 字符串使用单引号 – 需要转义的地方除外
-- 不再有冗余的变量 – 这是导致 大量 bug 的源头!
-- 无分号 – 这没什么不好。不骗你！
-- 行首不要以 `(`, `[`, or \``\` 开头, 这是省略分号时唯一会造成问题的地方
-- 关键字后加空格 `if (condition) { ... }`
-- 函数名后加空格 `function name (arg) { ... }`
-- 坚持使用全等 `===` 摒弃 `==` 一但在需要检查 `null || undefined` 时可以使用 `obj == null`。
-- 一定要处理 Node.js 中错误回调传递进来的 err 参数。
-- 使用浏览器全局变量时加上 window 前缀 – document 和 navigator 除外
-- 避免无意中使用到了这些命名看上去很普通的全局变量， open, length, event 还有 name。
-
-你可以在这里查看实际的[例子](https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md#javascript-standard-style)以加深理解
-
-##### ESLints
-
-[ESLints](https://github.com/eslint/eslint) 是一个实时代码格式检查工具, 它也可以在你保存文件修改时自动按照你定义好的 JS 代码规范来格式化你的代码.
-
-[ESLints 中文网](http://eslint.cn/)
-
-你可以参考下面这篇文章以及 [ESLints 官方文档](http://eslint.cn/docs/user-guide/getting-started)配置适合自己的 ESLints 配置文件:
-
-[深入浅出 eslint ——关于我学习 eslint 的心得 ------ @掘金 时长: 5分钟](https://juejin.im/post/5bab946cf265da0ae92a75ca#heading-0)
-
-ESLints 的配置文件一般包含在脚手架提供的项目模板中,
-不需要我们自己写,
-不过参考上面的文档现配一个也很简单.
-
-如果你需要自己写 eslint 插件的话:
-
-[开发 eslint 规则 ------ 掘金 时长: 20分钟](https://juejin.im/post/5bb079ede51d450e5d0b350a)
-
-###### 在 ESLints 中使用 Standard 规范
-
-[eslint-config-standard](https://github.com/standard/eslint-config-standard)
-
-###### 在 vscode 编辑器中配置 [Prettier-Standard](https://marketplace.visualstudio.com/items?itemName=numso.prettier-standard-vscode) 和 [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 扩展
-
-```json
-/*
-   * 插件名： ESLint插件的配置
-   * 描述：根据定义的规则对相应的语言的语法风格进行严格的约束，以统一编码风格降低阅读沟通成本
-   * 详情：https: //marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-   */
-  // 禁用默认 vscode 的 js 格式化
-  "javascript.validate.enable": false,
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
-  "eslint.autoFixOnSave": true, //  启用保存时自动修复,默认只支持 .js 文件
-  "eslint.validate": [
-    "javascript", //  用 eslint 的规则检测 js 文件
-    {
-      "language": "vue", // 检测vue文件
-      "autoFix": true //  为 vue 文件开启保存自动修复的功能
-    },
-    {
-      "language": "html",
-      "autoFix": true
-    },
-  ],
-  "[javascript]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode",
-    "editor.formatOnSave": true
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
-  },
-  /*
-   * 插件名：prettier
-   * 描述：按照设定的规则格式化对应的文档
-   * 详情：https: //marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
-   * 注意：此插件被 Vetur 插件依赖
-   */
-  // 使用单引号？
-  "prettier.singleQuote": true,
-  // 要分号？
-  "prettier.semi": false,
-  //将>多行JSX元素放在最后一行的末尾，而不是单独放在下一行
-  "prettier.jsxBracketSameLine": true,
-```
+- [你可能不知道的 JavaScript 代码规范 ------ 掘金 时长: 10分钟](https://juejin.im/entry/5a02d18d6fb9a045076f178e)
+- [代码规范与项目结构](https://floatsyi.com/2019/09/26/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/)
 
 ### 工程化的前端, 打包工具: webpack
 
@@ -939,6 +854,8 @@ ESLints 的配置文件一般包含在脚手架提供的项目模板中,
 #### 渐进式框架: Vue
 
 - [Vue 官网](https://cn.vuejs.org/v2/guide/)
+
+##### vue-cli3
 
 ##### 测试
 
@@ -958,7 +875,13 @@ ESLints 的配置文件一般包含在脚手架提供的项目模板中,
 
 #### 用于构建用户界面的JavaScript库: React.JS
 
+##### css in js
+
+##### css module
+
 #### 大而全的: angular8
+
+#### 服务端渲染 SSR
 
 #### MVC 与 MVP 与 MVVM
 

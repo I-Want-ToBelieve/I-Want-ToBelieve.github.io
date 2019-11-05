@@ -108,10 +108,10 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -126,9 +126,9 @@ scheme: Muse
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -172,11 +172,11 @@ avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: /images/avatar.png
   # If true, the avatar would be dispalyed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar would be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -184,9 +184,11 @@ site_state: true
 # Social Links
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
-# Value before `||` delimiter is the target permalink.
-# Value after `||` delimiter is the name of Font Awesome icon. If icon (with or without delimiter) is not specified, globe icon will be loaded.
+# Value before `||` delimeter is the target permalink.
+# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
+  GitHub: https://github.com/FloatingShuYin || github
+  CodePen: https://codepen.io/FloatingShuYin/# || codepen
   #GitHub: https://github.com/yourname || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
@@ -380,14 +382,14 @@ codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: normal
+  highlight_theme: tomorrow
   # Add copy button on codeblock
   copy_button:
     enable: false
     # Show text copy result.
-    show_result: false
+    show_result: true
     # Available values: default | flat | mac
-    style:
+    style: mac
 
 back2top:
   enable: true
@@ -434,43 +436,47 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
-  host:
+  host: //fonts.loli.net
 
   # Font options:
   # `external: true` will load this font family from `host` above.
   # `family: Times New Roman`. Without any quotes.
-  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+  # `size: xx`. Use `px` as unit.
 
-  # Global font settings used for all elements inside <body>.
+  # Global font settings used for all elements in <body>.
   global:
     external: true
-    family: Lato
+    family: Roboto Mono
     size:
 
-  # Font settings for site title (.site-title).
-  title:
-    external: true
-    family:
-    size:
-
-  # Font settings for headlines (<h1> to <h6>).
+  # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
+  # Fallback to `global` font settings.
   headings:
     external: true
-    family:
+    family: Roboto Mono
     size:
 
-  # Font settings for posts (.post-body).
+  # Font settings for posts.
+  # Fallback to `global` font settings.
   posts:
     external: true
-    family:
+    family: Roboto Mono
+
+  # Font settings for Logo.
+  # Fallback to `global` font settings.
+  logo:
+    external: true
+    family: Roboto Mono
+    size:
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: Roboto Mono
+    size:
 
 
 # ---------------------------------------------------------------
@@ -616,8 +622,8 @@ comments:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: FloatShuYin
   count: true
   lazyload: false
   #post_meta_order: 0
@@ -759,13 +765,13 @@ application_insights:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: # <app_id>
-  app_key: # <app_key>
+  enable: true
+  app_id: bH5pXa93c9rYkIe6zzKkty1d-gzGzoHsz #<app_id>
+  app_key: REvpf8v4c6CK9EgLRpFomYuL #<app_key>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: true
+  security: false
   betterPerformance: false
 
 # Another tool to show number of visitors to each article.
@@ -814,7 +820,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto

@@ -201,6 +201,8 @@ theme_config:
     top_n_per_article: 1
     # Unescape html strings to the readable one.
     unescape: false
+    # Preload the search data when the page loads.
+    preload: false
 
   # Show number of visitors to each article.
   # You can visit https://leancloud.cn to get AppID and AppKey.
