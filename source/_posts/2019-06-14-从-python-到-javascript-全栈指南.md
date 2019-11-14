@@ -758,6 +758,7 @@ JS 通过调用 BOM 获得了感知其载体------浏览器的能力.
 
 ### HTTP
 
+[HTTP/3详解](https://hungryturbo.com/HTTP3-explained/)
 [前端应该知道的http协议 ------ @知乎 时长: 15分钟](https://zhuanlan.zhihu.com/p/62191708)
 
 ### 跨域
