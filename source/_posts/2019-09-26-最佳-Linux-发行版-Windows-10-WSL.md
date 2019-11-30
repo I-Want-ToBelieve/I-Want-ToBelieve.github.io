@@ -17,6 +17,9 @@ tags:
 [oh-my-fish]: https://github.com/oh-my-fish/oh-my-fish
 [Homebrew-on-Linux]: https://docs.brew.sh/Homebrew-on-Linux
 [fish shell 主题]: https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md
+[vscode]: https://code.visualstudio.com/
+[Remote Development]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+
 ## 资源
 - [关于 wsl](https://docs.microsoft.com/zh-cn/windows/wsl/about)
 - [wsl.exe 命令行参数](https://docs.microsoft.com/zh-cn/windows/wsl/reference)
@@ -28,6 +31,8 @@ tags:
 - [apt-mirror-updater]
 - [oh-my-fish][]
 - [fish shell 主题][]
+- [vscode][]
+- [Remote Development][]
 
 ## 安装 wsl 及其必要条件
 
@@ -158,3 +163,12 @@ fish_config
 #### node 版本管理与 npm 仓库镜像源
 
 - [node 版本管理与 npm 仓库镜像源 (wsl)](https://floatsyi.com/2019/09/27/node-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E4%B8%8E-npm-%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F%E6%BA%90/#%E5%9C%A8%20liunx(wsl/mac)%20%E4%B8%8B%E4%BD%BF%E7%94%A8%20brew%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85)
+
+#### 使用 [vscode][] 扩展 [Remote Development][]
+
+通过 [Remote Development][], 我们可以在 [vscode][] 中编辑 WSL 中的文件,
+因此我们得以避免在 WSL 中使用不直观的 vim 编辑器.
+值得注意的是, WSL 与 Windows 中的扩展环境并不是同一个,
+这意味着你需要重新为 WSL 安装你之前所使用的扩展.
+
+

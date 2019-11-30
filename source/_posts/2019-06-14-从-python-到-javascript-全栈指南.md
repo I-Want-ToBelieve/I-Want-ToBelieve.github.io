@@ -745,6 +745,8 @@ JS 通过调用 BOM 获得了感知其载体------浏览器的能力.
 
 #### 安全
 
+[Mozilla web security](https://infosec.mozilla.org/guidelines/web_security)
+
 [前端安全系列之一：如何防止XSS攻击？ ------ 知乎 时长: 25分钟](https://zhuanlan.zhihu.com/p/45568315)
 [前端安全系列之二：如何防止CSRF攻击？------ 知乎 时长: 40分钟](https://zhuanlan.zhihu.com/p/46592479)
 
@@ -761,7 +763,7 @@ JS 通过调用 BOM 获得了感知其载体------浏览器的能力.
 [HTTP/3详解](https://hungryturbo.com/HTTP3-explained/)
 [前端应该知道的http协议 ------ @知乎 时长: 15分钟](https://zhuanlan.zhihu.com/p/62191708)
 
-### 跨域
+#### 跨域
 
 ### API
 
@@ -840,6 +842,10 @@ module.exports = {
 
 - [node 包管理工具: npm 与 yarn](https://floatsyi.com/2019/10/30/node-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-npm-%E4%B8%8E-yarn/)
 
+### Node.js技术栈
+
+- [《Node.js技术栈》](https://www.nodejs.red/)
+
 ## 有类型的 JS: TypeScript
 
 [有类型的 JS: TypeScript](https://floatsyi.com/2019/10/07/%E6%9C%89%E7%B1%BB%E5%9E%8B%E7%9A%84-javascript-typescript/)
@@ -886,9 +892,7 @@ module.exports = {
 
 #### MVC 与 MVP 与 MVVM
 
-### 值得一用的工具库
-
-#### Lodash.JS
+### 函数式编程
 
 #### Ramda.JS
 ......
