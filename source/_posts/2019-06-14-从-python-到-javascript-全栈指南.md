@@ -760,16 +760,15 @@ JS 通过调用 BOM 获得了感知其载体------浏览器的能力.
 
 ### HTTP
 
-[HTTP/3详解](https://hungryturbo.com/HTTP3-explained/)
-[前端应该知道的http协议 ------ @知乎 时长: 15分钟](https://zhuanlan.zhihu.com/p/62191708)
+跨域, 状态码， 请求头， 请求方法， Cookies 等都在这里
 
-#### 跨域
+- [前端应该知道的 http 协议 ------ @知乎 时长: 15分钟](https://zhuanlan.zhihu.com/p/62191708)
+- [TCP/IP, HTTP, QUIC, Axios](https://floatsyi.com/2019/11/28/TCP-IP-HTTP-QUIC-Axios/)
+
 
 ### API
 
-#### Result API
-
-#### GraphQL API
+- [RESTful-API-and-GraphQL-API](https://floatsyi.com/2019/12/06/RESTful-API-and-GraphQL-API/)
 
 ## 版本管理: Git
 

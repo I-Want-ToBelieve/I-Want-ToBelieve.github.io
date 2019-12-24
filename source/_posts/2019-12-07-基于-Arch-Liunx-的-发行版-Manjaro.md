@@ -6,6 +6,9 @@ tags:
 - arch
 - manjaro
 ---
+
+![manjaro desktop screen](http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcQusFzaMQtX5c0lWF3.b9dQ0gdyG**xu7pJP1Ns1qbaRd2mytJizJc5OiZ2jnpiLu2n.3DPccdoc.J7w6ZF9Ors!/r)
+
 [manjaro xfce]: https://manjaro.org/download/official/xfce/
 [Rufus]: https://rufus.ie/
 [manjaro]: https://manjaro.org/
@@ -43,16 +46,17 @@ scoop bucket add extras
 scoop install Rufus
 ```
 3. 使用 [diskgenius][] 将要安装 [manjaro xfce][] 的硬盘快速分区， 设置如下图：
-  ![]()
+  ![diskgenius 快速分区](http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcT19I3WCV*fRmPLfQxeajyi6ofvaSLyDegoi9PkLgt7AJ.J3xLRFAF*Vao.97Mo7XjNLFWgASEbTMH*Rtj9ElMU!/r)
 4. 使用 [Rufus][] 将 [manjaro xfce][] minimal 镜像文件写入 U 盘， 设置如下图：
-  ![]()
+  ![Rufus 写入镜像](http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcZ8veDcASaoVEfG0BZSSWfGkdm9yN0QblxXsOIJhJvD8qTKoIXdKSA00JlEK8EeM.dCTFC8rLTSRDEFolKU5MDY!/r)
 5. 写入完成后， 重启计算机， 按主板厂商定义的快捷键进入 UEFI 设置界面
   选择从 U 盘启动。
 6. 启动后即可进入 manjaro 安装引导界面， 根据 manjaro 安装引导完成安装。
 
-## 安装 yay
 
-### 使用中国镜像
+## 使用中国镜像
+
+## 安装 yay
 
 ## 安装 chrome
 
