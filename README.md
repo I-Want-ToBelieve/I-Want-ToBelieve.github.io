@@ -25,5 +25,5 @@ hexo d
 1. `git clone git@github.com:FloatingShuYin/FloatingShuYin.GitHub.git`
 2. `cd /FloatingShuYin.GitHub.git`
 3. `npm install -g hexo-cli`
-4. `npm install `
+4. `npm install`
 

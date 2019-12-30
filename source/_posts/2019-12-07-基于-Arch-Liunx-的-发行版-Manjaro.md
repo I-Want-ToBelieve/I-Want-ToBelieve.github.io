@@ -53,14 +53,35 @@ scoop install Rufus
   选择从 U 盘启动。
 6. 启动后即可进入 manjaro 安装引导界面， 根据 manjaro 安装引导完成安装。
 
+## 安装 yay
+```bash
+sudo pacman -S yay
+```
 
 ## 使用中国镜像
+```bash
+sudo pacman-mirrors -i -c China -m rank
+sudo pacman -Syy
+```
 
-## 安装 yay
+## 安装 vscode
+```bash
+yay -S code
+```
 
-## 安装 chrome
+## 安装 i3wm
+```bash
+yay -S i3-gaps
+```
+
+在 `~/.xinit` 末尾加上 `exec i3`
+```bash
+echo exec i3 >> ~/.xinit
+```
+
 
 ## 安装终端模拟器 alacritty
+
 
 ## 安装 fish shell
 
@@ -76,7 +97,7 @@ scoop install Rufus
 
 ### 安装 node
 
-## 安装 i3wm
+
 
 ## 安装 polybar
 
