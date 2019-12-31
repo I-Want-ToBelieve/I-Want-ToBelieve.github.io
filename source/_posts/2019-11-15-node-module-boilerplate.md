@@ -26,6 +26,7 @@ tags:
 [github]: https://github.com/
 [jest]: https://github.com/facebook/jest
 
+[node-module-boilerplate]: https://github.com/FloatingShuYin/node-module-boilerplate
 
 ## 参考
 - [代码规范与项目结构][]
@@ -122,10 +123,8 @@ package.json:
 }
 ```
 
-### 使用 [test][] 测试框架测试代码
-
-```
-```
+### 使用 [jest][] 测试框架测试代码
+参考: [JavaScript Testing Framework: jest][]
 
 ### 使用 [eslint][] 和 [eslint-config-standard][]
 参考: [代码规范与项目结构][]
@@ -242,7 +241,6 @@ git push
 code .
 npm uninstall husky
 npm install -D husky
-code .
 npm audit fix
 ```
 
