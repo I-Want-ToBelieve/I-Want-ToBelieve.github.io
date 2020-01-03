@@ -43,6 +43,8 @@ TypeScript 不是银弹, 需要考虑到引入 TypeScript 带来的多余复杂�
 如果没有这种项目可以实践, 尤大不久前发布的 [Vue 3 Pre-Alpha](https://github.com/vuejs/vue-next) 版本的源码可以读读看.
 
 
+## 扩展阅读
 
+- [TypeScript 疑难杂症](https://zhuanlan.zhihu.com/p/82459341)
 
 
