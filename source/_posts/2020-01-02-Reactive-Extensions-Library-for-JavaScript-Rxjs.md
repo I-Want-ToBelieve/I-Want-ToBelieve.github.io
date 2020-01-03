@@ -1,6 +1,6 @@
 ---
 title: 'Reactive Extensions Library for JavaScript: Rxjs'
-date: 2019-12-30 21:29:09
+date: 2020-1-1 21:29:09
 tags:
 - Reactive
 - Rxjs
