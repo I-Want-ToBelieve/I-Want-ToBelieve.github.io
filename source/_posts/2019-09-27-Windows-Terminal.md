@@ -7,6 +7,7 @@ tags:
 ---
 
 ![windows-terminal screenshot](http://r.photo.store.qq.com/psb?/V12iDrZG1mzmnh/rmPlL7vfaZsLhZAnI9ch3BEsRyE*Ym1FoMdegS9LTOU!/r/dIMAAAAAAAAA)
+
 [The-Package-Manager-for-Windows-choco-and-scoop]: https://floatsyi.com/2019/12/29/The-Package-Manager-for-Windows-choco-and-scoop/
 
 ## 参考
@@ -168,6 +169,17 @@ sudo choco install microsoft-windows-terminal --yes
 ```
 
 ## 添加到鼠标右键菜单
+下载 wget
+```
+scoop install wget
+```
+
+下载 terminal-box-fill.ico
+```
+cd ~
+wget.ps1 https://raw.githubusercontent.com/FloatingShuYin/FloatingShuYin.GitHub.io/hexo/terminal-box-fill.ico
+```
+
 新建 window.terminal.reg 文件
 修正其中路径
 ```reg
@@ -179,10 +191,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]
 @="S:\\Users\\doublethink\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe"
-```
-
-terminal-box-fill.ico 下载
-```
 ```
 
 双击 window.terminal.reg 执行

@@ -30,6 +30,10 @@ choco install docker-for-windows --yes
 docker --version;docker-compose --version;docker-machine --version;
 ```
 
+## 扩展阅读
+
+- [Docker secrets and configs](https://docs.docker.com/compose/compose-file/#secrets)
+
 ## 看书吧！！
 > This is the way
 
