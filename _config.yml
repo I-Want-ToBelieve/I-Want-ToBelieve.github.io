@@ -99,13 +99,6 @@ search:
   format: html
   limit: 10000
 
-# hot reload
-browsersync:
-  logLevel: "warn"
-  ghostMode:
-    scroll: true
-  instanceName: "uniqueString"
-
 # theme config
 theme_config:
   # Sidebar Avatar
@@ -304,3 +297,7 @@ theme_config:
     #variable: source/_data/variables.styl
     #mixin: source/_data/mixins.styl
     #style: source/_data/styles.styl
+
+  auto_excerpt:
+    enable: true
+    length: 450

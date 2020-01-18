@@ -44,7 +44,10 @@ tags:
 2. 安装 python
 - [Scoop: Switching Ruby and Python Versions][]
 3. 安装 jdk
-- [development-environment-manual: java][]
+~~- [development-environment-manual: java][]~~
+```
+sudo scoop install ojdkbuild8-full -g
+```
 4. 安装 Android Studio
 ```powershell
 scoop install android-studio

@@ -7,6 +7,10 @@ tags:
 ---
 
 ![windows-terminal screenshot](http://r.photo.store.qq.com/psb?/V12iDrZG1mzmnh/rmPlL7vfaZsLhZAnI9ch3BEsRyE*Ym1FoMdegS9LTOU!/r/dIMAAAAAAAAA)
+[The-Package-Manager-for-Windows-choco-and-scoop]: https://floatsyi.com/2019/12/29/The-Package-Manager-for-Windows-choco-and-scoop/
+
+## 参考
+- [The-Package-Manager-for-Windows-choco-and-scoop][]
 
 ## 资源
 
@@ -22,7 +26,12 @@ tags:
 
 ## 安装 Windows Terminal (Preview)
 
-- [安装 windows-terminal-preview](https://www.microsoft.com/zh-cn/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)
+参考 [安装 windows-terminal-preview](https://www.microsoft.com/zh-cn/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)
+
+或者参考 [The-Package-Manager-for-Windows-choco-and-scoop][]
+```
+sudo choco install microsoft-windows-terminal --yes
+```
 
 ## 更换字体与主题并修改启动命令行
 
@@ -32,7 +41,7 @@ tags:
     ```powershell
     scoop bucket add nerd-fonts
     sudo scoop install DroidSansMono-NF
-    sudo scoop install FiraCode-NF
+    sudo scoop install FiraCode
     ```
 2. 按快捷键 `win +  Q` 然后键入 `windows terminal` 并回车, 以运行 `windows terminal`.
 3. 选中 `windows terminal` 并按快捷键 `ctrl + ,(逗号)`, 以编辑 `windows terminal` 配置文件: `profiles.json`.
@@ -41,6 +50,7 @@ tags:
 ```json
 // To view the default settings, hold "alt" while clicking on the "Settings" button.
 // For documentation on these settings, see: https://aka.ms/terminal-documentation
+
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
 
@@ -52,15 +62,16 @@ tags:
       // Make changes here to the powershell.exe profile
       "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
       "acrylicOpacity": 0.9,
-      "fontSize": 14,
-      "fontFace": "Sarasa Mono T SC",
+      "fontSize": 12,
+      "fontFace": "Fira Code",
       "cursorShape": "underscore",
       "historySize": 9001,
       "useAcrylic" : true,
       "name": "Windows PowerShell",
       "colorScheme": "Tomorrow Night",
       "commandline": "powershell.exe",
-      "hidden": false
+      "hidden": false,
+      "startingDirectory": null
     },
     {
       // Make changes here to the cmd.exe profile
@@ -156,6 +167,24 @@ tags:
 }
 ```
 
+## 添加到鼠标右键菜单
+新建 window.terminal.reg 文件
+修正其中路径
+```reg
+Windows Registry Editor Version 5.00
 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt]
+@="Open Windows Terminal here"
+"Icon"="X:\\terminal-box-fill.ico"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]
+@="S:\\Users\\doublethink\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe"
+```
+
+terminal-box-fill.ico 下载
+```
+```
+
+双击 window.terminal.reg 执行
 
 
