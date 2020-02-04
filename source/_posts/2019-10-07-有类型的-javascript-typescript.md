@@ -46,5 +46,5 @@ TypeScript 不是银弹, 需要考虑到引入 TypeScript 带来的多余复杂�
 ## 扩展阅读
 
 - [TypeScript 疑难杂症](https://zhuanlan.zhihu.com/p/82459341)
-
+- [Effective Typescript：使用Typescript的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
 

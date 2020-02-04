@@ -89,7 +89,7 @@ yarn create react-app myapp --typescript
 - [eslint-config-prettier][] [eslint-plugin-prettier][]
 
 ```powershell
-yarn add prettier lint-staged husky stylelint stylelint-prettier stylelint-config-prettier stylelint-config-recommended eslint-config-prettier eslint-plugin-prettier
+yarn add prettier lint-staged husky stylelint stylelint-prettier stylelint-config-prettier stylelint-config-recommended eslint-config-prettier eslint-plugin-prettier -D
 ```
 
 添加配置文件
@@ -152,9 +152,6 @@ package.json 删除 eslintConfig 字段并添加以下字段
 ```json
 {
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "yarn lint --fix",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
