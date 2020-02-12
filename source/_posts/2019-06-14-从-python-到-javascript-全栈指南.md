@@ -786,7 +786,10 @@ JS 通过调用 BOM 获得了感知其载体------浏览器的能力.
 让设计师根据 iphone 6 750px 的视口宽度设计 UI,
 
 
-#### REM
+#### REM 和 VM
+非常好的一篇文章，还附带生产环境可用的代码
+- [细说移动端 经典的REM布局 与 新秀VW布局](https://zhuanlan.zhihu.com/p/44599960)
+
 
 使用以下 scss 适配代码,
 此时设计图的 1px = 0.01rem.
@@ -802,8 +805,6 @@ html {
   }
 }
 ```
-
-#### VM
 
 使用 postcss 插件: postcss-px-to-viewport
 ```js
@@ -869,21 +870,20 @@ module.exports = {
 
 [一篇文章学会 Vue 项目单元测试 ------  @知乎 时长: 20分钟](https://zhuanlan.zhihu.com/p/48758013)
 
-#### 用于构建用户界面的JavaScript库: React
-
-- [React 中文网](https://react.docschina.org/docs/hello-world.html)
-- [react-developer-roadmap](https://github.com/adam-golab/react-developer-roadmap)
-- [正确掌握React 生命周期(Lifecycle)](https://zhuanlan.zhihu.com/p/24926575)
-
-##### 测试
-
-###### 单元测试
-
 #### 用于构建用户界面的JavaScript库: React.JS
+
+- [react-developer-roadmap](https://github.com/adam-golab/react-developer-roadmap)
+- [A JavaScript library for building user interfaces: React](https://floatsyi.com/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/)
 
 ##### css in js
 
-##### css module
+- [styled-components](https://github.com/styled-components/styled-components)
+- [精读《请停止 css-in-js 的行为》](https://zhuanlan.zhihu.com/p/26878157) 2017 年的文章， 请注意时效性！！！
+
+##### css modules
+
+- [css modules](https://github.com/css-modules/css-modules)
+- [adding-a-css-modules-stylesheet](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
 
 #### 大而全的: angular8
 

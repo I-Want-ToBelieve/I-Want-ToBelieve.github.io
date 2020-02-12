@@ -18,7 +18,13 @@ tags:
 [react docs: test]: https://zh-hans.reactjs.org/docs/testing.html
 [react router docs]: https://reacttraining.com/react-router/web/example/basic
 [jest docs]: https://jestjs.io/docs/en/getting-started
-[2020-01-21-使用-react-app-rewired-扩展-cra-样板的配置文件]:  https://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/
+[2020-01-21-使用-react-app-rewired-扩展-cra-样板的配置文件]: https://floatsyi.com/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/
+
+> 我知道我自己的知识缺陷，但是当我需要它们的时候我可以比较快的掌握它们。
+这些缺陷不会让我的知识和经验贬值，我可以做好很多事情，比如说：当我需要某些技术的时候学会它们。
+--- Dan Abramov
+
+[Dan Abramov(React 核心开发，Redux 作者) 谈他不懂的技术](https://zhuanlan.zhihu.com/p/53587347)
 
 ## 参考
 
@@ -42,7 +48,7 @@ tags:
 
 最近加入了一个志愿者组织，参与学习观网站的前端开发。
 (说好的转型后端呢？emmm...学习观网站后端选型选的 java，我尝试配了下开发环境，
-结果使用 maven 运行项目的时候， 终端报错刷屏至少刷了三分钟...哇，都不带停的，真的厉害，报错都这么啰嗦！
+结果使用 maven 打包项目的时候， 终端报错刷屏至少刷了三分钟...哇，都不带停的，真的厉害，报错都这么啰嗦！
 看样子是 maven 依赖项的问题， 要知道 maven 的配置文件可是 xml 写的，啊真是啰嗦！
 又想起很久以前被 java 那啰嗦的写法支配的恐惧了... 直接劝退。
 如果能改成 node 栈比如说用 nestjs 也许还可以插下手， java 就别想了...)
@@ -87,8 +93,11 @@ tags:
 
 ## 扩展阅读
 
+- [Personal blog by Dan Abramov. I explain with words and code.](https://overreacted.io/)
 - [技术周刊 2019-11-12：JavaScript 年度安全报告，React 介绍并发模式](https://zhuanlan.zhihu.com/p/91501173)
 - [React Hooks(一): From Redux to Hooks](https://zhuanlan.zhihu.com/p/83552786)
 - [React Hooks(二): useCallback 之痛](https://zhuanlan.zhihu.com/p/98554943)
 - [React Hooks(三): 并发之道，初入协程](https://zhuanlan.zhihu.com/p/99977314)
 - [Hooks 时代的 React 状态管理方案](https://zhuanlan.zhihu.com/p/68434464)
+- [正确掌握React 生命周期(Lifecycle)](https://zhuanlan.zhihu.com/p/24926575)
+- [9102，作为前端必须知道 hook 怎么玩了](https://juejin.im/post/5d00a67cf265da1b8a4f156f)
