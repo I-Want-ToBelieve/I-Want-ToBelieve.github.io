@@ -110,5 +110,7 @@ tags:
 - [精读《React Hooks 最佳实践》](https://zhuanlan.zhihu.com/p/81752821)
 - [(译) 在 React Hooks 中如何请求数据？](https://juejin.im/post/5c98fb35518825157172acc6)
 - [React Suspense + 自定义Hook开启数据请求新方式](https://juejin.im/post/5dc953235188250c6c41683e)
+- [精读《Hooks 取数 - swr 源码》](https://zhuanlan.zhihu.com/p/91228591)
 - [SWR 源码浅析](https://juejin.im/post/5de72afbe51d45584f536f57)
+
 
