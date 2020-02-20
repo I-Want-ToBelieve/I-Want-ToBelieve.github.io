@@ -94,6 +94,8 @@ tags:
 ## 扩展阅读
 
 - [Personal blog by Dan Abramov. I explain with words and code.](https://overreacted.io/)
+- [将 React 作为 UI 运行时](https://overreacted.io/zh-hans/react-as-a-ui-runtime/)
+- [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/#tldr)
 - [技术周刊 2019-11-12：JavaScript 年度安全报告，React 介绍并发模式](https://zhuanlan.zhihu.com/p/91501173)
 - [React Hooks(一): From Redux to Hooks](https://zhuanlan.zhihu.com/p/83552786)
 - [React Hooks(二): useCallback 之痛](https://zhuanlan.zhihu.com/p/98554943)
@@ -101,3 +103,12 @@ tags:
 - [Hooks 时代的 React 状态管理方案](https://zhuanlan.zhihu.com/p/68434464)
 - [正确掌握React 生命周期(Lifecycle)](https://zhuanlan.zhihu.com/p/24926575)
 - [9102，作为前端必须知道 hook 怎么玩了](https://juejin.im/post/5d00a67cf265da1b8a4f156f)
+- [rehooks/awesome-react-hooks](https://github.com/rehooks/awesome-react-hooks)
+- [react-use/react-use](https://github.com/streamich/react-use)
+- [gragland/usehooks](https://github.com/gragland/usehooks)
+- [2019年了，整理了N个实用案例帮你快速迁移到React Hooks](https://juejin.im/post/5d594ea5518825041301bbcb#heading-1)
+- [精读《React Hooks 最佳实践》](https://zhuanlan.zhihu.com/p/81752821)
+- [(译) 在 React Hooks 中如何请求数据？](https://juejin.im/post/5c98fb35518825157172acc6)
+- [React Suspense + 自定义Hook开启数据请求新方式](https://juejin.im/post/5dc953235188250c6c41683e)
+- [SWR 源码浅析](https://juejin.im/post/5de72afbe51d45584f536f57)
+
