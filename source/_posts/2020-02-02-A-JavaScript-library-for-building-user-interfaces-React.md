@@ -19,6 +19,7 @@ tags:
 [react router docs]: https://reacttraining.com/react-router/web/example/basic
 [jest docs]: https://jestjs.io/docs/en/getting-started
 [2020-01-21-使用-react-app-rewired-扩展-cra-样板的配置文件]: https://floatsyi.com/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/
+[Vegetarian friendly state for React: easy-peasy]: https://floatsyi.com/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/
 
 > 我知道我自己的知识缺陷，但是当我需要它们的时候我可以比较快的掌握它们。
 这些缺陷不会让我的知识和经验贬值，我可以做好很多事情，比如说：当我需要某些技术的时候学会它们。
@@ -36,6 +37,7 @@ tags:
 - [react router docs][]
 - [react-testing-library docs][]
 - [jest docs][]
+- [Vegetarian friendly state for React: easy-peasy][]
 
 ## 资源
 
@@ -88,8 +90,8 @@ tags:
 - [jest docs][]
 
 ## react-redux
-
-...
+参考:
+- [Vegetarian friendly state for React: easy-peasy][]
 
 ## 扩展阅读
 
