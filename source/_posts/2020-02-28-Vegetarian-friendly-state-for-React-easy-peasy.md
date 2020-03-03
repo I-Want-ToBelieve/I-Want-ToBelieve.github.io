@@ -38,7 +38,6 @@ tags:
 [react-state-patterns][]
 [hookstate][]
 [unstated-next][]
-[react-state-patterns][]
 [react-hooks-global-state][]
 [constate][]
 
