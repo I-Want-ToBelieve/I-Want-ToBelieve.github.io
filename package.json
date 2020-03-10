@@ -6,7 +6,8 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "deploy": "yarn hexo clean && yarn hexo g -d"
+    
+    "deploy": "npx hexo clean && npx hexo g -d"
   },
   "dependencies": {
     "hexo": "^3.9.0",
