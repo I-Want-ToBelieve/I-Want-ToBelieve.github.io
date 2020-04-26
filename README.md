@@ -22,7 +22,7 @@ hexo d
 ## 在新主机上的环境配置步骤
 
 
-1. `git clone git@github.com:doublethinkio/doublethink.github.io.git`
+1. `git clone git@github.com:doublethinkio/doublethinkio.github.io.git`
 2. `cd /doublethink.github.git`
 3. `npm install -g hexo-cli`
 4. `npm install`
