@@ -17,6 +17,8 @@ tags:
 - [lodash debounce 源码][]
 - [github][]
 
+<!-- more -->
+
 ## [不要翻译 github 上的代码][]
 
 因为需要经常逛 [github][] 查阅文档, 而文档大多都是英文

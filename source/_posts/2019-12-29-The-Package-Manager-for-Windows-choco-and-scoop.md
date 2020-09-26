@@ -18,6 +18,8 @@ tags:
 - [scoop][]
 - [choco][]
 
+<!-- more -->
+
 ## 安装 scoop
 - [安装 windows 包管理工具: scoop][]
 

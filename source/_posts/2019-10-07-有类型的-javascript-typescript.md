@@ -16,6 +16,8 @@ tags:
 - [为 Vue3 学点 TypeScript , 体验 TypeScript ------@掘金](https://juejin.im/post/5d19ad6de51d451063431864)
 - [TypeScript 高级技巧](https://shanyue.tech/post/ts-tips.html#_01-keyof)
 
+<!-- more -->
+
 ## 自学路径
 
 1. 第一步是先对新知识有个基础的认识, 以此来快速构建一个基础的 新知识网络(理解为主, 不必死记硬背)

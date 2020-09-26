@@ -44,6 +44,8 @@ tags:
 - [RxDart][]
 - [counter-using-bloc_pattern][]
 
+<!-- more -->
+
 ## 配置 android 开发环境
 参考 [Learn-once-write-anywhere-React-Native][]
 

@@ -64,6 +64,7 @@ npm i rollup -D
 ```bash
 mkdir -p src/index.js __test__/ build coverage rollup.config.js
 ```
+<!-- more -->
 
 3. 添加以下内容到 `rollup.config.js`
 参考: [前端构建工具][]

@@ -60,6 +60,8 @@ tags:
 - [vscode-stylelint][]
 - [vscode-prettier][]
 
+<!-- more -->
+
 ## QA
 
 - 为什么要在已有 [eslint][] 的 [create-react-app][] 中加入 [prettier][] ?

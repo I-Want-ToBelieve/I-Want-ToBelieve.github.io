@@ -28,6 +28,7 @@ tags:
 - [Rufus][]
 - [diskgenius][]
 
+<!-- more -->
 
 ## 制作 U 盘引导，并硬盘安装 manjaro 与 windows 10 双系统
 

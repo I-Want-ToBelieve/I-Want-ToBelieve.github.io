@@ -20,6 +20,8 @@ tags:
 ## 资源
 - [ArchWSL][]
 
+<!-- more -->
+
 ## 安装
 安装 scoop
 请参考 [The-Package-Manager-for-Windows-choco-and-scoop][]

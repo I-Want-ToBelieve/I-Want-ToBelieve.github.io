@@ -28,7 +28,7 @@ tags:
 - [react-native][]
 - [yarn][]
 - [react-native-cli][]
-
+<!-- more -->
 
 ## 搭建开发环境
 

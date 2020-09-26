@@ -17,6 +17,8 @@ tags:
 - [react-app-rewired][]
 - [tailwindcss][]
 
+<!-- more -->
+
 ## 安装 [react-app-rewired][]
 添加开发时依赖
 ```

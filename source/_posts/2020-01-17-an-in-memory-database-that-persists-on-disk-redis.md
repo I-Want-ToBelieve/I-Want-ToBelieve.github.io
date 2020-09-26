@@ -19,6 +19,8 @@ tags:
 ## 资源
 - [redis][]
 
+<!-- more -->
+
 ## 安装
 安装 wsl2 archliunx
 请参考  [windows subsystem archliunx][]

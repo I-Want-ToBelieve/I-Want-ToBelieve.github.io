@@ -20,6 +20,8 @@ cd vue-next
 yarn
 ```
 
+<!-- more -->
+
 3. 启用 sourcemap
   将根目录下的 `rollup.config.js` 配置文件内容替换为:
   ```js

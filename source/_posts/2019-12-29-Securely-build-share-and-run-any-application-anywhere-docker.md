@@ -16,6 +16,8 @@ tags:
 ## 资源
 - [Docker][]
 
+<!-- more -->
+
 ## 安装
 1. 首先要安装 choco: [The Package Manager for Windows: choco and scoop][]
 

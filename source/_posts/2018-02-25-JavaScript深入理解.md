@@ -27,6 +27,8 @@ categories:
 } )( args );
 ```
 
+<!-- more -->
+
 ## 私有变量 静态私有变量
 
 利用 构造函数的块级作用域 实现私有变量
@@ -136,7 +138,7 @@ var ObjName = function () {
   var privateVariable = 10;
 
   function privateFunction() {
-    // do something  
+    // do something
   }
 
   // return 一个包含有私有变量、函数映射的匿名的公有单例对象
@@ -170,7 +172,7 @@ var ObjName = function () {
   var privateVariable = 10;
 
   function privateFunction() {
-    // do something  
+    // do something
   }
 
   // 实例化一个自定义对象 我们将对这个对象进行增强
@@ -220,7 +222,7 @@ ObjName.prototype = {
   functionName1 : function(){
     // do something
   }
-  ...  
+  ...
 }
 
 // use 使用 类实例
@@ -322,52 +324,52 @@ instance.SubTypeFunctionName0();
 
 ```js
 'use strict'
-function inheritPrototype( SubType, SuperType ) {  
+function inheritPrototype( SubType, SuperType ) {
     /*这里为何需要调用object函数去构造一个新的对象，而不直接让SubType.prototype=SuperType.prototype呢？
     原因是如果这么做的话，当我们想给SubType的prototype里面添加共享属性或者方法时，
     如果其prototype指向的是SuperType的prototype
     那么在SubType的prototype里添加的属性和方法也会反映在SuperType的prototype里面，
     这明显是不合理的，这样做的后果是当我们只想使用SuperType时，也能看见SubType往里面扔的方法和属性。
-    所以需要每个构造函数都需要持有自己专用的prototype对象。*/  
-    var prototype = object( SuperType.prototype );  
-    prototype.constructor = SubType;  
-    SubType.prototype = prototype;  
-};  
+    所以需要每个构造函数都需要持有自己专用的prototype对象。*/
+    var prototype = object( SuperType.prototype );
+    prototype.constructor = SubType;
+    SubType.prototype = prototype;
+};
 
-function SuperType( arg0,... ) {  
-    this.arg0 = arg0;  
+function SuperType( arg0,... ) {
+    this.arg0 = arg0;
     ...
-    if( typeof SuperType.prototype.superTypeFunctionName10 !== "function" ) {  
+    if( typeof SuperType.prototype.superTypeFunctionName10 !== "function" ) {
         SuperType.prototype.superTypeFunctionName10 = function () {
           // do something
         };
         SuperType.prototype.superTypeFunctionName11 = function () {
           // do something
-        };          
-    }  
-}  
-
-function SubTypeType( arg0, arg1,... ) {  
-    SuperType.call( this, arg0 );
-    // or SuperType.apply( this,arguments );  
-    this.arg1 = arg1;  
-
-    if( typeof SuperType.prototype.superTypeFunctionName10 !== "function" ) {  
-        SuperType.prototype.superTypeFunctionName10 = function () {
-          // do something
         };
-        SuperType.prototype.superTypeFunctionName11 = function () {
-          // do something
-        };          
     }
-};  
+}
+
+function SubTypeType( arg0, arg1,... ) {
+    SuperType.call( this, arg0 );
+    // or SuperType.apply( this,arguments );
+    this.arg1 = arg1;
+
+    if( typeof SuperType.prototype.superTypeFunctionName10 !== "function" ) {
+        SuperType.prototype.superTypeFunctionName10 = function () {
+          // do something
+        };
+        SuperType.prototype.superTypeFunctionName11 = function () {
+          // do something
+        };
+    }
+};
 
 // 调用 寄生继承函数
-inheritPrototype( SubType, SuperType );  
+inheritPrototype( SubType, SuperType );
 
 // 使用
-var instance = new Sub( arg0,arg1,... );  
-instance.superTypeFunctionName10();  
+var instance = new Sub( arg0,arg1,... );
+instance.superTypeFunctionName10();
 instance.superTypeFunctionName11();
 ```
 

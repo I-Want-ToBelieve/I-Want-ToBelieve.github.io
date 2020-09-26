@@ -21,6 +21,8 @@ tags:
 - [microsoft/terminal][]
 - [iTerm2-Color-Schemes][]
 
+<!-- more -->
+
 
 ## 安装
 安装及配置终端模拟器 [microsoft/terminal][]

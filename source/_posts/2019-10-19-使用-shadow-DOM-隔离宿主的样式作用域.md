@@ -25,6 +25,8 @@ tags:
 - [fontface Observer][]
 - [buefy][]
 
+<!-- more -->
+
 ## [tampermonkey script: Syntax highlighting][]
 
 花了 ~~将近两天时间~~ 几天时间, 边构思, 边实践, 实现了一个使用 highlight.js 高亮页面中的代码片段的油猴脚本.

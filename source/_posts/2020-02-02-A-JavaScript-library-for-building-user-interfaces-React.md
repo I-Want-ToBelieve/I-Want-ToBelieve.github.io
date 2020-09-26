@@ -46,6 +46,7 @@ tags:
 - [react-testing-library][]
 - [jest][]
 
+<!-- more -->
 
 ## create-react-app
 

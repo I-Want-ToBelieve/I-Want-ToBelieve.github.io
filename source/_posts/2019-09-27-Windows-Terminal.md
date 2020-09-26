@@ -25,6 +25,8 @@ tags:
 
 - [检查你的系统版本](https://docs.microsoft.com/zh-cn/windows/wsl/troubleshooting#check-your-build-number)
 
+<!-- more -->
+
 ## 安装 Windows Terminal (Preview)
 
 参考 [安装 windows-terminal-preview](https://www.microsoft.com/zh-cn/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)
