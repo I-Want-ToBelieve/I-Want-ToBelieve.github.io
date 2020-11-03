@@ -6,9 +6,7 @@ tags:
 - linux
 ---
 
-- https://www.archlinux.org/
-
-## 前言
+官网: https://www.archlinux.org/
 
 基本上看这个 up: [thecw](https://space.bilibili.com/13081489?from=search&seid=5593233721511478655) 的视频就行了
 
@@ -25,6 +23,10 @@ tags:
 我现在使用 archlinux 的方式是在 windows 10 下 使用 vmware 装了 archlinux 的虚拟机.
 
 - [VMware/Install_Arch_Linux_as_a_guest](https://wiki.archlinux.org/index.php/VMware/Install_Arch_Linux_as_a_guest)
+
+试过 wsl2 装 archlinux, 能用, 但图形软件还是有一些问题的, 主要是没有好的 x server, 继续观望吧
+
+- [Windows 的 Linux 子系统（WSL）即将带来图形化应用 | Linux 中国](https://zhuanlan.zhihu.com/p/261878373)
 
 花了差不多一个多月的时间学习 vim 和配置 archlinux, 现在可以纯键盘操作了, 最重要的是了解了操作系统的桌面环境, 窗口管理器, 这些以前忽视的, 还有驱动, 内核这些比较底层的东西. 这些都是在 windows 下所难以触及到的东西.
 而且还重新复习了一下 linux c 和 rust, 是时候往底层走一走, 看一看了.
