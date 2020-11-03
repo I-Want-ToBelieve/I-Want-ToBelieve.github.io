@@ -6,6 +6,8 @@ tags:
 - linux
 ---
 
+- https://www.archlinux.org/
+
 ## 前言
 
 基本上看这个 up: [thecw](https://space.bilibili.com/13081489?from=search&seid=5593233721511478655) 的视频就行了
@@ -30,8 +32,7 @@ tags:
 算法, 数据结构这些还是需要仔细学一下, 编译原理也是.
 这样应该可以突破瓶颈了.
 
-## 官网
-- https://www.archlinux.org/
+
 
 
 
