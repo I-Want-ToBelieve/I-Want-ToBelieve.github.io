@@ -34,6 +34,8 @@ tags:
 算法, 数据结构这些还是需要仔细学一下, 编译原理也是.
 这样应该可以突破瓶颈了.
 
+差点忘了, 纯键盘操作还需要一个支持类 vim 快捷键的浏览器插件: https://github.com/brookhong/Surfingkeys
+
 
 
 
