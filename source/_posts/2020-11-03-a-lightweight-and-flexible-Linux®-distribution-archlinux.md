@@ -1,48 +1,25 @@
 ---
-title: 'a lightweight and flexible Linux® distribution: archlinux'
+title: 'Pick your character. Round up your squad. Show everyone what Legends are made of: APEX'
 date: 2020-11-03 07:42:57
 tags:
-- archlinux
-- linux
+- game
+- apex
 ---
 
-官网: https://www.archlinux.org/
+官网: https://www.ea.com/zh-tw/games/apex-legends/about
 
-基本上看这个 up: [thecw](https://space.bilibili.com/13081489?from=search&seid=5593233721511478655) 的视频就行了
+首先大概了解一下玩法
+[超详细完全扫盲！大逃杀游戏《Apex英雄》萌新入门速成上手指南！](https://www.bilibili.com/video/BV17b411U7EE?from=search&seid=784979808239111258)
 
-- [Installation guide (简体中文)](https://wiki.archlinux.org/index.php/Installation_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
-- [【残酷难度】最全Arch Linux安装教程——打造真正属于你的操作系统](https://www.bilibili.com/video/BV11J411a7Tp)
-- [装完Arch Linux你该做什么？用户权限，图形界面及软件安装详解【Arch第二期】](https://www.bilibili.com/video/BV1q7411s7LS)
+然后熟悉英雄技能
+[Apex英雄：爆火吃鸡游戏24个英雄技能全介绍，你最适合玩哪个？](https://www.bilibili.com/video/BV1nb411S7Hu?from=search&seid=2672814253694445232)
+更全面的还是看官网的文字描述: https://www.ea.com/zh-tw/games/apex-legends/about/characters
 
-使用这个 up 推荐的软件, 基本上可以做到完全脱离鼠标.
-纯粹的键盘操作, 可以说是解决了笔记本用户的一大痛点!
+最后是进阶
+身法： https://search.bilibili.com/all?keyword=apex%20%E8%BA%AB%E6%B3%95
+技巧： https://search.bilibili.com/all?keyword=apex%20%E6%8A%80%E5%B7%A7
 
-虽然这么多软件需要配置挺麻烦的, 不过配置一次就可以了, 可以通过 git 进行版本管理, 使用新的主机的时候, 可以非常快速把配置全都给 clone 下来.
-
-使用双系统 archlinux 唯二的问题是很难再使用 pxcook 这个设计标注软件了, 也许可以使用网页版蓝湖替代? 如果不写 web 前端的话就不是什么问题了.
-我现在使用 archlinux 的方式是在 windows 10 下 使用 vmware 装了 archlinux 的虚拟机.
-
-- [VMware/Install_Arch_Linux_as_a_guest](https://wiki.archlinux.org/index.php/VMware/Install_Arch_Linux_as_a_guest)
-
-试过 wsl2 装 archlinux, 能用, 但图形软件还是有一些问题的, 主要是没有好的 x server, 继续观望吧
-
-- [Windows 的 Linux 子系统（WSL）即将带来图形化应用 | Linux 中国](https://zhuanlan.zhihu.com/p/261878373)
-
-花了差不多一个多月的时间学习 vim 和配置 archlinux, 现在可以纯键盘操作了, 最重要的是了解了操作系统的桌面环境, 窗口管理器, 这些以前忽视的, 还有驱动, 内核这些比较底层的东西. 这些都是在 windows 下所难以触及到的东西.
-而且还重新复习了一下 linux c 和 rust, 是时候往底层走一走, 看一看了.
-也是时候仔细学习一下设计模式了, 之前写 react hooks 一直用的偏 fp 的范式, 根本就没把设计模式这种给 oop 擦屁股的东西放在心上.
-算法, 数据结构这些还是需要仔细学一下, 编译原理也是.
-这样应该可以突破瓶颈了.
-
-差点忘了, 纯键盘操作还需要一个支持类 vim 快捷键的浏览器插件: https://github.com/brookhong/Surfingkeys
-
-
-
-
-
-
-
-
-
-
-
+扩展阅读：
+- [如何评价游戏《Apex英雄》？](https://www.zhihu.com/question/311284526)
+- [Apex英雄：谁才是移动最快的传奇？这个英雄大招跑的又快又远！](https://www.bilibili.com/video/BV17b411g7JF?from=search&seid=4290014240875470524)
+- [超实用设置，手残党的福音，百分之百躲apex新英雄秘客的EMP大招！](https://www.bilibili.com/video/BV1LE411o7f8?from=search&seid=3804512488709912792)
