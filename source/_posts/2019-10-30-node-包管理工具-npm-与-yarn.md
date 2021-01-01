@@ -46,6 +46,8 @@ yarn config delete https-proxy
 
 ## 镜像
 
+ref: https://npm.taobao.org/mirrors
+
 nvm
 ```bash
 export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
@@ -53,17 +55,17 @@ export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
 ```
 
 ```bash
-npm config set registry https://registry.npm.taobao.org
-npm config set disturl https://npm.taobao.org/dist
-npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
-npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
-npm config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/
+npm config set registry https://registry.npm.taobao.org -g
+npm config set disturl https://npm.taobao.org/dist -g
+npm config set electron_mirror https://npm.taobao.org/mirrors/electron/ -g
+npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/ -g
+npm config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/ -g
 ```
 
 ```bash
-yarn config set registry https://registry.npm.taobao.org
-yarn config set disturl https://npm.taobao.org/dist
-yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
-yarn config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
-yarn config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/
+yarn config set registry https://registry.npm.taobao.org -g
+yarn config set disturl https://npm.taobao.org/dist -g
+yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/ -g
+yarn config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/ -g
+yarn config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/ -g
 ```
