@@ -1,16 +1,22 @@
 .followme {
+  align-items: center;
+  background: var(--card-bg-color);
+  border-left: 3px solid $red;
   color: $grey;
+  margin: 2em 0 1em 0;
   padding: 1em 1.5em;
-  text-align: center;
-  post-card();
+  flex-column();
 
   .social-list {
-    flex-wrap();
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 
     .social-item {
       margin: .5em 2em;
-
-      +tablet-mobile() {
+    }
+    +tablet-mobile() {
+      .social-item {
         margin: .5em .75em;
       }
     }
@@ -22,6 +28,8 @@
 
       .icon {
         font-size: 1.75em;
+        height: 1.75em;
+        width: 1.75em;
       }
 
       .label {

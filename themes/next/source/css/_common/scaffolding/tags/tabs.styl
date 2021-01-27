@@ -3,12 +3,15 @@
 }
 
 .post-body .tabs, .tabs-comment {
+  display: block;
   padding-top: 10px;
+  position: relative;
 
   ul.nav-tabs {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
+    margin-bottom: -1px;
     padding: 0;
 
     +mobile-smallest() {
@@ -38,13 +41,14 @@
       }
 
       if (hexo-config('tabs.transition.tabs')) {
-        transition: all $transition-ease-out;
+        the-transition-ease-out();
       }
 
       a {
         border-bottom: initial;
         display: block;
         line-height: 1.8;
+        outline: 0;
         padding: .25em .75em;
         text-align: center;
 
@@ -53,24 +57,25 @@
         }
 
         if (hexo-config('tabs.transition.labels')) {
-          transition: all $transition-ease-out;
+          the-transition-ease-out();
         }
       }
 
       &.active {
-        border-bottom-color: transparent;
-        border-left-color: $table-border-color;
-        border-right-color: $table-border-color;
-        border-top-color: $orange;
+        border-bottom: 1px solid transparent;
+        border-left: 1px solid $table-border-color;
+        border-right: 1px solid $table-border-color;
+        border-top: 3px solid $orange;
 
         +mobile-smallest() {
-          border-bottom-color: $table-border-color;
-          border-left-color: $orange;
-          border-right-color: $table-border-color;
-          border-top-color: $table-border-color;
+          border-bottom: 1px solid $table-border-color;
+          border-left: 3px solid $orange;
+          border-right: 1px solid $table-border-color;
+          border-top: 1px solid $table-border-color;
         }
 
         a {
+          color: var(--link-color);
           cursor: default;
         }
       }
@@ -78,20 +83,27 @@
   }
 
   .tab-content {
-    border: 1px solid $table-border-color;
-    border-top-color: transparent;
-    border-radius: 0 0 $tbr $tbr;
-
-    +mobile-smallest() {
-      border-radius: $tbr;
-      border-top-color: $table-border-color;
-    }
-
     .tab-pane {
+      border: 1px solid $table-border-color;
+      border-top: 0;
       padding: 20px 20px 0 20px;
+
+      border-radius: $tbr;
 
       &:not(.active) {
         display: none;
+      }
+
+      &.active {
+        display: block;
+
+        &:nth-of-type(1) {
+          border-radius: 0 $tbr $tbr $tbr;
+
+          +mobile-smallest() {
+            border-radius: $tbr;
+          }
+        }
       }
     }
   }

@@ -1,9 +1,10 @@
 .book-mark-link {
   border-bottom: none;
+  display: inline-block;
   position: fixed;
+  right: $b2t-position-right;
   top: -10px;
-  transition: top .3s;
-  sidebar-toggle-position(true);
+  transition: .3s;
 
   +tablet-mobile() {
     display: none;
@@ -11,9 +12,10 @@
 
   &::before {
     color: unquote(hexo-config('bookmark.color'));
+    content: '\f02e';
     font-size: 32px;
     line-height: 1;
-    font-family-icons('\f02e');
+    font-family-icons();
   }
 }
 

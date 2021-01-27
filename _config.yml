@@ -158,7 +158,6 @@ theme_config:
     icons: true
     badges: false
 
-
   # ---------------------------------------------------------------
   # Scheme Settings
   # ---------------------------------------------------------------
@@ -169,7 +168,6 @@ theme_config:
   #scheme: Mist
   #scheme: Pisces
   #scheme: Gemini
-
 
   # ---------------------------------------------------------------
   # Sidebar Settings
@@ -307,5 +305,3 @@ theme_config:
 
   # Automatically excerpt description in homepage as preamble text.
   excerpt_description: true
-
-

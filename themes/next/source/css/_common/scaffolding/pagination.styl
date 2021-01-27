@@ -1,7 +1,9 @@
 $page-number-basic {
   display: inline-block;
-  margin: -1px 10px 0 10px;
-  padding: 0 10px;
+  margin: 0 10px;
+  padding: 0 11px;
+  position: relative;
+  top: -1px;
 
   +mobile() {
     margin: 0 5px;
@@ -17,23 +19,11 @@ $page-number-basic {
     @extend $page-number-basic;
     border-bottom: 0;
     border-top: 1px solid $pagination-link-border;
-    transition: border-color $transition-ease;
+    transition-property: border-color;
+    the-transition();
 
     &:hover {
       border-top-color: $pagination-link-hover-border;
-    }
-  }
-
-  +mobile() {
-    border-top: 0;
-
-    .prev, .next, .page-number {
-      border-bottom: 1px solid $pagination-link-border;
-      border-top: 0;
-
-      &:hover {
-        border-bottom-color: $pagination-link-hover-border;
-      }
     }
   }
 
@@ -43,9 +33,36 @@ $page-number-basic {
     padding: 0;
   }
 
+  .prev {
+    margin-left: 0;
+  }
+
+  .next {
+    margin-right: 0;
+  }
+
   .page-number.current {
     background: $pagination-active-bg;
-    border-color: $pagination-active-border;
+    border-top-color: $pagination-active-border;
     color: $pagination-active-color;
+  }
+}
+
++mobile() {
+  .pagination {
+    border-top: none;
+  }
+
+  .pagination {
+    .prev, .next, .page-number {
+      border-bottom: 1px solid $pagination-link-border;
+      border-top: 0;
+      margin-bottom: 10px;
+      padding: 0 10px;
+
+      &:hover {
+        border-bottom-color: $pagination-link-hover-border;
+      }
+    }
   }
 }
