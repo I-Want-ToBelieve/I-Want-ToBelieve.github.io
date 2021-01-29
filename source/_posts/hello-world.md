@@ -35,4 +35,6 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 $ hexo deploy
 ```
 
+ issues: https://github.com/hexojs/hexo-deployer-git/issues/199
+
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
