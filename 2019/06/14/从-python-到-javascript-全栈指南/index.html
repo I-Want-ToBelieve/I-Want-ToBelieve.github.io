@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="你需要科学上网才能加载评论组件 参考 developer-roadmap —— @github 简明python —— @gitbook  资源 JavaScript 资源大全中文版，内容包括：包管理器、加载器、测试框架、运行器、QA、MVC框架和库、模板引擎等   计算机是如何计算的,编译器是如何编译的 从下而上的从想象中构建电子世界,仰望前辈们欣勤建立的计算机大厦,你会得到从上而下洞悉黑色盒子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python --&gt; javascript 全栈指南">
+<meta property="og:url" content="http://floatsyi.com/2019/06/14/%E4%BB%8E-python-%E5%88%B0-javascript-%E5%85%A8%E6%A0%88%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="backtolife">
+<meta property="og:description" content="你需要科学上网才能加载评论组件 参考 developer-roadmap —— @github 简明python —— @gitbook  资源 JavaScript 资源大全中文版，内容包括：包管理器、加载器、测试框架、运行器、QA、MVC框架和库、模板引擎等   计算机是如何计算的,编译器是如何编译的 从下而上的从想象中构建电子世界,仰望前辈们欣勤建立的计算机大厦,你会得到从上而下洞悉黑色盒子">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-14T05:50:31.000Z">
+<meta property="article:modified_time" content="2021-07-02T09:53:04.734Z">
+<meta property="article:author" content="backtolife">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="python 至 JS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://floatsyi.com/2019/06/14/%E4%BB%8E-python-%E5%88%B0-javascript-%E5%85%A8%E6%A0%88%E6%8C%87%E5%8D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>python --> javascript 全栈指南 | backtolife</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="backtolife" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">backtolife</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2019/06/14/%E4%BB%8E-python-%E5%88%B0-javascript-%E5%85%A8%E6%A0%88%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python --> javascript 全栈指南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-14 13:50:31" itemprop="dateCreated datePublished" datetime="2019-06-14T13:50:31+08:00">2019-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">文档</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%A1%A3/python-%E8%87%B3-JS/" itemprop="url" rel="index"><span itemprop="name">python 至 JS</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/06/14/%E4%BB%8E-python-%E5%88%B0-javascript-%E5%85%A8%E6%A0%88%E6%8C%87%E5%8D%97/" class="post-meta-item leancloud_visitors" data-flag-title="python --> javascript 全栈指南" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/06/14/%E4%BB%8E-python-%E5%88%B0-javascript-%E5%85%A8%E6%A0%88%E6%8C%87%E5%8D%97/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/14/从-python-到-javascript-全栈指南/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>你需要<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows">科学上网</a>才能加载评论组件</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/kamranahmedse/developer-roadmap">developer-roadmap —— @github</a></li>
+<li><a target="_blank" rel="noopener" href="https://bop.mol.uno/04.about_python.html">简明python —— @gitbook</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/jobbole/awesome-javascript-cn">JavaScript 资源大全中文版，内容包括：包管理器、加载器、测试框架、运行器、QA、MVC框架和库、模板引擎等</a></li>
+</ul>
+<hr>
+<h2 id="计算机是如何计算的-编译器是如何编译的"><a href="#计算机是如何计算的-编译器是如何编译的" class="headerlink" title="计算机是如何计算的,编译器是如何编译的"></a>计算机是如何计算的,编译器是如何编译的</h2><blockquote>
+<p>从下而上的从想象中构建电子世界,<br>仰望前辈们欣勤建立的计算机大厦,<br>你会得到从上而下洞悉黑色盒子的能力,<br>你无法也不必关注太多的细节,<br>俯视电子世界,所有的电子河流都要回到电子海洋.</p>
+</blockquote>
+<a id="more"></a>
+
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av51948975">极简编译器原理 —— @bilibili 时长: 1小时</a></p>
+<p>python 被 python 的解释器 Cpython(官方默认的解释器) 或者 PyPy(支持JIT) 转换成字节码<br>然后再由字节码虚拟机把字节码转换成机器语言</p>
+<p><strong>python 人类可读的源代码 –&gt; 字节码 –&gt; 机器可读的机器语言</strong></p>
+<p>JS 也是如此,<br>JS 被 JS 的解释器 v8(chrome浏览器和node的解释器,支持JIT) 转换成字节码<br>然后再由字节码虚拟机把字节码转换成机器语言</p>
+<p><strong>javascript 人类可读的源代码 –&gt; 字节码 –&gt; 机器可读的机器语言</strong></p>
+<h3 id="JS-与-node-与-python-语法比对"><a href="#JS-与-node-与-python-语法比对" class="headerlink" title="JS 与 node 与 python 语法比对"></a>JS 与 node 与 python 语法比对</h3><blockquote>
+<p>毫无疑问, 这是比对学习法的最佳应用场景.</p>
+</blockquote>
+<p>在比对之前, 必须说明下, 什么是ES5, ES6.</p>
+<p>JS 这门语言一直在持续更新, ECMAScript 是 JS 的语法标准,<br>你可以简单的理解为, ES5 是 python 2.x, ES6 是 python 3.x<br>现在普遍被浏览器所支持的版本是 ES5, 而 ES6 也已经被大多数现代浏览器所支持,<br>对于不支持 ES6 语法的浏览器, 我们可以通过 <a target="_blank" rel="noopener" href="https://babeljs.io/">babel</a> 将其编译为 ES5,<br>而新添加的 API 则可以通过添加 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Polyfill">polyfill</a> 以兼容老旧的浏览器.</p>
+<p>以下内容如果是 ES6 甚至是 ES7 版本的, 我会将其标注出来.</p>
+<h4 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h4><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;Hello World&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Hello World&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">多行</span></span><br><span class="line"><span class="string">注释</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 多行</span></span><br><span class="line"><span class="comment"> * 注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 局部变量</span></span><br><span class="line">value = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局变量</span></span><br><span class="line"><span class="keyword">global</span> <span class="built_in">str</span> = <span class="string">&#x27;i\&#x27;m global string&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 局部变量</span></span><br><span class="line"><span class="keyword">var</span> value = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> value_0 = <span class="number">1</span> <span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不可二次赋值的常量</span></span><br><span class="line"><span class="keyword">const</span> VALUE = <span class="number">1</span> <span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 新增的解构赋值</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">0</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">1</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">2</span></span><br><span class="line"><span class="comment">// 简写为:</span></span><br><span class="line"><span class="keyword">const</span> [a, b, c] = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量</span></span><br><span class="line"><span class="built_in">window</span>.str = <span class="string">&#x27;i\&#x27;m global string in brower&#x27;</span> <span class="comment">// 在浏览器中</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">global</span>.str = <span class="string">&#x27;i\&#x27;m global string in node&#x27;</span><span class="comment">// 在 node 中</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单行字符串</span></span><br><span class="line"><span class="string">&#x27;我是字符串&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多行字符串</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">我是多行</span></span><br><span class="line"><span class="string">字符串</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单行字符串</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;我是字符串&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 多行字符串 (ES6, 这个符号通过 shift + ~打出)</span></span><br><span class="line"></span><br><span class="line"><span class="string">`我是多行</span></span><br><span class="line"><span class="string">字符串`</span></span><br></pre></td></tr></table></figure>
+<h4 id="格式化方法-模板字符串"><a href="#格式化方法-模板字符串" class="headerlink" title="格式化方法(模板字符串)"></a>格式化方法(模板字符串)</h4><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span> = <span class="string">&#x27;World&#x27;</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;Hello &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="built_in">str</span>)) <span class="comment"># &#x27;Hello World&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;World&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`Hello <span class="subst">$&#123;str&#125;</span>`</span>) <span class="comment">// &#x27;Hello World&#x27; (ES6)</span></span><br></pre></td></tr></table></figure>
+<h4 id="运算符与表达式"><a href="#运算符与表达式" class="headerlink" title="运算符与表达式"></a>运算符与表达式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 等于</span></span><br><span class="line">==</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不等</span></span><br><span class="line">!=</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 与</span></span><br><span class="line"><span class="keyword">and</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 非</span></span><br><span class="line"><span class="keyword">not</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 整除</span></span><br><span class="line">//</span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等于</span></span><br><span class="line">===</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不等</span></span><br><span class="line">!==</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line">||</span><br><span class="line"></span><br><span class="line"><span class="comment">// 与</span></span><br><span class="line">&amp;&amp;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 非</span></span><br><span class="line">!</span><br><span class="line"></span><br><span class="line"><span class="comment">// 没有整除符号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 自增 自减</span></span><br><span class="line"><span class="keyword">let</span> n = <span class="number">0</span> <span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line">n++ <span class="comment">// 是 n = n + 1 的简写</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(n) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h4 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h4><h5 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a><code>if</code> 语句</h5><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line">b = <span class="number">1</span></span><br><span class="line">c = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a &gt; b:</span><br><span class="line">    print(<span class="string">&#x27;a &gt; b&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> a &gt; c:</span><br><span class="line">    print(<span class="string">&#x27;a &gt; c&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&#x27;a &lt; b and a &lt; c&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单条 if</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> Ture:</span><br><span class="line">    print(<span class="string">&#x27;true&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [a, b, c] = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;a &gt; b&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt; c)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;a &gt; c&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;a &lt; b and a &lt; c&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单条 if 可省略花括号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) <span class="built_in">console</span>.log(<span class="string">&#x27;true&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a><code>while</code> 语句</h5><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line">b = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> a &lt; b:</span><br><span class="line">    a += <span class="number">1</span></span><br><span class="line">    print(<span class="string">&#x27;第 &#123;&#125; 次循环&#x27;</span>.<span class="built_in">format</span>(a))</span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">0</span> <span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">10</span> <span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (a &lt; b) &#123;</span><br><span class="line">  a += <span class="number">1</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`第 <span class="subst">$&#123;a&#125;</span> 次循环`</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a><code>for</code> 循环</h5><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> i <span class="keyword">of</span> arr) &#123; <span class="comment">// ES6</span></span><br><span class="line">  <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h5><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_hello</span>():</span></span><br><span class="line">    print(<span class="string">&#x27;hello world&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js 有三种写法...</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say_hello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> say_hello = <span class="function">() =&gt;</span> &#123; <span class="comment">// ES6 匿名箭头函数</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h5><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">total</span>(<span class="params">a=<span class="number">5</span>, *numbers, **phonebook</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;a&#x27;</span>, a)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历元组中的所有项目</span></span><br><span class="line">    <span class="keyword">for</span> single_item <span class="keyword">in</span> numbers:</span><br><span class="line">        print(<span class="string">&#x27;single_item&#x27;</span>, single_item)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历字典中的所有项目</span></span><br><span class="line">    <span class="keyword">for</span> first_part, second_part <span class="keyword">in</span> phonebook.items():</span><br><span class="line">        print(first_part,second_part)</span><br><span class="line"></span><br><span class="line">print(total(<span class="number">10</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,Jack=<span class="number">1123</span>,John=<span class="number">2231</span>,Inge=<span class="number">1560</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="comment"># a 10</span></span><br><span class="line"><span class="comment"># single_item 1</span></span><br><span class="line"><span class="comment"># single_item 2</span></span><br><span class="line"><span class="comment"># single_item 3</span></span><br><span class="line"><span class="comment"># Inge 1560</span></span><br><span class="line"><span class="comment"># John 2231</span></span><br><span class="line"><span class="comment"># Jack 1123</span></span><br><span class="line"><span class="comment"># None</span></span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> total = <span class="function">(<span class="params">a = <span class="number">5</span>, phonebook, ...numbers</span>) =&gt;</span> &#123; <span class="comment">// ES6</span></span><br><span class="line">  <span class="comment">// ...numbers 是一个列表(数组),存储了所有剩余的参数: [1, 2, 3]</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;a&#x27;</span>, a)</span><br><span class="line">  <span class="comment">// js 中没有元组 只有列表(数组)</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> single_item <span class="keyword">of</span> numbers) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;single_item&#x27;</span>, single_item)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 遍历字典(对象)中的所有项目</span></span><br><span class="line">  <span class="keyword">for</span> ( <span class="keyword">const</span> [first_part, second_part] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(phonebook)) &#123; <span class="comment">// ES6 的解构赋值</span></span><br><span class="line">    <span class="built_in">console</span>.log(first_part,second_part)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(total(<span class="number">10</span>, &#123;<span class="attr">Jack</span>: <span class="number">1123</span>,<span class="attr">John</span>: <span class="number">2231</span>, <span class="attr">Inge</span>: <span class="number">1560</span>&#125;, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="comment">// a 10</span></span><br><span class="line"><span class="comment">// VM331:6 single_item 1</span></span><br><span class="line"><span class="comment">// VM331:6 single_item 2</span></span><br><span class="line"><span class="comment">// VM331:6 single_item 3</span></span><br><span class="line"><span class="comment">// VM331:10 Jack 1123</span></span><br><span class="line"><span class="comment">// VM331:10 John 2231</span></span><br><span class="line"><span class="comment">// VM331:10 Inge 1560</span></span><br><span class="line"><span class="comment">// VM331:14 undefined</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h5><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;\n\nThe PYTHONPATH is&#x27;</span>, sys.path, <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">print(<span class="string">&quot;Square root of 16 is&quot;</span>, sqrt(<span class="number">16</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5 没有模块功能...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lodash <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; clone &#125; <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = lodash.clone(&#123;&#125;)</span><br><span class="line"><span class="keyword">const</span> obj_1 = clone(&#123;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// node</span></span><br><span class="line"><span class="keyword">const</span> os = required(<span class="string">&#x27;os&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> release = required(<span class="string">&#x27;os&#x27;</span>).release</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="类"><a href="#类" class="headerlink" title="类"></a>类</h5><p>python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;Hello, my name is&#x27;</span>, self.name)</span><br><span class="line"></span><br><span class="line">p = Person(<span class="string">&#x27;Swaroop&#x27;</span>)</span><br><span class="line">p.say_hi() <span class="comment"># Hello, my name is Swaroop</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>JS 与 node:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5 没有类...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span> (<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  say_hi () &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;Hello, my name is&#x27;</span>, <span class="built_in">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">&#x27;Swaroop&#x27;</span>)</span><br><span class="line">p.say_hi() <span class="comment">// Hello, my name is Swaroop</span></span><br></pre></td></tr></table></figure>
+<h5 id="深入理解"><a href="#深入理解" class="headerlink" title="深入理解"></a>深入理解</h5><p>以下两本通读一遍, 不要死记, 理解最重要</p>
+<p><a target="_blank" rel="noopener" href="http://javascript.ruanyifeng.com/#toc0">JavaScript 标准参考教程（alpha）(ES5语法: 1-5章节)</a><br><a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/#README">ECMAScript 6 入门</a></p>
+<hr>
+<h2 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/FloatingShuYin/development-environment-manual">development-environment-manual —— @github 时长: 10分钟</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/FloatingShuYin/development-environment-manual/blob/master/javascript.md">javascript 开发环境搭建(windows 10) —— @github 时长: 10分钟</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/FloatingShuYin/development-environment-manual/blob/master/python.md">python 开发环境搭建(windows 10) —— @github 时长: 10分钟</a></li>
+</ul>
+<hr>
+<h2 id="JS-与-node-以及-python-的运行环境"><a href="#JS-与-node-以及-python-的运行环境" class="headerlink" title="JS 与 node 以及 python 的运行环境"></a>JS 与 node 以及 python 的运行环境</h2><blockquote>
+<p>上帝说: “要有光!”,于是,就有了光.</p>
+</blockquote>
+<h3 id="Node-JS-的结构"><a href="#Node-JS-的结构" class="headerlink" title="Node.JS 的结构"></a>Node.JS 的结构</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000005892501">Node.JS 架构概览 —— @segmentfault 时长: 15分钟</a></p>
+<p>JS 大多都运行在浏览器中,<br>而 node 就是 使用 JS 语法 的 python ,<br>node 和 python 都可以进行高权限的 io 操作, 因此可以在服务器上工作.</p>
+<p>node 需要运行 JS 于是它集成了 v8 ,<br>node 需要异步 io 于是它集成了 libuv.<br>如此等等…</p>
+<p>v8 和 libuv 这些都是什么? 它们都是一个个黑色的盒子,<br>你只需要在\需要了解它的时候\了解它.</p>
+<h3 id="浏览器的结构"><a href="#浏览器的结构" class="headerlink" title="浏览器的结构"></a>浏览器的结构</h3><p><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/CS9-WZQlNR5h05HHDo1b">史上最全！图解浏览器的工作原理 —— @infoq 时长: 20分钟</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zybuluo.com/yangfch3/note/671516">浏览器内核、JS 引擎、页面呈现原理及其优化 —— @zybuluo 时长: 25分钟</a></p>
+<p>chrome 浏览器需要渲染页面于是就集成了 webKit,<br>chrome 浏览器需要解析 XML 于是就集成了 libXML,<br>chrome 浏览器需要运行 JS 于是就集成了 v8.</p>
+<p>如此等等…</p>
+<p>没有太多的理由, 就像大地需要树, 于是大地就生长出了树.<br>树, 是一种优美的植物, 在电子世界里, 树, 是一种优美的数据结构.<br>它的层次之美,让它承载着茂盛的树冠.</p>
+<p>这样华美的页面大概也只有树才能够支撑的起吧.</p>
+<h3 id="浏览器中的树-HTML-CSS-JS"><a href="#浏览器中的树-HTML-CSS-JS" class="headerlink" title="浏览器中的树: HTML + CSS + JS"></a>浏览器中的树: HTML + CSS + JS</h3><p><a target="_blank" rel="noopener" href="https://www.freecodecamp.cn/challenges/say-hello-to-html-element">HTML5 and CSS,边写边练,所见即所得,快速入门 —– @FreeCodeCamp 时长: 5小时</a><br><a target="_blank" rel="noopener" href="https://www.imooc.com/learn/9">初识HTML+CSS —— @幕客网 时长: 9小时</a></p>
+<blockquote>
+<p>与生俱来的遗忘机制使我们没办法记住所有的细节,<br>而值得庆幸的是软件开发并不是一场愚蠢的闭卷考试.</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element">HTML标签速查文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/html/dict">HTML标签速查文档-分类版</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference">CSS速查文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/css/dict">CSS速查文档-分类版</a></li>
+</ul>
+<blockquote>
+<p>人们需要网页排版合理,有结构,于是就有了HTML.<br>人们需要网页华美绚丽,有色彩,于是就有了CSS.<br>人们需要网页动态活泼,有逻辑,于是就有了JS.</p>
+</blockquote>
+<p>HTML是一种 类XML数据结构, 它是树,它是浏览器中的树.</p>
+<p>它最开始是这样的:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>它最后会成为你心中的样子,<br>HTML是树,<br>是你心中的树.</p>
+<hr>
+<h4 id="css-眼中的树"><a href="#css-眼中的树" class="headerlink" title="css 眼中的树"></a>css 眼中的树</h4><p>css眼中的树是方方正正的.</p>
+<blockquote>
+<p>CSS 装饰着 HTML 这株树, 成为了树的一部分.</p>
+</blockquote>
+<h5 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h5><p>css 总想改变树的样子,<br>它需要选择树的某一部分,<br>选择它,然后改变它.</p>
+<p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/css/dict">选择器全列表</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50322177">前端杂谈: CSS 权重 (Specificity) @知乎 时长: 15分钟</a></p>
+<h5 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h5><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/59612287">盒子模型 —— @知乎 时长: 10分钟</a></p>
+<p>建议使用 IE 盒子模型:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="块级格式化上下文-Block-Formatting-Context"><a href="#块级格式化上下文-Block-Formatting-Context" class="headerlink" title="块级格式化上下文(Block Formatting Context)"></a>块级格式化上下文(Block Formatting Context)</h5><p>我想你会喜欢这样的方块.</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/59b73d5bf265da064618731d">学习 BFC (Block Formatting Context) —— @掘金 时长: 20分钟</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/64366441">css_11 | CSS——让“盒子”动起来：② “定位”和 BFC  @知乎 时长: 20分钟</a></p>
+<h5 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h5><p><a target="_blank" rel="noopener" href="http://zh.learnlayout.com/">学习 CSS 布局 —— @learnlayout 时长: 20分钟</a></p>
+<h6 id="flex-布局"><a href="#flex-布局" class="headerlink" title="flex 布局"></a>flex 布局</h6><p><a target="_blank" rel="noopener" href="https://flexboxfroggy.com/">FLEXBOX FROGGY: 超棒的 Flex 游戏交互式教程</a><br><a target="_blank" rel="noopener" href="https://codepen.io/enxaneta/pen/adLPwv">直观感受 Flex Layout—— @codepen</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/46684565">Flex —— @知乎 时长: 15分钟</a></p>
+<h6 id="grid-布局"><a href="#grid-布局" class="headerlink" title="grid 布局"></a>grid 布局</h6><p><a target="_blank" rel="noopener" href="https://cssgridgarden.com/">格子花园: 超棒的 Grid 游戏交互式教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://codepen.io/MSEdgeDev/pen/mMQqZX">直观感受 CSS Grid Layout —— @codepen</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/46754464">轻松快速学习 Grid 布局 —— @知乎 时长: 15分钟</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/46757975">最全～ Grid vs Flex —— @知乎 时长: 15分钟</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/69809343">一行 css 代码搞定响应式布局 —— @知乎 时长: 15分钟</a></p>
+<h5 id="重置默认样式"><a href="#重置默认样式" class="headerlink" title="重置默认样式"></a>重置默认样式</h5><p>由于各个浏览器会存在各不相同的默认 css 样式,<br>我们需要引入一个第三方库来让这些默认样式保持统一.</p>
+<p><a target="_blank" rel="noopener" href="https://necolas.github.io/normalize.css/">Normalize.css</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60816003">在 Normalize.css 基础上更进一步 ——@zhihu 时长: 5分钟</a></p>
+<h5 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h5><p><a target="_blank" rel="noopener" href="https://juejin.im/post/58f818bbb123db006233ab2a">16种方法实现水平居中垂直居中 —— @掘金 时长: 15分钟</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/5b9a4477f265da0ad82bf921">CSS 实现水平垂直居中的1010种方式（史上最全）—— @掘金 时长: 15分钟</a></p>
+<p>不考虑兼容性的话,<br>使用 flex 的方案最好,<br>这是标准方案.</p>
+<h5 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h5><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/09bd5873bed4">CSS中的浮动和清除浮动 —— @简书 时长: 10分钟</a></p>
+<h5 id="px、em、rem、-、vw、vh、vm"><a href="#px、em、rem、-、vw、vh、vm" class="headerlink" title="px、em、rem、%、vw、vh、vm"></a>px、em、rem、%、vw、vh、vm</h5><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/66686493">px、em、rem、%、vw、vh、vm这些单位的区别 —— @知乎 时长: 5分钟</a></p>
+<h5 id="CSS隐藏元素的几种方式及区别"><a href="#CSS隐藏元素的几种方式及区别" class="headerlink" title="CSS隐藏元素的几种方式及区别"></a>CSS隐藏元素的几种方式及区别</h5><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/23977353">从隐藏元素谈起 —— @知乎 时长: 5分钟</a></p>
+<h5 id="渐进增强与优雅降级"><a href="#渐进增强与优雅降级" class="headerlink" title="渐进增强与优雅降级"></a>渐进增强与优雅降级</h5><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/29634882">CSS选择 “渐进增强” 还是 “优雅降级”？ —— @知乎 时长: 5分钟</a><br><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2010/09/%E9%9C%80%E8%AD%A6%E6%83%95css3%E5%B1%9E%E6%80%A7%E7%9A%84%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F/">需警惕CSS3属性的书写顺序</a></p>
+<h5 id="CSS-代码规范"><a href="#CSS-代码规范" class="headerlink" title="CSS 代码规范"></a>CSS 代码规范</h5><blockquote>
+<p>计算机科学中只有两个难题: 缓存失效和命名 ——Phil Karlton</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="http://getbem.com/naming/">CSS 命名规范</a><br><a target="_blank" rel="noopener" href="https://github.com/ecomfe/spec/blob/master/css-style-guide.md">CSS 编码规范 —— @github 时长: 10分钟</a><br><a target="_blank" rel="noopener" href="https://github.com/ikkou/awesome-css#architecture">Awesome CSS</a></p>
+<hr>
+<h4 id="JS-眼中的树"><a href="#JS-眼中的树" class="headerlink" title="JS 眼中的树"></a>JS 眼中的树</h4><p>JS 眼中的树是抽象的.</p>
+<h5 id="DOM-Document-Object-Model"><a href="#DOM-Document-Object-Model" class="headerlink" title="DOM (Document Object Model)"></a>DOM (Document Object Model)</h5><p>浏览器把 HTML 这株树给抽象成了 DOM,<br>JS 通过调用 DOM 获得了 创建与毁灭 HTML 这株树的能力.</p>
+<p><a target="_blank" rel="noopener" href="http://javascript.ruanyifeng.com/#dom">DOM 模型 —— @JavaScript 标准参考教程（alpha）(第6章) 时长: 20分钟</a><br><a target="_blank" rel="noopener" href="http://naotu.baidu.com/file/066f228731f401d54b19d033e660310d?token=c250785699717806">DOM 脑图</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/70671215">详解 HTML attribute 和 DOM property —— @知乎 时长: 15分钟</a></p>
+<h5 id="CSSOM"><a href="#CSSOM" class="headerlink" title="CSSOM"></a>CSSOM</h5><p>浏览器把 HTML 树上的 CSS 给抽象成了 CSSOM,<br>JS 通过调用 CSSOM 获得了 修改 CSS 的能力.</p>
+<p><a target="_blank" rel="noopener" href="https://www.w3cplus.com/javascript/cssom-css-typed-om.html">初探CSS对象模型（CSSOM）—— @w3cplus 时长: 5分钟</a></p>
+<h5 id="浏览器里的-JS-BOM-Brower-Object-Model"><a href="#浏览器里的-JS-BOM-Brower-Object-Model" class="headerlink" title="浏览器里的 JS, BOM (Brower Object Model)"></a>浏览器里的 JS, BOM (Brower Object Model)</h5><p>浏览器 把它自身 抽象成了 BOM,<br>JS 通过调用 BOM 获得了感知其载体——浏览器的能力.</p>
+<p><a target="_blank" rel="noopener" href="http://javascript.ruanyifeng.com/#bom">浏览器环境 —— @JavaScript 标准参考教程（alpha）(第7章) 时长: 20分钟</a></p>
+<hr>
+<h3 id="深入理解-JS-执行逻辑"><a href="#深入理解-JS-执行逻辑" class="headerlink" title="深入理解 JS 执行逻辑"></a>深入理解 JS 执行逻辑</h3><h4 id="调用堆栈"><a href="#调用堆栈" class="headerlink" title="调用堆栈"></a>调用堆栈</h4><p><a target="_blank" rel="noopener" href="https://github.com/yygmind/blog">理解JavaScript 中的执行上下文和执行栈 —— @github</a></p>
+<h4 id="作用域闭包"><a href="#作用域闭包" class="headerlink" title="作用域闭包"></a>作用域闭包</h4><p><a target="_blank" rel="noopener" href="https://github.com/yygmind/blog">深入浅出图解作用域链和闭包 —— @github </a></p>
+<h4 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h4><p><a target="_blank" rel="noopener" href="https://github.com/yygmind/blog">JavaScript深入之史上最全–5种this绑定全面解析 —— @github</a></p>
+<h4 id="深浅拷贝原理"><a href="#深浅拷贝原理" class="headerlink" title="深浅拷贝原理"></a>深浅拷贝原理</h4><p><a target="_blank" rel="noopener" href="https://github.com/yygmind/blog">详细解析赋值、浅拷贝和深拷贝的区别 —— @github </a></p>
+<h4 id="原型链与继承"><a href="#原型链与继承" class="headerlink" title="原型链与继承"></a>原型链与继承</h4><p>继承随便看看, 用 ES6 的 extend 关键字就好</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yygmind/blog">重新认识构造函数、原型和原型链 —— @github </a></p>
+<h4 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h4><p><a target="_blank" rel="noopener" href="https://github.com/yygmind/blog">JavaScript 高阶函数浅析 —— @github</a></p>
+<h4 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h4><h4 id="事件循环-Event-Loop-以及-宏任务与微任务"><a href="#事件循环-Event-Loop-以及-宏任务与微任务" class="headerlink" title="事件循环(Event Loop) 以及 宏任务与微任务"></a>事件循环(Event Loop) 以及 宏任务与微任务</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55511602">一次弄懂Event Loop —— @知乎 时长: 20分钟</a></p>
+<h4 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h4><h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24684803">这是一篇傻瓜都能看懂的Promises文章！—— @知乎 时长: 20分钟</a></p>
+<h4 id="Async-Await原理"><a href="#Async-Await原理" class="headerlink" title="Async/Await原理"></a>Async/Await原理</h4><h4 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h4><p><a target="_blank" rel="noopener" href="https://infosec.mozilla.org/guidelines/web_security">Mozilla web security</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/45568315">前端安全系列之一：如何防止XSS攻击？ —— 知乎 时长: 25分钟</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/46592479">前端安全系列之二：如何防止CSRF攻击？—— 知乎 时长: 40分钟</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/OWASP/NodeGoat">了解OWASP十大安全风险,以及使用 node 的解决方案</a></p>
+<h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/67134654">最强前端性能优化，Google已经为你准备好了 —— @知乎 时长: 15分钟</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/52076790">你真的了解回流和重绘吗 —— @知乎 时长: 15分钟</a></p>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>跨域, 状态码， 请求头， 请求方法， Cookies 等都在这里</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62191708">前端应该知道的 http 协议 —— @知乎 时长: 15分钟</a></li>
+<li><a href="https://floatsyi.com/2019/11/28/TCP-IP-HTTP-QUIC-Axios/">TCP/IP, HTTP, QUIC, Axios</a></li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li><a href="https://floatsyi.com/2019/12/06/RESTful-API-and-GraphQL-API/">RESTful-API-and-GraphQL-API</a></li>
+</ul>
+<h2 id="版本管理-Git"><a href="#版本管理-Git" class="headerlink" title="版本管理: Git"></a>版本管理: Git</h2><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20866683/answer/705180453">如何优雅地使用 Git？——  @知乎 时长: 5分钟</a><br><a target="_blank" rel="noopener" href="http://iissnan.com/progit/">Pro Git简体中文版</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/69635847">如何配置 Git Commit Message ——  @知乎 时长: 10分钟</a></p>
+<h2 id="升级的-css-预编译语言-sass-scss"><a href="#升级的-css-预编译语言-sass-scss" class="headerlink" title="升级的 css, 预编译语言: sass(scss)"></a>升级的 css, 预编译语言: sass(scss)</h2><h3 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h3><p><a target="_blank" rel="noopener" href="https://juejin.im/post/5d70747cf265da03e16897c8">前端基础知识概述 – 移动端开发的屏幕、图像、字体与布局的兼容适配 —— @juejin 时长: 10分钟</a></p>
+<p>让设计师根据 iphone 6 750px 的视口宽度设计 UI,</p>
+<h4 id="REM-和-VM"><a href="#REM-和-VM" class="headerlink" title="REM 和 VM"></a>REM 和 VM</h4><p>非常好的一篇文章，还附带生产环境可用的代码</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44599960">细说移动端 经典的REM布局 与 新秀VW布局</a></li>
+</ul>
+<p>使用以下 scss 适配代码,<br>此时设计图的 1px = 0.01rem.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: calc(<span class="number">100vw</span>/<span class="number">7.5</span>); <span class="comment">/* 当100vm = 750px时, font-size = 100px*/</span></span><br><span class="line">  <span class="attribute">font-size</span>: -webkit-calc(<span class="number">100vw</span>/<span class="number">7.5</span>);</span><br><span class="line">  -webkit-text-size-adjust: <span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.16rem</span>; <span class="comment">/* 1rem = 100px */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用 postcss 插件: postcss-px-to-viewport</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .postcssrc.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>: &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">    <span class="string">&quot;postcss-px-to-viewport&quot;</span>: &#123;</span><br><span class="line">      viewportWidth: <span class="number">750</span>, <span class="comment">// 视口宽度，这里设置为跟设计稿宽度一致；</span></span><br><span class="line">      viewportHeight: <span class="number">1334</span>, <span class="comment">// 视口高度</span></span><br><span class="line">      unitPrecision: <span class="number">3</span>, <span class="comment">// 转换后值的精度(小数位)</span></span><br><span class="line">      viewportUnit: <span class="string">&#x27;vw&#x27;</span>, <span class="comment">// 输出单位</span></span><br><span class="line">      selectorBlackList: [<span class="string">&#x27;.usepixel&#x27;</span>], <span class="comment">// 黑名单</span></span><br><span class="line">      minPixelValue: <span class="number">1</span>, <span class="comment">// 触发转换的最小值, 大于等于这个值才会转换</span></span><br><span class="line">      mediaQuery: <span class="literal">false</span> <span class="comment">// 是否转换媒体查询中的像素</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="升级的-JS-ES6"><a href="#升级的-JS-ES6" class="headerlink" title="升级的 JS: ES6"></a>升级的 JS: ES6</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/67492465">ES7 ES8 ES9 ES10 新特性总结思考 —— @知乎 时长: 15分钟</a></p>
+<h2 id="在服务器运行的-JS-Node"><a href="#在服务器运行的-JS-Node" class="headerlink" title="在服务器运行的 JS: Node"></a>在服务器运行的 JS: Node</h2><h3 id="node-的事件循环-Event-Loop"><a href="#node-的事件循环-Event-Loop" class="headerlink" title="node 的事件循环(Event Loop)"></a>node 的事件循环(Event Loop)</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55511602">一次弄懂Event Loop</a></li>
+</ul>
+<h3 id="node-的-pip-npm-node-package-manager"><a href="#node-的-pip-npm-node-package-manager" class="headerlink" title="node 的 pip: npm (node package manager)"></a>node 的 pip: npm (node package manager)</h3><ul>
+<li><a href="https://floatsyi.com/2019/10/30/node-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-npm-%E4%B8%8E-yarn/">node 包管理工具: npm 与 yarn</a></li>
+</ul>
+<h3 id="Node-js技术栈"><a href="#Node-js技术栈" class="headerlink" title="Node.js技术栈"></a>Node.js技术栈</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.nodejs.red/">《Node.js技术栈》</a></li>
+</ul>
+<h2 id="有类型的-JS-TypeScript"><a href="#有类型的-JS-TypeScript" class="headerlink" title="有类型的 JS: TypeScript"></a>有类型的 JS: TypeScript</h2><p><a href="https://floatsyi.com/2019/10/07/%E6%9C%89%E7%B1%BB%E5%9E%8B%E7%9A%84-javascript-typescript/">有类型的 JS: TypeScript</a></p>
+<h3 id="JS-代码规范"><a href="#JS-代码规范" class="headerlink" title="JS 代码规范"></a>JS 代码规范</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/entry/5a02d18d6fb9a045076f178e">你可能不知道的 JavaScript 代码规范 —— 掘金 时长: 10分钟</a></li>
+<li><a href="https://floatsyi.com/2019/09/26/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/">代码规范与项目结构</a></li>
+</ul>
+<h3 id="工程化的前端-打包工具-webpack"><a href="#工程化的前端-打包工具-webpack" class="headerlink" title="工程化的前端, 打包工具: webpack"></a>工程化的前端, 打包工具: webpack</h3><h3 id="前端的三架马车"><a href="#前端的三架马车" class="headerlink" title="前端的三架马车"></a>前端的三架马车</h3><h4 id="渐进式框架-Vue"><a href="#渐进式框架-Vue" class="headerlink" title="渐进式框架: Vue"></a>渐进式框架: Vue</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/">Vue 官网</a></li>
+</ul>
+<h5 id="vue-cli3"><a href="#vue-cli3" class="headerlink" title="vue-cli3"></a>vue-cli3</h5><h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><h6 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h6><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48758013">一篇文章学会 Vue 项目单元测试 ——  @知乎 时长: 20分钟</a></p>
+<h4 id="用于构建用户界面的JavaScript库-React-JS"><a href="#用于构建用户界面的JavaScript库-React-JS" class="headerlink" title="用于构建用户界面的JavaScript库: React.JS"></a>用于构建用户界面的JavaScript库: React.JS</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/adam-golab/react-developer-roadmap">react-developer-roadmap</a></li>
+<li><a href="https://floatsyi.com/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/">A JavaScript library for building user interfaces: React</a></li>
+</ul>
+<h5 id="css-in-js"><a href="#css-in-js" class="headerlink" title="css in js"></a>css in js</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/styled-components/styled-components">styled-components</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26878157">精读《请停止 css-in-js 的行为》</a> 2017 年的文章， 请注意时效性！！！</li>
+</ul>
+<h5 id="css-modules"><a href="#css-modules" class="headerlink" title="css modules"></a>css modules</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/css-modules/css-modules">css modules</a></li>
+<li><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/adding-a-css-modules-stylesheet">adding-a-css-modules-stylesheet</a></li>
+</ul>
+<h4 id="大而全的-angular8"><a href="#大而全的-angular8" class="headerlink" title="大而全的: angular8"></a>大而全的: angular8</h4><h4 id="服务端渲染-SSR"><a href="#服务端渲染-SSR" class="headerlink" title="服务端渲染 SSR"></a>服务端渲染 SSR</h4><h4 id="MVC-与-MVP-与-MVVM"><a href="#MVC-与-MVP-与-MVVM" class="headerlink" title="MVC 与 MVP 与 MVVM"></a>MVC 与 MVP 与 MVVM</h4><h3 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h3><h4 id="Ramda-JS"><a href="#Ramda-JS" class="headerlink" title="Ramda.JS"></a>Ramda.JS</h4><p>……</p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript !!!"></a>JavaScript !!!</h2><blockquote>
+<p>任何可以用 JavaScript 来写的应用，最终都将用 JavaScript 来写.</p>
+</blockquote>
+<h3 id="node-后端框架-express-koa2-nest"><a href="#node-后端框架-express-koa2-nest" class="headerlink" title="node 后端框架: express, koa2, nest"></a>node 后端框架: express, koa2, nest</h3><h3 id="使用-JavaScript-HTML-和-CSS-构建跨平台的桌面应用-Electron"><a href="#使用-JavaScript-HTML-和-CSS-构建跨平台的桌面应用-Electron" class="headerlink" title="使用 JavaScript, HTML 和 CSS 构建跨平台的桌面应用: Electron"></a>使用 JavaScript, HTML 和 CSS 构建跨平台的桌面应用: Electron</h3><h3 id="使用-JavaScript-和-React-编写原生移动应用-React-Native"><a href="#使用-JavaScript-和-React-编写原生移动应用-React-Native" class="headerlink" title="使用 JavaScript 和 React 编写原生移动应用: React Native"></a>使用 JavaScript 和 React 编写原生移动应用: React Native</h3><h3 id="万物互联-IoT-JS"><a href="#万物互联-IoT-JS" class="headerlink" title="万物互联: IoT.JS"></a>万物互联: IoT.JS</h3><h3 id="深度学习-TensorFlow-JS"><a href="#深度学习-TensorFlow-JS" class="headerlink" title="深度学习: TensorFlow.JS"></a>深度学习: TensorFlow.JS</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/python-%E8%87%B3-JS/" rel="tag"># python 至 JS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/05/30/%E8%87%AA%E8%80%83%E6%9C%AC%E7%A7%91%E4%B9%8B%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="prev" title="自考本科之英语学习规划">
+      <i class="fa fa-chevron-left"></i> 自考本科之英语学习规划
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/09/26/%E6%9C%80%E4%BD%B3-Linux-%E5%8F%91%E8%A1%8C%E7%89%88-Windows-10-WSL/" rel="next" title="最佳 Linux 发行版 Windows 10(WSL)">
+      最佳 Linux 发行版 Windows 10(WSL) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E7%9A%84-%E7%BC%96%E8%AF%91%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">计算机是如何计算的,编译器是如何编译的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-%E4%B8%8E-node-%E4%B8%8E-python-%E8%AF%AD%E6%B3%95%E6%AF%94%E5%AF%B9"><span class="nav-number">3.1.</span> <span class="nav-text">JS 与 node 与 python 语法比对</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hello-World"><span class="nav-number">3.1.1.</span> <span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">3.1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">3.1.3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.1.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95-%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.1.5.</span> <span class="nav-text">格式化方法(模板字符串)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">3.1.6.</span> <span class="nav-text">运算符与表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="nav-number">3.1.7.</span> <span class="nav-text">控制流</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#if-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.1.7.1.</span> <span class="nav-text">if 语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#while-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.1.7.2.</span> <span class="nav-text">while 语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.1.7.3.</span> <span class="nav-text">for 循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.7.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-number">3.1.7.5.</span> <span class="nav-text">可变参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-number">3.1.7.6.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">3.1.7.7.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3"><span class="nav-number">3.1.7.8.</span> <span class="nav-text">深入理解</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">开发环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-%E4%B8%8E-node-%E4%BB%A5%E5%8F%8A-python-%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">5.</span> <span class="nav-text">JS 与 node 以及 python 的运行环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-JS-%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">Node.JS 的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">5.2.</span> <span class="nav-text">浏览器的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E6%A0%91-HTML-CSS-JS"><span class="nav-number">5.3.</span> <span class="nav-text">浏览器中的树: HTML + CSS + JS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css-%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%A0%91"><span class="nav-number">5.3.1.</span> <span class="nav-text">css 眼中的树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">5.3.1.1.</span> <span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.3.1.2.</span> <span class="nav-text">盒子模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87-Block-Formatting-Context"><span class="nav-number">5.3.1.3.</span> <span class="nav-text">块级格式化上下文(Block Formatting Context)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%83%E5%B1%80"><span class="nav-number">5.3.1.4.</span> <span class="nav-text">布局</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#flex-%E5%B8%83%E5%B1%80"><span class="nav-number">5.3.1.4.1.</span> <span class="nav-text">flex 布局</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#grid-%E5%B8%83%E5%B1%80"><span class="nav-number">5.3.1.4.2.</span> <span class="nav-text">grid 布局</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F"><span class="nav-number">5.3.1.5.</span> <span class="nav-text">重置默认样式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-number">5.3.1.6.</span> <span class="nav-text">垂直居中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="nav-number">5.3.1.7.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#px%E3%80%81em%E3%80%81rem%E3%80%81-%E3%80%81vw%E3%80%81vh%E3%80%81vm"><span class="nav-number">5.3.1.8.</span> <span class="nav-text">px、em、rem、%、vw、vh、vm</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%8C%BA%E5%88%AB"><span class="nav-number">5.3.1.9.</span> <span class="nav-text">CSS隐藏元素的几种方式及区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA%E4%B8%8E%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7"><span class="nav-number">5.3.1.10.</span> <span class="nav-text">渐进增强与优雅降级</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><span class="nav-number">5.3.1.11.</span> <span class="nav-text">CSS 代码规范</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS-%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%A0%91"><span class="nav-number">5.3.2.</span> <span class="nav-text">JS 眼中的树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM-Document-Object-Model"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">DOM (Document Object Model)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSSOM"><span class="nav-number">5.3.2.2.</span> <span class="nav-text">CSSOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C%E7%9A%84-JS-BOM-Brower-Object-Model"><span class="nav-number">5.3.2.3.</span> <span class="nav-text">浏览器里的 JS, BOM (Brower Object Model)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-JS-%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91"><span class="nav-number">5.4.</span> <span class="nav-text">深入理解 JS 执行逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%A0%86%E6%A0%88"><span class="nav-number">5.4.1.</span> <span class="nav-text">调用堆栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%97%AD%E5%8C%85"><span class="nav-number">5.4.2.</span> <span class="nav-text">作用域闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">5.4.3.</span> <span class="nav-text">this 关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%8E%9F%E7%90%86"><span class="nav-number">5.4.4.</span> <span class="nav-text">深浅拷贝原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E4%B8%8E%E7%BB%A7%E6%89%BF"><span class="nav-number">5.4.5.</span> <span class="nav-text">原型链与继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-number">5.4.6.</span> <span class="nav-text">高阶函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6"><span class="nav-number">5.4.7.</span> <span class="nav-text">事件机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF-Event-Loop-%E4%BB%A5%E5%8F%8A-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E4%B8%8E%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.4.8.</span> <span class="nav-text">事件循环(Event Loop) 以及 宏任务与微任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83"><span class="nav-number">5.4.9.</span> <span class="nav-text">回调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">5.4.10.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Async-Await%E5%8E%9F%E7%90%86"><span class="nav-number">5.4.11.</span> <span class="nav-text">Async&#x2F;Await原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8"><span class="nav-number">5.4.12.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">5.4.13.</span> <span class="nav-text">性能优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">5.5.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API"><span class="nav-number">5.6.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86-Git"><span class="nav-number">6.</span> <span class="nav-text">版本管理: Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E7%9A%84-css-%E9%A2%84%E7%BC%96%E8%AF%91%E8%AF%AD%E8%A8%80-sass-scss"><span class="nav-number">7.</span> <span class="nav-text">升级的 css, 预编译语言: sass(scss)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D"><span class="nav-number">7.1.</span> <span class="nav-text">移动端适配</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#REM-%E5%92%8C-VM"><span class="nav-number">7.1.1.</span> <span class="nav-text">REM 和 VM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E7%9A%84-JS-ES6"><span class="nav-number">8.</span> <span class="nav-text">升级的 JS: ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C%E7%9A%84-JS-Node"><span class="nav-number">9.</span> <span class="nav-text">在服务器运行的 JS: Node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node-%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF-Event-Loop"><span class="nav-number">9.1.</span> <span class="nav-text">node 的事件循环(Event Loop)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-%E7%9A%84-pip-npm-node-package-manager"><span class="nav-number">9.2.</span> <span class="nav-text">node 的 pip: npm (node package manager)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="nav-number">9.3.</span> <span class="nav-text">Node.js技术栈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%B1%BB%E5%9E%8B%E7%9A%84-JS-TypeScript"><span class="nav-number">10.</span> <span class="nav-text">有类型的 JS: TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><span class="nav-number">10.1.</span> <span class="nav-text">JS 代码规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E5%89%8D%E7%AB%AF-%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7-webpack"><span class="nav-number">10.2.</span> <span class="nav-text">工程化的前端, 打包工具: webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E7%9A%84%E4%B8%89%E6%9E%B6%E9%A9%AC%E8%BD%A6"><span class="nav-number">10.3.</span> <span class="nav-text">前端的三架马车</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%A1%86%E6%9E%B6-Vue"><span class="nav-number">10.3.1.</span> <span class="nav-text">渐进式框架: Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#vue-cli3"><span class="nav-number">10.3.1.1.</span> <span class="nav-text">vue-cli3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">10.3.1.2.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">10.3.1.2.1.</span> <span class="nav-text">单元测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%BA%8E%E6%9E%84%E5%BB%BA%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E7%9A%84JavaScript%E5%BA%93-React-JS"><span class="nav-number">10.3.2.</span> <span class="nav-text">用于构建用户界面的JavaScript库: React.JS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#css-in-js"><span class="nav-number">10.3.2.1.</span> <span class="nav-text">css in js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#css-modules"><span class="nav-number">10.3.2.2.</span> <span class="nav-text">css modules</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E8%80%8C%E5%85%A8%E7%9A%84-angular8"><span class="nav-number">10.3.3.</span> <span class="nav-text">大而全的: angular8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93-SSR"><span class="nav-number">10.3.4.</span> <span class="nav-text">服务端渲染 SSR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MVC-%E4%B8%8E-MVP-%E4%B8%8E-MVVM"><span class="nav-number">10.3.5.</span> <span class="nav-text">MVC 与 MVP 与 MVVM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">10.4.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ramda-JS"><span class="nav-number">10.4.1.</span> <span class="nav-text">Ramda.JS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-number">11.</span> <span class="nav-text">JavaScript !!!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node-%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6-express-koa2-nest"><span class="nav-number">11.1.</span> <span class="nav-text">node 后端框架: express, koa2, nest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-JavaScript-HTML-%E5%92%8C-CSS-%E6%9E%84%E5%BB%BA%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8-Electron"><span class="nav-number">11.2.</span> <span class="nav-text">使用 JavaScript, HTML 和 CSS 构建跨平台的桌面应用: Electron</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-JavaScript-%E5%92%8C-React-%E7%BC%96%E5%86%99%E5%8E%9F%E7%94%9F%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8-React-Native"><span class="nav-number">11.3.</span> <span class="nav-text">使用 JavaScript 和 React 编写原生移动应用: React Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%87%E7%89%A9%E4%BA%92%E8%81%94-IoT-JS"><span class="nav-number">11.4.</span> <span class="nav-text">万物互联: IoT.JS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-TensorFlow-JS"><span class="nav-number">11.5.</span> <span class="nav-text">深度学习: TensorFlow.JS</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="backtolife"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">backtolife</p>
+  <div class="site-description" itemprop="description">21 世纪两大浪漫, 五线谱与二进制.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/backtolife2021" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;backtolife2021" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codepen.io/FloatingShuYin/#" title="CodePen → https:&#x2F;&#x2F;codepen.io&#x2F;FloatingShuYin&#x2F;#" rel="noopener" target="_blank"><i class="fab fa-codepen fa-fw"></i>CodePen</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">backtolife</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"bH5pXa93c9rYkIe6zzKkty1d-gzGzoHsz","app_key":"REvpf8v4c6CK9EgLRpFomYuL","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://backtolife.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://floatsyi.com/2019/06/14/%E4%BB%8E-python-%E5%88%B0-javascript-%E5%85%A8%E6%A0%88%E6%8C%87%E5%8D%97/";
+    this.page.identifier = "2019/06/14/从-python-到-javascript-全栈指南/";
+    this.page.title = "python --> javascript 全栈指南";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://backtolife.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

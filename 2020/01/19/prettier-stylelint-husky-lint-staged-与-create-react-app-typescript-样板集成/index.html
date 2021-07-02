@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="参考 Prettier docs: Prettier vs. Linters Prettier docs: Why Prettier? Stylelint: Why and How to Lint CSS Prettier docs: integrating-with-linters stylelint docs: extend-a-shared-configuration 代码规范与项目结构 c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成">
+<meta property="og:url" content="http://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/index.html">
+<meta property="og:site_name" content="backtolife">
+<meta property="og:description" content="参考 Prettier docs: Prettier vs. Linters Prettier docs: Why Prettier? Stylelint: Why and How to Lint CSS Prettier docs: integrating-with-linters stylelint docs: extend-a-shared-configuration 代码规范与项目结构 c">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-19T01:01:40.000Z">
+<meta property="article:modified_time" content="2021-07-02T09:53:04.738Z">
+<meta property="article:author" content="backtolife">
+<meta property="article:tag" content="typescript">
+<meta property="article:tag" content="prettier">
+<meta property="article:tag" content="stylelint">
+<meta property="article:tag" content="husky">
+<meta property="article:tag" content="lint-staged">
+<meta property="article:tag" content="create-react-app">
+<meta property="article:tag" content="eslint">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成 | backtolife</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="backtolife" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">backtolife</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-19 09:01:40" itemprop="dateCreated datePublished" datetime="2020-01-19T09:01:40+08:00">2020-01-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/" class="post-meta-item leancloud_visitors" data-flag-title="prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/19/prettier-stylelint-husky-lint-staged-与-create-react-app-typescript-样板集成/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://prettier.io/docs/en/comparison.html">Prettier docs: Prettier vs. Linters</a></li>
+<li><a target="_blank" rel="noopener" href="https://prettier.io/docs/en/why-prettier.html">Prettier docs: Why Prettier?</a></li>
+<li><a target="_blank" rel="noopener" href="http://slides.com/ai/stylelint#/">Stylelint: Why and How to Lint CSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://prettier.io/docs/en/integrating-with-linters.html">Prettier docs: integrating-with-linters</a></li>
+<li><a target="_blank" rel="noopener" href="https://stylelint.io/#extend-a-shared-configuration">stylelint docs: extend-a-shared-configuration</a></li>
+<li><a href="https://floatsyi.com/2019/09/26/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/">代码规范与项目结构</a></li>
+<li><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/getting-started#creating-a-typescript-app">create-react-app docs: creating-a-typescript-app</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app">create-react-app</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/eslint/eslint">eslint</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/prettier">prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/okonet/lint-staged">lint-staged</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/typicode/husky">husky</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stylelint/stylelint">stylelint</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/stylelint-config-prettier">stylelint-config-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stylelint/stylelint-config-recommended">stylelint-config-recommended</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/hugomrdias/prettier-stylelint">stylelint-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/eslint-config-prettier">eslint-config-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/eslint-plugin-prettier">eslint-plugin-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">vscode-eslint</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">vscode-stylelint</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">vscode-prettier</a></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h2><ul>
+<li><p>为什么要在已有 <a target="_blank" rel="noopener" href="https://github.com/eslint/eslint">eslint</a> 的 <a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app">create-react-app</a> 中加入 <a target="_blank" rel="noopener" href="https://github.com/prettier/prettier">prettier</a> ?<br>请参考: <a target="_blank" rel="noopener" href="https://prettier.io/docs/en/comparison.html">Prettier docs: Prettier vs. Linters</a><br>请参考: <a target="_blank" rel="noopener" href="https://prettier.io/docs/en/why-prettier.html">Prettier docs: Why Prettier?</a></p>
+</li>
+<li><p>为什么要使用 <a target="_blank" rel="noopener" href="https://github.com/stylelint/stylelint">stylelint</a> ?<br>请参考: <a target="_blank" rel="noopener" href="http://slides.com/ai/stylelint#/">Stylelint: Why and How to Lint CSS</a></p>
+</li>
+</ul>
+<h2 id="集成步骤"><a href="#集成步骤" class="headerlink" title="集成步骤"></a>集成步骤</h2><p>请参考: <a target="_blank" rel="noopener" href="https://prettier.io/docs/en/integrating-with-linters.html">Prettier docs: integrating-with-linters</a><br>请参考: <a target="_blank" rel="noopener" href="https://stylelint.io/#extend-a-shared-configuration">stylelint docs: extend-a-shared-configuration</a><br>请参考: <a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/getting-started#creating-a-typescript-app">create-react-app docs: creating-a-typescript-app</a><br>请参考: <a href="https://floatsyi.com/2019/09/26/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/">代码规范与项目结构</a></p>
+<p>使用 <a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app">create-react-app</a> 创建样板文件</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn create react<span class="literal">-app</span> myapp -<span class="literal">-typescript</span></span><br></pre></td></tr></table></figure>
+<p>添加开发时依赖</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/prettier">prettier</a> <a target="_blank" rel="noopener" href="https://github.com/okonet/lint-staged">lint-staged</a> <a target="_blank" rel="noopener" href="https://github.com/typicode/husky">husky</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stylelint/stylelint">stylelint</a> <a target="_blank" rel="noopener" href="https://github.com/prettier/stylelint-config-prettier">stylelint-config-prettier</a> <a target="_blank" rel="noopener" href="https://github.com/stylelint/stylelint-config-recommended">stylelint-config-recommended</a> <a target="_blank" rel="noopener" href="https://github.com/hugomrdias/prettier-stylelint">stylelint-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/eslint-config-prettier">eslint-config-prettier</a> <a target="_blank" rel="noopener" href="https://github.com/prettier/eslint-plugin-prettier">eslint-plugin-prettier</a></li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add prettier lint<span class="literal">-staged</span> husky stylelint stylelint<span class="literal">-prettier</span> stylelint<span class="literal">-config</span><span class="literal">-prettier</span> stylelint<span class="literal">-config</span><span class="literal">-recommended</span> eslint<span class="literal">-config</span><span class="literal">-prettier</span> eslint<span class="literal">-plugin</span><span class="literal">-prettier</span> <span class="literal">-D</span></span><br></pre></td></tr></table></figure>
+<p>添加配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch .eslintrc .eslintignore .gitattributes .prettierrc .stylelintrc</span><br></pre></td></tr></table></figure>
+<p>.eslintrc</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;extends&quot;</span>: [<span class="string">&quot;react-app&quot;</span>, <span class="string">&quot;plugin:prettier/recommended&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span>: [<span class="string">&quot;prettier&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;rules&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;prettier/prettier&quot;</span>: <span class="string">&quot;error&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>.eslintignore</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># build</span><br><span class="line">build&#x2F;</span><br></pre></td></tr></table></figure>
+<p>.gitattributes</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* text&#x3D;auto eol&#x3D;lf</span><br></pre></td></tr></table></figure>
+<p>.prettierrc</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;trailingComma&quot;</span>: <span class="string">&quot;es5&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;tabWidth&quot;</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">&quot;semi&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;singleQuote&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;endOfLine&quot;</span>: <span class="string">&quot;lf&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>.stylelintrc</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;extends&quot;</span>: [<span class="string">&quot;stylelint-config-recommended&quot;</span>, <span class="string">&quot;stylelint-prettier/recommended&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span>: [<span class="string">&quot;stylelint-prettier&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;rules&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;prettier/prettier&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>package.json 删除 eslintConfig 字段并添加以下字段</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;lint&quot;</span>: <span class="string">&quot;eslint \&quot;src/**/*.&#123;js,jsx,ts,tsx&#125;\&quot;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;lint:fix&quot;</span>: <span class="string">&quot;yarn lint --fix&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;stylelint&quot;</span>: <span class="string">&quot;stylelint \&quot;src/**/*.&#123;css,scss&#125;\&quot;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;stylelint:fix&quot;</span>: <span class="string">&quot;yarn stylelint --fix&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;lint-staged&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;src/**/*.&#123;js,jsx,ts,tsx,json,css,scss,md&#125;&quot;</span>: [<span class="string">&quot;prettier --write&quot;</span>, <span class="string">&quot;git add&quot;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;husky&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;hooks&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;pre-commit&quot;</span>: <span class="string">&quot;lint-staged&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>检查脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn lint</span><br></pre></td></tr></table></figure>
+<p>检查并修复脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn lint:fix</span><br></pre></td></tr></table></figure>
+<p>检查样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn stylelint</span><br></pre></td></tr></table></figure>
+<p>检查并修复样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn stylelint:fix</span><br></pre></td></tr></table></figure>
+<h2 id="eslint-与-stylelint-的-vscode-扩展"><a href="#eslint-与-stylelint-的-vscode-扩展" class="headerlink" title="eslint 与 stylelint 的 vscode 扩展"></a>eslint 与 stylelint 的 vscode 扩展</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">vscode-eslint</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">vscode-stylelint</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">vscode-prettier</a></li>
+</ul>
+<p>vscode setting.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">   * 插件名： ESLint插件的配置</span></span><br><span class="line"><span class="comment">   * 描述：根据定义的规则对相应的语言的语法风格进行严格的约束，以统一编码风格降低阅读沟通成本</span></span><br><span class="line"><span class="comment">   * 详情：https: //marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attr">&quot;eslint.enable&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// 禁用 vscode 默认的 js 格式化</span></span><br><span class="line">  <span class="attr">&quot;javascript.validate.enable&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;editor.formatOnPaste&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 保存时自动执行 eslint fix</span></span><br><span class="line">  <span class="attr">&quot;editor.codeActionsOnSave&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;source.fixAll.eslint&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;source.fixAll.stylelint&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 插件名: stylelint</span></span><br><span class="line"><span class="comment">   * 描述： css 语法效验</span></span><br><span class="line"><span class="comment">   * 详情： https: //marketplace.visualstudio.com/items?itemName=shinnn.stylelint</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attr">&quot;stylelint.enable&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;css.validate&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;less.validate&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;scss.validate&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;[json]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[css]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">   * 插件名：prettier</span></span><br><span class="line"><span class="comment">   * 描述：按照设定的规则格式化对应的文档</span></span><br><span class="line"><span class="comment">   * 详情：https: //marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode</span></span><br><span class="line"><span class="comment">   * 注意：此插件被 Vetur 插件依赖</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attr">&quot;prettier.trailingComma&quot;</span>: <span class="string">&quot;es5&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;prettier.tabWidth&quot;</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="comment">// 使用单引号？</span></span><br><span class="line">  <span class="attr">&quot;prettier.singleQuote&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// 要分号？</span></span><br><span class="line">  <span class="attr">&quot;prettier.semi&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;[javascript]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[typescript]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[typescriptreact]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[jsx]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[tsx]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[jsonc]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[md]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;[javascriptreact]&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span>: <span class="string">&quot;esbenp.prettier-vscode&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>-</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/typescript/" rel="tag"># typescript</a>
+              <a href="/tags/prettier/" rel="tag"># prettier</a>
+              <a href="/tags/stylelint/" rel="tag"># stylelint</a>
+              <a href="/tags/husky/" rel="tag"># husky</a>
+              <a href="/tags/lint-staged/" rel="tag"># lint-staged</a>
+              <a href="/tags/create-react-app/" rel="tag"># create-react-app</a>
+              <a href="/tags/eslint/" rel="tag"># eslint</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="prev" title="搭建 gitlab 私有服务器">
+      <i class="fa fa-chevron-left"></i> 搭建 gitlab 私有服务器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/" rel="next" title="git 复杂流程 2020">
+      git 复杂流程 2020 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QA"><span class="nav-number">3.</span> <span class="nav-text">QA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E6%88%90%E6%AD%A5%E9%AA%A4"><span class="nav-number">4.</span> <span class="nav-text">集成步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">5.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eslint-%E4%B8%8E-stylelint-%E7%9A%84-vscode-%E6%89%A9%E5%B1%95"><span class="nav-number">6.</span> <span class="nav-text">eslint 与 stylelint 的 vscode 扩展</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="backtolife"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">backtolife</p>
+  <div class="site-description" itemprop="description">21 世纪两大浪漫, 五线谱与二进制.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/backtolife2021" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;backtolife2021" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codepen.io/FloatingShuYin/#" title="CodePen → https:&#x2F;&#x2F;codepen.io&#x2F;FloatingShuYin&#x2F;#" rel="noopener" target="_blank"><i class="fab fa-codepen fa-fw"></i>CodePen</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">backtolife</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"bH5pXa93c9rYkIe6zzKkty1d-gzGzoHsz","app_key":"REvpf8v4c6CK9EgLRpFomYuL","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://backtolife.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/";
+    this.page.identifier = "2020/01/19/prettier-stylelint-husky-lint-staged-与-create-react-app-typescript-样板集成/";
+    this.page.title = "prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://backtolife.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

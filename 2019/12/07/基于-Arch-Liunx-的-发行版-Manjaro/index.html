@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="参考 manjaro manjaro.forum manjaro.userguide Rufus  资源 manjaro xfce Rufus diskgenius">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于 Arch Liunx 的 发行版: Manjaro">
+<meta property="og:url" content="http://floatsyi.com/2019/12/07/%E5%9F%BA%E4%BA%8E-Arch-Liunx-%E7%9A%84-%E5%8F%91%E8%A1%8C%E7%89%88-Manjaro/index.html">
+<meta property="og:site_name" content="backtolife">
+<meta property="og:description" content="参考 manjaro manjaro.forum manjaro.userguide Rufus  资源 manjaro xfce Rufus diskgenius">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcQusFzaMQtX5c0lWF3.b9dQ0gdyG**xu7pJP1Ns1qbaRd2mytJizJc5OiZ2jnpiLu2n.3DPccdoc.J7w6ZF9Ors!/r">
+<meta property="og:image" content="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcT19I3WCV*fRmPLfQxeajyi6ofvaSLyDegoi9PkLgt7AJ.J3xLRFAF*Vao.97Mo7XjNLFWgASEbTMH*Rtj9ElMU!/r">
+<meta property="og:image" content="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcZ8veDcASaoVEfG0BZSSWfGkdm9yN0QblxXsOIJhJvD8qTKoIXdKSA00JlEK8EeM.dCTFC8rLTSRDEFolKU5MDY!/r">
+<meta property="article:published_time" content="2019-12-07T09:27:11.000Z">
+<meta property="article:modified_time" content="2021-07-02T09:53:04.734Z">
+<meta property="article:author" content="backtolife">
+<meta property="article:tag" content="liunx">
+<meta property="article:tag" content="arch">
+<meta property="article:tag" content="manjaro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcQusFzaMQtX5c0lWF3.b9dQ0gdyG**xu7pJP1Ns1qbaRd2mytJizJc5OiZ2jnpiLu2n.3DPccdoc.J7w6ZF9Ors!/r">
+
+<link rel="canonical" href="http://floatsyi.com/2019/12/07/%E5%9F%BA%E4%BA%8E-Arch-Liunx-%E7%9A%84-%E5%8F%91%E8%A1%8C%E7%89%88-Manjaro/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>基于 Arch Liunx 的 发行版: Manjaro | backtolife</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="backtolife" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">backtolife</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2019/12/07/%E5%9F%BA%E4%BA%8E-Arch-Liunx-%E7%9A%84-%E5%8F%91%E8%A1%8C%E7%89%88-Manjaro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于 Arch Liunx 的 发行版: Manjaro
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-07 17:27:11" itemprop="dateCreated datePublished" datetime="2019-12-07T17:27:11+08:00">2019-12-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2019/12/07/%E5%9F%BA%E4%BA%8E-Arch-Liunx-%E7%9A%84-%E5%8F%91%E8%A1%8C%E7%89%88-Manjaro/" class="post-meta-item leancloud_visitors" data-flag-title="基于 Arch Liunx 的 发行版: Manjaro" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/12/07/%E5%9F%BA%E4%BA%8E-Arch-Liunx-%E7%9A%84-%E5%8F%91%E8%A1%8C%E7%89%88-Manjaro/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/07/基于-Arch-Liunx-的-发行版-Manjaro/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcQusFzaMQtX5c0lWF3.b9dQ0gdyG**xu7pJP1Ns1qbaRd2mytJizJc5OiZ2jnpiLu2n.3DPccdoc.J7w6ZF9Ors!/r" alt="manjaro desktop screen"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://manjaro.org/">manjaro</a></li>
+<li><a target="_blank" rel="noopener" href="https://forum.manjaro.org/">manjaro.forum</a></li>
+<li><a target="_blank" rel="noopener" href="https://manjaro.org/support/userguide/">manjaro.userguide</a></li>
+<li><a target="_blank" rel="noopener" href="https://rufus.ie/">Rufus</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://manjaro.org/download/official/xfce/">manjaro xfce</a></li>
+<li><a target="_blank" rel="noopener" href="https://rufus.ie/">Rufus</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.diskgenius.cn/help/index.php?from=dg">diskgenius</a></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="制作-U-盘引导，并硬盘安装-manjaro-与-windows-10-双系统"><a href="#制作-U-盘引导，并硬盘安装-manjaro-与-windows-10-双系统" class="headerlink" title="制作 U 盘引导，并硬盘安装 manjaro 与 windows 10 双系统"></a>制作 U 盘引导，并硬盘安装 manjaro 与 windows 10 双系统</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ul>
+<li>一个多余的硬盘     （需要被格式化）</li>
+<li>一个 &gt; 4GB 的 U 盘 （需要被格式化）</li>
+<li>支持 UEFI 的主板</li>
+<li>关闭 安全启动 与 快速启动</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>下载 <a target="_blank" rel="noopener" href="https://manjaro.org/download/official/xfce/">manjaro xfce</a> minimal 镜像文件并验证文件完整性</li>
+<li>下载 U 盘引导写入工具 <a target="_blank" rel="noopener" href="https://rufus.ie/">Rufus</a><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extras</span><br><span class="line">scoop install Rufus</span><br></pre></td></tr></table></figure></li>
+<li>使用 <a target="_blank" rel="noopener" href="http://www.diskgenius.cn/help/index.php?from=dg">diskgenius</a> 将要安装 <a target="_blank" rel="noopener" href="https://manjaro.org/download/official/xfce/">manjaro xfce</a> 的硬盘快速分区， 设置如下图：<br><img src="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcT19I3WCV*fRmPLfQxeajyi6ofvaSLyDegoi9PkLgt7AJ.J3xLRFAF*Vao.97Mo7XjNLFWgASEbTMH*Rtj9ElMU!/r" alt="diskgenius 快速分区"></li>
+<li>使用 <a target="_blank" rel="noopener" href="https://rufus.ie/">Rufus</a> 将 <a target="_blank" rel="noopener" href="https://manjaro.org/download/official/xfce/">manjaro xfce</a> minimal 镜像文件写入 U 盘， 设置如下图：<br><img src="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcZ8veDcASaoVEfG0BZSSWfGkdm9yN0QblxXsOIJhJvD8qTKoIXdKSA00JlEK8EeM.dCTFC8rLTSRDEFolKU5MDY!/r" alt="Rufus 写入镜像"></li>
+<li>写入完成后， 重启计算机， 按主板厂商定义的快捷键进入 UEFI 设置界面<br>选择从 U 盘启动。</li>
+<li>启动后即可进入 manjaro 安装引导界面， 根据 manjaro 安装引导完成安装。</li>
+</ol>
+<h2 id="安装-yay"><a href="#安装-yay" class="headerlink" title="安装 yay"></a>安装 yay</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S yay</span><br></pre></td></tr></table></figure>
+<h2 id="使用中国镜像"><a href="#使用中国镜像" class="headerlink" title="使用中国镜像"></a>使用中国镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<h2 id="安装-vscode"><a href="#安装-vscode" class="headerlink" title="安装 vscode"></a>安装 vscode</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S code</span><br></pre></td></tr></table></figure>
+<h2 id="安装-i3wm"><a href="#安装-i3wm" class="headerlink" title="安装 i3wm"></a>安装 i3wm</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S i3-gaps</span><br></pre></td></tr></table></figure>
+<p>在 <code>~/.xinit</code> 末尾加上 <code>exec i3</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">exec</span> i3 &gt;&gt; ~/.xinit</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装终端模拟器-alacritty"><a href="#安装终端模拟器-alacritty" class="headerlink" title="安装终端模拟器 alacritty"></a>安装终端模拟器 alacritty</h2><h2 id="安装-fish-shell"><a href="#安装-fish-shell" class="headerlink" title="安装 fish shell"></a>安装 fish shell</h2><h2 id="安装-oh-my-fish"><a href="#安装-oh-my-fish" class="headerlink" title="安装 oh-my-fish"></a>安装 oh-my-fish</h2><h2 id="安装-neofeh"><a href="#安装-neofeh" class="headerlink" title="安装 neofeh"></a>安装 neofeh</h2><h2 id="安装-python"><a href="#安装-python" class="headerlink" title="安装 python"></a>安装 python</h2><h3 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h3><h2 id="安装-nvm"><a href="#安装-nvm" class="headerlink" title="安装 nvm"></a>安装 nvm</h2><h3 id="安装-node"><a href="#安装-node" class="headerlink" title="安装 node"></a>安装 node</h3><h2 id="安装-polybar"><a href="#安装-polybar" class="headerlink" title="安装 polybar"></a>安装 polybar</h2><h2 id="安装-中文输入法"><a href="#安装-中文输入法" class="headerlink" title="安装 中文输入法"></a>安装 中文输入法</h2><h2 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h2><h2 id="安装网易云播放器"><a href="#安装网易云播放器" class="headerlink" title="安装网易云播放器"></a>安装网易云播放器</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/liunx/" rel="tag"># liunx</a>
+              <a href="/tags/arch/" rel="tag"># arch</a>
+              <a href="/tags/manjaro/" rel="tag"># manjaro</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/06/RESTful-API-and-GraphQL-API/" rel="prev" title="RESTful API and GraphQL API">
+      <i class="fa fa-chevron-left"></i> RESTful API and GraphQL API
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/07/Learn-once-write-anywhere-React-Native/" rel="next" title="Learn once, write anywhere: React Native">
+      Learn once, write anywhere: React Native <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C-U-%E7%9B%98%E5%BC%95%E5%AF%BC%EF%BC%8C%E5%B9%B6%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85-manjaro-%E4%B8%8E-windows-10-%E5%8F%8C%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text">制作 U 盘引导，并硬盘安装 manjaro 与 windows 10 双系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">前提条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.2.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-yay"><span class="nav-number">4.</span> <span class="nav-text">安装 yay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%AD%E5%9B%BD%E9%95%9C%E5%83%8F"><span class="nav-number">5.</span> <span class="nav-text">使用中国镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-vscode"><span class="nav-number">6.</span> <span class="nav-text">安装 vscode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-i3wm"><span class="nav-number">7.</span> <span class="nav-text">安装 i3wm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BB%88%E7%AB%AF%E6%A8%A1%E6%8B%9F%E5%99%A8-alacritty"><span class="nav-number">8.</span> <span class="nav-text">安装终端模拟器 alacritty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-fish-shell"><span class="nav-number">9.</span> <span class="nav-text">安装 fish shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-oh-my-fish"><span class="nav-number">10.</span> <span class="nav-text">安装 oh-my-fish</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-neofeh"><span class="nav-number">11.</span> <span class="nav-text">安装 neofeh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-python"><span class="nav-number">12.</span> <span class="nav-text">安装 python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-pip"><span class="nav-number">12.1.</span> <span class="nav-text">安装 pip</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nvm"><span class="nav-number">13.</span> <span class="nav-text">安装 nvm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-node"><span class="nav-number">13.1.</span> <span class="nav-text">安装 node</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-polybar"><span class="nav-number">14.</span> <span class="nav-text">安装 polybar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-number">15.</span> <span class="nav-text">安装 中文输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%93%9D%E7%89%99"><span class="nav-number">16.</span> <span class="nav-text">蓝牙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E6%98%93%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8"><span class="nav-number">17.</span> <span class="nav-text">安装网易云播放器</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="backtolife"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">backtolife</p>
+  <div class="site-description" itemprop="description">21 世纪两大浪漫, 五线谱与二进制.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/backtolife2021" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;backtolife2021" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codepen.io/FloatingShuYin/#" title="CodePen → https:&#x2F;&#x2F;codepen.io&#x2F;FloatingShuYin&#x2F;#" rel="noopener" target="_blank"><i class="fab fa-codepen fa-fw"></i>CodePen</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">backtolife</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"bH5pXa93c9rYkIe6zzKkty1d-gzGzoHsz","app_key":"REvpf8v4c6CK9EgLRpFomYuL","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://backtolife.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://floatsyi.com/2019/12/07/%E5%9F%BA%E4%BA%8E-Arch-Liunx-%E7%9A%84-%E5%8F%91%E8%A1%8C%E7%89%88-Manjaro/";
+    this.page.identifier = "2019/12/07/基于-Arch-Liunx-的-发行版-Manjaro/";
+    this.page.title = "基于 Arch Liunx 的 发行版: Manjaro";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://backtolife.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

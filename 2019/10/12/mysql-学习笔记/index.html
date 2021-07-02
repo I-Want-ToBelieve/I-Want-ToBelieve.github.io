@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="资源 mysql 管理 MySQL用户及权限管理 MySQL 8.0用户和角色管理 MySQL指南 mycli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql 学习笔记">
+<meta property="og:url" content="http://floatsyi.com/2019/10/12/mysql-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="backtolife">
+<meta property="og:description" content="资源 mysql 管理 MySQL用户及权限管理 MySQL 8.0用户和角色管理 MySQL指南 mycli">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-12T13:22:20.000Z">
+<meta property="article:modified_time" content="2021-07-02T09:53:04.734Z">
+<meta property="article:author" content="backtolife">
+<meta property="article:tag" content="backtolife">
+<meta property="article:tag" content="blogs">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://floatsyi.com/2019/10/12/mysql-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>mysql 学习笔记 | backtolife</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="backtolife" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">backtolife</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2019/10/12/mysql-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mysql 学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-12 21:22:20" itemprop="dateCreated datePublished" datetime="2019-10-12T21:22:20+08:00">2019-10-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2019/10/12/mysql-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="mysql 学习笔记" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/10/12/mysql-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/12/mysql-学习笔记/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-administration.html">mysql 管理</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5c34b2b1e51d45518d46b290">MySQL用户及权限管理</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5b6eec2cf265da0f5e3315a6">MySQL 8.0用户和角色管理</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/mysql-tutorial">MySQL指南</a></li>
+<li><a target="_blank" rel="noopener" href="http://mycli.net/">mycli</a></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="安装-mysql-和-mycli"><a href="#安装-mysql-和-mycli" class="headerlink" title="安装 mysql 和 mycli"></a>安装 mysql 和 mycli</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql@5.7 mycli</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="mysqld"><a href="#mysqld" class="headerlink" title="mysqld"></a>mysqld</h2><h3 id="添加-mysqlservice-函数"><a href="#添加-mysqlservice-函数" class="headerlink" title="添加 mysqlservice 函数"></a>添加 mysqlservice 函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function mysqlservice</span><br><span class="line">    &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;opt&#x2F;mysql@5.7&#x2F;bin&#x2F;mysql.server $argv</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">funcsave mysqlservice</span><br></pre></td></tr></table></figure>
+<h3 id="启动-mysqld-service"><a href="#启动-mysqld-service" class="headerlink" title="启动 mysqld service"></a>启动 mysqld service</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlservice start</span><br></pre></td></tr></table></figure>
+<h3 id="停止-mysqld-service"><a href="#停止-mysqld-service" class="headerlink" title="停止 mysqld service"></a>停止 mysqld service</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlservice stop</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="mysql-client"><a href="#mysql-client" class="headerlink" title="mysql client"></a>mysql client</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> ~ tldr mysql                                                                                 Sat Oct 12 21:41:52 2019</span><br><span class="line">mysql</span><br><span class="line"></span><br><span class="line">The MySQL command-line tool.</span><br><span class="line">More information: &lt;https:&#x2F;&#x2F;www.mysql.com&#x2F;&gt;.</span><br><span class="line"></span><br><span class="line">- Connect to a database:</span><br><span class="line">    mysql database_name</span><br><span class="line">- Connect to a database, user will be prompted for a password:</span><br><span class="line">    mysql -u user --password database_name</span><br><span class="line">- Connect to a database on another host:</span><br><span class="line">    mysql -h database_host database_name</span><br><span class="line">- Connect to a database through a Unix socket:</span><br><span class="line">    mysql --socket path&#x2F;to&#x2F;socket.sock</span><br><span class="line">- Execute SQL statements in a script file (batch file):</span><br><span class="line">    mysql -e &quot;source filename.sql&quot; database_name</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="管理用户"><a href="#管理用户" class="headerlink" title="管理用户"></a>管理用户</h2><p>MySQL 用户账号和信息存储在名为 mysql 的 MySQL 数据库中.</p>
+<h3 id="以默认的超级管理员-root-登录-mysql"><a href="#以默认的超级管理员-root-登录-mysql" class="headerlink" title="以默认的超级管理员 root 登录 mysql"></a>以默认的超级管理员 root 登录 mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
+<h4 id="为-root-设置密码"><a href="#为-root-设置密码" class="headerlink" title="为 root 设置密码"></a>为 root 设置密码</h4><p><strong>注意：在 MySQL5.7 中 user 表的 password 已换成了authentication_string</strong><br><strong>注意：password() 加密函数已经在 8.0.11 中移除了，可以使用 MD5() 函数代替</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p[oldpass] password newpass</span><br></pre></td></tr></table></figure>
+<h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> use mysql</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">set</span> password <span class="keyword">for</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span><span class="operator">=</span>PASSWORD(<span class="string">&#x27;new_password&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="查看用户列表"><a href="#查看用户列表" class="headerlink" title="查看用户列表"></a>查看用户列表</h3><p>注意 sql 语句需要以 <code>;</code> 结尾, 而关键字大写只是习惯.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> USE mysql;</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="keyword">user</span> <span class="keyword">FROM</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="创建用户账号"><a href="#创建用户账号" class="headerlink" title="创建用户账号"></a>创建用户账号</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">CREATE</span> <span class="keyword">USER</span> floatsyi IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;p@$$wOrd&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="重命名用户帐号"><a href="#重命名用户帐号" class="headerlink" title="重命名用户帐号"></a>重命名用户帐号</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> RENAME <span class="keyword">USER</span> floatsyi <span class="keyword">TO</span> newfloatsyi;</span><br></pre></td></tr></table></figure>
+<h3 id="删除用户账号"><a href="#删除用户账号" class="headerlink" title="删除用户账号"></a>删除用户账号</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">DROP</span> <span class="keyword">USER</span> newfloatsyi;</span><br></pre></td></tr></table></figure>
+<h3 id="设置访问权限"><a href="#设置访问权限" class="headerlink" title="设置访问权限"></a>设置访问权限</h3><p>在创建用户账号后，应该接着分配访问权限。<br>新创建的用户账号没有访问权限。它们能登录 MySQL 但不能执行任何数据库操作, 不能看到数据.</p>
+<h4 id="查看用户帐号的权限"><a href="#查看用户帐号的权限" class="headerlink" title="查看用户帐号的权限"></a>查看用户帐号的权限</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SHOW</span> GRANTS <span class="keyword">FOR</span> floatsyi;</span><br></pre></td></tr></table></figure>
+<p>USAGE 表示根本没有权限</p>
+<h4 id="为用户帐号添加权限"><a href="#为用户帐号添加权限" class="headerlink" title="为用户帐号添加权限"></a>为用户帐号添加权限</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> crashcourse.<span class="operator">*</span> <span class="keyword">TO</span> floatsyi</span><br></pre></td></tr></table></figure>
+<p>此 GRANT 允许用户在 crashcourse.*（crashcourse数据库的所 有表）上使用 SELECT 。通过只授予 SELECT floatsyi 对crashcourse 数据库中的所有数据具有只读访问权限</p>
+<p>你也可以使用 GRANT ALL 来给予用户除 GRANT OPTION 外的所有权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> crashcourse.<span class="operator">*</span> <span class="keyword">TO</span> floatsyi;</span><br></pre></td></tr></table></figure>
+
+<h4 id="为用户帐号撤销权限"><a href="#为用户帐号撤销权限" class="headerlink" title="为用户帐号撤销权限"></a>为用户帐号撤销权限</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">REVOKE</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> crashcourse.<span class="operator">*</span> <span class="keyword">TO</span> floatsyi</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/09/Vue-3-Pre-Alpha-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" rel="prev" title="Vue 3 Pre-Alpha 源码阅读前置知识">
+      <i class="fa fa-chevron-left"></i> Vue 3 Pre-Alpha 源码阅读前置知识
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/10/13/Vue-3-Pre-Alpha-%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/" rel="next" title="Vue 3 Pre-Alpha 源码调试">
+      Vue 3 Pre-Alpha 源码调试 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-mysql-%E5%92%8C-mycli"><span class="nav-number">2.</span> <span class="nav-text">安装 mysql 和 mycli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysqld"><span class="nav-number">3.</span> <span class="nav-text">mysqld</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-mysqlservice-%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.</span> <span class="nav-text">添加 mysqlservice 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-mysqld-service"><span class="nav-number">3.2.</span> <span class="nav-text">启动 mysqld service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2-mysqld-service"><span class="nav-number">3.3.</span> <span class="nav-text">停止 mysqld service</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-client"><span class="nav-number">4.</span> <span class="nav-text">mysql client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7"><span class="nav-number">5.</span> <span class="nav-text">管理用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E9%BB%98%E8%AE%A4%E7%9A%84%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98-root-%E7%99%BB%E5%BD%95-mysql"><span class="nav-number">5.1.</span> <span class="nav-text">以默认的超级管理员 root 登录 mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA-root-%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="nav-number">5.1.1.</span> <span class="nav-text">为 root 设置密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">5.1.2.</span> <span class="nav-text">修改密码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="nav-number">5.2.</span> <span class="nav-text">查看用户列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7"><span class="nav-number">5.3.</span> <span class="nav-text">创建用户账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E7%94%A8%E6%88%B7%E5%B8%90%E5%8F%B7"><span class="nav-number">5.4.</span> <span class="nav-text">重命名用户帐号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7"><span class="nav-number">5.5.</span> <span class="nav-text">删除用户账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number">5.6.</span> <span class="nav-text">设置访问权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E5%B8%90%E5%8F%B7%E7%9A%84%E6%9D%83%E9%99%90"><span class="nav-number">5.6.1.</span> <span class="nav-text">查看用户帐号的权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E7%94%A8%E6%88%B7%E5%B8%90%E5%8F%B7%E6%B7%BB%E5%8A%A0%E6%9D%83%E9%99%90"><span class="nav-number">5.6.2.</span> <span class="nav-text">为用户帐号添加权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E7%94%A8%E6%88%B7%E5%B8%90%E5%8F%B7%E6%92%A4%E9%94%80%E6%9D%83%E9%99%90"><span class="nav-number">5.6.3.</span> <span class="nav-text">为用户帐号撤销权限</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="backtolife"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">backtolife</p>
+  <div class="site-description" itemprop="description">21 世纪两大浪漫, 五线谱与二进制.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/backtolife2021" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;backtolife2021" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codepen.io/FloatingShuYin/#" title="CodePen → https:&#x2F;&#x2F;codepen.io&#x2F;FloatingShuYin&#x2F;#" rel="noopener" target="_blank"><i class="fab fa-codepen fa-fw"></i>CodePen</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">backtolife</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"bH5pXa93c9rYkIe6zzKkty1d-gzGzoHsz","app_key":"REvpf8v4c6CK9EgLRpFomYuL","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://backtolife.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://floatsyi.com/2019/10/12/mysql-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/";
+    this.page.identifier = "2019/10/12/mysql-学习笔记/";
+    this.page.title = "mysql 学习笔记";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://backtolife.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

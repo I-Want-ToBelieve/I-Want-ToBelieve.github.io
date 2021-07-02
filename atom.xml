@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>backtolife</title>
+  
+  
+  <link href="http://floatsyi.com/atom.xml" rel="self"/>
+  
+  <link href="http://floatsyi.com/"/>
+  <updated>2021-07-02T09:53:04.738Z</updated>
+  <id>http://floatsyi.com/</id>
+  
+  <author>
+    <name>backtolife</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://floatsyi.com/2021/07/02/hello-world/"/>
+    <id>http://floatsyi.com/2021/07/02/hello-world/</id>
+    <published>2021-07-02T09:53:04.738Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hyperextensible Vim-based text editor: neovim</title>
+    <link href="http://floatsyi.com/2020/08/07/hyperextensible-Vim-based-text-editor-neovim/"/>
+    <id>http://floatsyi.com/2020/08/07/hyperextensible-Vim-based-text-editor-neovim/</id>
+    <published>2020-08-06T23:09:20.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先看完这个&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/wsdjeg/vim-galore-zh_cn&quot;&gt;vim-galore-zh_cn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;看不太懂可以看这些作为补充,</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我终于理解了正则表达式</title>
+    <link href="http://floatsyi.com/2020/03/01/%E6%88%91%E7%BB%88%E4%BA%8E%E7%90%86%E8%A7%A3%E4%BA%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>http://floatsyi.com/2020/03/01/%E6%88%91%E7%BB%88%E4%BA%8E%E7%90%86%E8%A7%A3%E4%BA%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+    <published>2020-03-01T09:14:47.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/EZLippi/practical-programming-books/blob/master/src/30-minutes-to-learn-regex.md&quot;&gt;30-minutes-to-learn-regex.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md&quot;&gt;learn-regex&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://regexper.com/#%2F%28%5E%5Cs*%29%7C%28%5Cs*%24%29%7C%28%5B%5Cr%5Cn%5D%29%2Fg&quot;&gt;regexper 正则可视化&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="正则" scheme="http://floatsyi.com/tags/%E6%AD%A3%E5%88%99/"/>
+    
+    <category term="正则表达式" scheme="http://floatsyi.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vegetarian friendly state for React: easy-peasy</title>
+    <link href="http://floatsyi.com/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/"/>
+    <id>http://floatsyi.com/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/</id>
+    <published>2020-02-28T06:56:34.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/68434464&quot;&gt;Hooks 时代的 React 状态管理方案&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ctrlplusb/easy-peasy&quot;&gt;easy-peasy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/apollographql/apollo-client&quot;&gt;apollo-client&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="react" scheme="http://floatsyi.com/tags/react/"/>
+    
+    <category term="state" scheme="http://floatsyi.com/tags/state/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web API: Canvas</title>
+    <link href="http://floatsyi.com/2020/02/12/Web-API-Canvas/"/>
+    <id>http://floatsyi.com/2020/02/12/Web-API-Canvas/</id>
+    <published>2020-02-12T12:12:00.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API&quot;&gt;MDN Docs: Canvas&lt;/a&gt; 底部还有封装 canvas 的库推荐&lt;/li&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Web API" scheme="http://floatsyi.com/tags/Web-API/"/>
+    
+    <category term="Canvas" scheme="http://floatsyi.com/tags/Canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A JavaScript library for building user interfaces: React</title>
+    <link href="http://floatsyi.com/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/"/>
+    <id>http://floatsyi.com/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/</id>
+    <published>2020-02-01T17:53:04.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我知道我自己的知识缺陷，但是当我需要它们的时候我可以比较快的掌握它们。&lt;br&gt;这些缺陷不会让我的知识和经验贬值，我可以做好很多事情，比如说：当我需要某些技术的时候学会它们。&lt;br&gt;— Dan Abramov&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/53587347&quot;&gt;Dan Abramov(React 核心开发，Redux 作者) 谈他不懂的技术&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/&quot;&gt;prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/&quot;&gt;2020-01-21-使用-react-app-rewired-扩展-cra-样板的配置文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zh-hans.reactjs.org/docs/getting-started.html&quot;&gt;react docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zh-hans.reactjs.org/docs/hooks-intro.html&quot;&gt;react docs: hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zh-hans.reactjs.org/docs/testing.html&quot;&gt;react docs: test&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://reacttraining.com/react-router/web/example/basic&quot;&gt;react router docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://testing-library.com/docs/react-testing-library/intro&quot;&gt;react-testing-library docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jestjs.io/docs/en/getting-started&quot;&gt;jest docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/&quot;&gt;Vegetarian friendly state for React: easy-peasy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react&quot;&gt;react&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ReactTraining/react-router&quot;&gt;react-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/testing-library/react-testing-library&quot;&gt;react-testing-library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/jest&quot;&gt;jest&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="react" scheme="http://floatsyi.com/tags/react/"/>
+    
+    <category term="react-hook" scheme="http://floatsyi.com/tags/react-hook/"/>
+    
+    <category term="react-router" scheme="http://floatsyi.com/tags/react-router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 react-app-rewired 扩展 cra 样板的配置文件</title>
+    <link href="http://floatsyi.com/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <id>http://floatsyi.com/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</id>
+    <published>2020-01-21T02:07:01.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/&quot;&gt;prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/timarney/react-app-rewired&quot;&gt;react-app-rewired&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tailwindcss/tailwindcss&quot;&gt;tailwindcss&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="react-app-rewired" scheme="http://floatsyi.com/tags/react-app-rewired/"/>
+    
+    <category term="cra" scheme="http://floatsyi.com/tags/cra/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 复杂流程 2020</title>
+    <link href="http://floatsyi.com/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/"/>
+    <id>http://floatsyi.com/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/</id>
+    <published>2020-01-20T00:53:33.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://git-scm.com/book/en/v2/images/areas.png&quot; alt=&quot;git&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-Git-%E5%9F%BA%E7%A1%80&quot;&gt;pro git&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/git/git&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="速查" scheme="http://floatsyi.com/tags/%E9%80%9F%E6%9F%A5/"/>
+    
+    <category term="git" scheme="http://floatsyi.com/tags/git/"/>
+    
+    <category term="2020" scheme="http://floatsyi.com/tags/2020/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成</title>
+    <link href="http://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/"/>
+    <id>http://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/</id>
+    <published>2020-01-19T01:01:40.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://prettier.io/docs/en/comparison.html&quot;&gt;Prettier docs: Prettier vs. Linters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://prettier.io/docs/en/why-prettier.html&quot;&gt;Prettier docs: Why Prettier?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://slides.com/ai/stylelint#/&quot;&gt;Stylelint: Why and How to Lint CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://prettier.io/docs/en/integrating-with-linters.html&quot;&gt;Prettier docs: integrating-with-linters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stylelint.io/#extend-a-shared-configuration&quot;&gt;stylelint docs: extend-a-shared-configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/09/26/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/&quot;&gt;代码规范与项目结构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://create-react-app.dev/docs/getting-started#creating-a-typescript-app&quot;&gt;create-react-app docs: creating-a-typescript-app&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/create-react-app&quot;&gt;create-react-app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint&quot;&gt;eslint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prettier/prettier&quot;&gt;prettier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/okonet/lint-staged&quot;&gt;lint-staged&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typicode/husky&quot;&gt;husky&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/stylelint/stylelint&quot;&gt;stylelint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prettier/stylelint-config-prettier&quot;&gt;stylelint-config-prettier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/stylelint/stylelint-config-recommended&quot;&gt;stylelint-config-recommended&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hugomrdias/prettier-stylelint&quot;&gt;stylelint-prettier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prettier/eslint-config-prettier&quot;&gt;eslint-config-prettier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prettier/eslint-plugin-prettier&quot;&gt;eslint-plugin-prettier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint&quot;&gt;vscode-eslint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint&quot;&gt;vscode-stylelint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode&quot;&gt;vscode-prettier&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="typescript" scheme="http://floatsyi.com/tags/typescript/"/>
+    
+    <category term="prettier" scheme="http://floatsyi.com/tags/prettier/"/>
+    
+    <category term="stylelint" scheme="http://floatsyi.com/tags/stylelint/"/>
+    
+    <category term="husky" scheme="http://floatsyi.com/tags/husky/"/>
+    
+    <category term="lint-staged" scheme="http://floatsyi.com/tags/lint-staged/"/>
+    
+    <category term="create-react-app" scheme="http://floatsyi.com/tags/create-react-app/"/>
+    
+    <category term="eslint" scheme="http://floatsyi.com/tags/eslint/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建 gitlab 私有服务器</title>
+    <link href="http://floatsyi.com/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://floatsyi.com/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2020-01-18T02:22:56.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xce4K6t5XUs*00HfOVo2TO2*NPs6.IOoJEaGAkW3AXoEpfxJp.NG7e84FX17E8ZoF44QtfpEXuEh21dPdtO8g7IA!/r&quot; alt=&quot;gitlab private servers&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.gitlab.com/ee/administration/&quot;&gt;gitlab docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sameersbn/docker-gitlab/blob/master/README.md&quot;&gt;docker-gitlab README.md&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topics/docker&quot;&gt;docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sameersbn/docker-gitlab&quot;&gt;docker-gitlab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="gitlab" scheme="http://floatsyi.com/tags/gitlab/"/>
+    
+    <category term="private servers" scheme="http://floatsyi.com/tags/private-servers/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>powershell 美化</title>
+    <link href="http://floatsyi.com/2020/01/17/powershell-%E7%BE%8E%E5%8C%96/"/>
+    <id>http://floatsyi.com/2020/01/17/powershell-%E7%BE%8E%E5%8C%96/</id>
+    <published>2020-01-16T19:55:15.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/09/27/Windows-Terminal/&quot;&gt;Windows-Terminal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sspai.com/post/52868&quot;&gt;告别 Windows 终端的难看难用，从改造 PowerShell 的外观开始&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sspai.com/post/52907&quot;&gt;5 个 PowerShell 主题，让你的 Windows 终端更好看&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/terminal/&quot;&gt;microsoft/terminal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/windowsterminal&quot;&gt;iTerm2-Color-Schemes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="powershell" scheme="http://floatsyi.com/tags/powershell/"/>
+    
+    <category term="美化" scheme="http://floatsyi.com/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows subsystem archliunx</title>
+    <link href="http://floatsyi.com/2020/01/17/windows-subsystem-archliunx/"/>
+    <id>http://floatsyi.com/2020/01/17/windows-subsystem-archliunx/</id>
+    <published>2020-01-16T19:54:01.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/29/The-Package-Manager-for-Windows-choco-and-scoop/&quot;&gt;The-Package-Manager-for-Windows-choco-and-scoop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/09/26/%E6%9C%80%E4%BD%B3-Linux-%E5%8F%91%E8%A1%8C%E7%89%88-Windows-10-WSL/&quot;&gt;最佳 Linux 发行版 Windows 10(WSL)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/51270874&quot;&gt;利用WSL打造Arch开发环境&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yuk7/ArchWSL&quot;&gt;ArchWSL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="wsl2" scheme="http://floatsyi.com/tags/wsl2/"/>
+    
+    <category term="wsl" scheme="http://floatsyi.com/tags/wsl/"/>
+    
+    <category term="archlinux" scheme="http://floatsyi.com/tags/archlinux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>an in-memory database that persists on disk: redis</title>
+    <link href="http://floatsyi.com/2020/01/17/an-in-memory-database-that-persists-on-disk-redis/"/>
+    <id>http://floatsyi.com/2020/01/17/an-in-memory-database-that-persists-on-disk-redis/</id>
+    <published>2020-01-16T19:33:06.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2020/01/17/windows-subsystem-archliunx/&quot;&gt;windows subsystem archliunx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://redis.io/&quot;&gt;redis.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.runoob.com/redis/redis-tutorial.html&quot;&gt;Redis 菜鸟教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/antirez/redis&quot;&gt;redis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="in-memory database" scheme="http://floatsyi.com/tags/in-memory-database/"/>
+    
+    <category term="redis" scheme="http://floatsyi.com/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库相关且必要的知识补充</title>
+    <link href="http://floatsyi.com/2020/01/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E4%B8%94%E5%BF%85%E8%A6%81%E7%9A%84%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85/"/>
+    <id>http://floatsyi.com/2020/01/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E4%B8%94%E5%BF%85%E8%A6%81%E7%9A%84%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85/</id>
+    <published>2020-01-12T23:04:40.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/43493165&quot;&gt;深入理解数据库事务与一致性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/67949045&quot;&gt;通俗易懂 数据一致性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/52678870&quot;&gt;深入理解数据库行锁与表锁&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/85889976&quot;&gt;MySQL数据库的锁机制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://juejin.im/post/5e1b353c6fb9a0301e0de80b&quot;&gt;Redis 常见的使用场景总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/34510121&quot;&gt;两程序员玩“锁”，一人抢救无效身亡&lt;/a&gt; 有内味了&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/27323883&quot;&gt;(科普文, python 描述)什么是 ORM 中的 N+1 问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/99718374&quot;&gt;Elasticsearch如何做到数十亿数据查询毫秒级响应？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DDD and Microservices</title>
+    <link href="http://floatsyi.com/2020/01/13/DDD-and-Microservices/"/>
+    <id>http://floatsyi.com/2020/01/13/DDD-and-Microservices/</id>
+    <published>2020-01-12T22:56:19.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="DDD" scheme="http://floatsyi.com/tags/DDD/"/>
+    
+    <category term="Microservices" scheme="http://floatsyi.com/tags/Microservices/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>转型计划之初级后端(下)</title>
+    <link href="http://floatsyi.com/2020/01/03/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%8B/"/>
+    <id>http://floatsyi.com/2020/01/03/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%8B/</id>
+    <published>2020-01-03T10:47:38.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.nestjs.com/cli/overview&quot;&gt;nest-cli docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/30/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%8A/&quot;&gt;转型计划之初级后端(上)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/31/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%AD/&quot;&gt;转型计划之初级后端(中)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lorenwest/node-config/wiki/Securing-Production-Config-Files&quot;&gt;使用 Git-crypt 加密生产配置文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://typeorm.io/#/&quot;&gt;typeorm docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/zh-cn/docs/guides/nodejs-docker-webapp/&quot;&gt;把一个 Node.js web 应用程序给 Docker 化&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nestjs/nest-cli&quot;&gt;nest-cli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tylerlong/yarn-upgrade-all&quot;&gt;yarn-upgrade-all&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn&quot;&gt;yarn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/npm&quot;&gt;npm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lorenwest/node-config&quot;&gt;config&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/motdotla/dotenv&quot;&gt;dotenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prettier/prettier&quot;&gt;prettier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/prettier/prettier-vscode&quot;&gt;prettier-vscode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/vscode&quot;&gt;vscode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/jest&quot;&gt;jest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gremo/nest-winston&quot;&gt;nest-winston&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/winstonjs/winston&quot;&gt;winston&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typestack/class-validator&quot;&gt;class-validator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typestack/class-transformer&quot;&gt;class-transformer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hub.docker.com/_/mysql&quot;&gt;image:mysql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hub.docker.com/_/adminer&quot;&gt;image:adminer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topics/docker&quot;&gt;docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mysqljs/mysql&quot;&gt;mysql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typeorm/typeorm&quot;&gt;typeorm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nestjs/typeorm&quot;&gt;@nestjs/typeorm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jaredhanson/passport&quot;&gt;passport&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.passportjs.org/docs/&quot;&gt;passport docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nestjs/swagger&quot;&gt;@nestjs/swagger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/scottie1984/swagger-ui-express&quot;&gt;swagger-ui-express&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="初级后端" scheme="http://floatsyi.com/tags/%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="转型计划" scheme="http://floatsyi.com/tags/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Reactive Extensions Library for JavaScript: Rxjs</title>
+    <link href="http://floatsyi.com/2020/01/01/Reactive-Extensions-Library-for-JavaScript-Rxjs/"/>
+    <id>http://floatsyi.com/2020/01/01/Reactive-Extensions-Library-for-JavaScript-Rxjs/</id>
+    <published>2020-01-01T13:29:09.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Reactive" scheme="http://floatsyi.com/tags/Reactive/"/>
+    
+    <category term="Rxjs" scheme="http://floatsyi.com/tags/Rxjs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>转型计划之初级后端(中)</title>
+    <link href="http://floatsyi.com/2019/12/31/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%AD/"/>
+    <id>http://floatsyi.com/2019/12/31/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%AD/</id>
+    <published>2019-12-31T00:58:37.000Z</published>
+    <updated>2021-07-02T09:53:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcdR2daHKd13U6t.v6WRly*a.CgaDhpSzGeas6iqBV.dNLGWNm5.BojkFMm6lUpcbLd0uFVhQzCZ07NWNUWrADSs!/r&quot; alt=&quot;年轻人， 你渴望力量吗&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/30/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%8A/&quot;&gt;转型计划之初级后端(上)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/29/Securely-build-share-and-run-any-application-anywhere-docker/&quot;&gt;Securely build, share and run any application, anywhere: docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/10/07/%E6%9C%89%E7%B1%BB%E5%9E%8B%E7%9A%84-javascript-typescript/&quot;&gt;有类型的 javascript : typescript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.nestjs.com/&quot;&gt;docs.nestjs.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/28621374&quot;&gt;精读 《Nestjs 文档》&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/OAI/OpenAPI-Specification&quot;&gt;OpenAPI-Specification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.nestjs.com/recipes/swagger&quot;&gt;OpenAPI（Swagger）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/MarkNjunge/nest-starter&quot;&gt;nest-starter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node&quot;&gt;nodejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript&quot;&gt;typescript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nestjs/nest&quot;&gt;nestjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typeorm/typeorm&quot;&gt;typeorm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mysqljs/mysql&quot;&gt;mysql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topics/docker&quot;&gt;docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lujakob/nestjs-realworld-example-app&quot;&gt;nestjs-realworld-example-app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://yeoman.io/&quot;&gt;yeoman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hub.docker.com/_/mysql&quot;&gt;hub.docker.com: mysql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/babel/babel&quot;&gt;babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/TypeStrong/ts-node&quot;&gt;ts-node&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topcoder-platform/challenge-api&quot;&gt;challenge-api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.getpostman.com/&quot;&gt;postman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/winstonjs/winston&quot;&gt;winston&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gremo/nest-winston&quot;&gt;nestjs-winston&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/remy/nodemon&quot;&gt;nodemon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ReactiveX/rxjs&quot;&gt;rxjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typestack/class-validator&quot;&gt;class-validator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typestack/class-transformer&quot;&gt;class-transformer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="初级后端" scheme="http://floatsyi.com/tags/%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="转型计划" scheme="http://floatsyi.com/tags/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>转型计划之初级后端(上)</title>
+    <link href="http://floatsyi.com/2019/12/30/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%8A/"/>
+    <id>http://floatsyi.com/2019/12/30/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92%E4%B9%8B%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF-%E4%B8%8A/</id>
+    <published>2019-12-30T07:23:22.000Z</published>
+    <updated>2021-07-02T09:53:04.734Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xcfNn6PH6nDxmpAL9WP9RUJDaZcEhN6sEkwolkEuOlV3ELeE6lJvdAHyvM181ewfdQrJsvT91wgMwlBZmm2R.K7M!/r&quot; alt=&quot;this is the way&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://iissnan.com/progit/&quot;&gt;pro git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/index.html&quot;&gt;node api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://es6.ruanyifeng.com/#README&quot;&gt;ECMAScript 6 入门&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://expressjs.com/en/4x/api.html&quot;&gt;express 4.x api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/76796394&quot;&gt;数据库设计规范（三大范式）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://juejin.im/post/5d68dff55188255b0600538e&quot;&gt;MySQL数据库设计规范&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.lucidchart.com/pages/er-diagrams#discovery__top&quot;&gt;What is an Entity Relationship Diagram (ERD)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/10/31/SQL-%E8%AF%AD%E6%B3%95%E4%B8%80%E8%A7%88/&quot;&gt;SQL 语法一览&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/06/RESTful-API-and-GraphQL-API/&quot;&gt;RESTful-API-and-GraphQL-API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore&quot;&gt;You-Dont-Need-Lodash-Underscore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/29/The-Package-Manager-for-Windows-choco-and-scoop/&quot;&gt;The Package Manager for Windows: choco and scoop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/FloatingShuYin/development-environment-manual&quot;&gt;development-environment-manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/petkaantonov/bluebird&quot;&gt;bluebird&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/25413141/answer/30767780&quot;&gt;nodejs异步控制「co、async、Q 、『es6原生promise』、then.js、bluebird」有何优缺点？最爱哪个？哪个简单？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/39571954&quot;&gt;ES next中async/await proposal实现原理是什么？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/11/28/TCP-IP-HTTP-QUIC-Axios/&quot;&gt;TCP-IP-HTTP-QUIC-Axios&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topcoder-platform/resources-api&quot;&gt;resources-api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topcoder-platform/submissions-api&quot;&gt;submissions-api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topcoder-platform/challenge-api&quot;&gt;challenge-api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.draw.io/&quot;&gt;draw.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node&quot;&gt;nodejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sequelize/sequelize&quot;&gt;sequelize&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mapbox/node-sqlite3&quot;&gt;sqlite3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript&quot;&gt;typescript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nestjs/nest&quot;&gt;nestjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typeorm/typeorm&quot;&gt;typeorm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mysqljs/mysql&quot;&gt;mysql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topics/docker&quot;&gt;docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lukesampson/scoop&quot;&gt;scoop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jaredpalmer/backpack&quot;&gt;backpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.getpostman.com/&quot;&gt;postman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/kentcdodds/cross-env&quot;&gt;cross-env&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/petkaantonov/bluebird&quot;&gt;bluebird&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/joi&quot;&gt;joi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/cors&quot;&gt;cors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lorenwest/node-config&quot;&gt;config&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/enricomarino/is&quot;&gt;is&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lodash/lodash&quot;&gt;lodash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/adaltas/node-http-status&quot;&gt;HttpStatus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/body-parser&quot;&gt;bodyParser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/express&quot;&gt;express&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="数据库设计规范" scheme="http://floatsyi.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/"/>
+    
+    <category term="ER 图" scheme="http://floatsyi.com/tags/ER-%E5%9B%BE/"/>
+    
+    <category term="初级后端" scheme="http://floatsyi.com/tags/%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="转型计划" scheme="http://floatsyi.com/tags/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Securely build, share and run any application, anywhere: docker</title>
+    <link href="http://floatsyi.com/2019/12/29/Securely-build-share-and-run-any-application-anywhere-docker/"/>
+    <id>http://floatsyi.com/2019/12/29/Securely-build-share-and-run-any-application-anywhere-docker/</id>
+    <published>2019-12-29T06:24:53.000Z</published>
+    <updated>2021-07-02T09:53:04.734Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/29/The-Package-Manager-for-Windows-choco-and-scoop/&quot;&gt;The Package Manager for Windows: choco and scoop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docker_practice.gitee.io/zh-cn/&quot;&gt;Docker — 从入门到实践&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.docker.com/&quot;&gt;docker.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/topics/docker&quot;&gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="docker" scheme="http://floatsyi.com/tags/docker/"/>
+    
+  </entry>
+  
+</feed>

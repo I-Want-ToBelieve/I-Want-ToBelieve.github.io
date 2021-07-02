@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="backtolife">
+<meta property="og:url" content="http://floatsyi.com/index.html">
+<meta property="og:site_name" content="backtolife">
+<meta property="og:description" content="21 世纪两大浪漫, 五线谱与二进制.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="backtolife">
+<meta property="article:tag" content="backtolife">
+<meta property="article:tag" content="blogs">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://floatsyi.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>backtolife</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="backtolife" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">backtolife</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2021/07/02/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/02/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-02 17:53:04" itemprop="dateCreated datePublished" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+            </span>
+
+          
+            <span id="/2021/07/02/hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/07/02/hello-world/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/02/hello-world/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p> issues: <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git/issues/199">https://github.com/hexojs/hexo-deployer-git/issues/199</a></p>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/08/07/hyperextensible-Vim-based-text-editor-neovim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/07/hyperextensible-Vim-based-text-editor-neovim/" class="post-title-link" itemprop="url">hyperextensible Vim-based text editor: neovim</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-07 07:09:20" itemprop="dateCreated datePublished" datetime="2020-08-07T07:09:20+08:00">2020-08-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/08/07/hyperextensible-Vim-based-text-editor-neovim/" class="post-meta-item leancloud_visitors" data-flag-title="hyperextensible Vim-based text editor: neovim" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/08/07/hyperextensible-Vim-based-text-editor-neovim/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/07/hyperextensible-Vim-based-text-editor-neovim/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>首先看完这个</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/wsdjeg/vim-galore-zh_cn">vim-galore-zh_cn</a></li>
+</ul>
+<p>看不太懂可以看这些作为补充, 辅助理解</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/54078065">2019 了, 别再推 Vundle 了</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68111471">精通 VIM, 此文就够了</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.oschina.net/translate/learn-vim-progressively?lang=chs&p=1">Vim学习指南</a></li>
+</ul>
+<p>然后看完这些</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV164411P7tw">上古神器Vim：从恶言相向到爱不释手 - 终极Vim教程01 - 带你配置属于你自己的最强IDE</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1e4411V7AA">上古神器Vim：从恶言相向到爱不释手 - 终极Vim教程02 - 带你配置属于你自己的最强IDE</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1r4411G7de">上古神器Vim：从恶言相向到爱不释手 - 终极Vim教程03 - 带你配置属于你自己的最强IDE</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ka4y1E7AM">【硬货】让你的vim像vscode一样强大 —— coc.nvim终极指南</a></li>
+</ul>
+<p>然后</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37352209">VimScript 五分钟入门（翻译）</a></li>
+</ul>
+<p>最后由于 vim 的 tsx 语法高亮还有一些问题,所以写 tsx 还是用 vscode 要好, 不过仍然可以在 vscode 中使用 neovim, 此时 vscode 作为 neovim 的前端.<br>这里使用 vscode 的社区构建版本 vscodium.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/neovim/neovim">neovim</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ChristianChiarulli/nvim">nvcode</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/asvetliakov/vscode-neovim">vscode-neovim</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.chrisatmachine.com/Neovim/22-vscodium-neovim/">vscodium-neovim</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/03/01/%E6%88%91%E7%BB%88%E4%BA%8E%E7%90%86%E8%A7%A3%E4%BA%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/01/%E6%88%91%E7%BB%88%E4%BA%8E%E7%90%86%E8%A7%A3%E4%BA%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">我终于理解了正则表达式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-01 17:14:47" itemprop="dateCreated datePublished" datetime="2020-03-01T17:14:47+08:00">2020-03-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/03/01/%E6%88%91%E7%BB%88%E4%BA%8E%E7%90%86%E8%A7%A3%E4%BA%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-meta-item leancloud_visitors" data-flag-title="我终于理解了正则表达式" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/03/01/%E6%88%91%E7%BB%88%E4%BA%8E%E7%90%86%E8%A7%A3%E4%BA%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/01/我终于理解了正则表达式/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/EZLippi/practical-programming-books/blob/master/src/30-minutes-to-learn-regex.md">30-minutes-to-learn-regex.md</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md">learn-regex</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://regexper.com/#%2F%28%5E%5Cs*%29%7C%28%5Cs*%24%29%7C%28%5B%5Cr%5Cn%5D%29%2Fg">regexper 正则可视化</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/01/%E6%88%91%E7%BB%88%E4%BA%8E%E7%90%86%E8%A7%A3%E4%BA%86%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/" class="post-title-link" itemprop="url">Vegetarian friendly state for React: easy-peasy</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-28 14:56:34" itemprop="dateCreated datePublished" datetime="2020-02-28T14:56:34+08:00">2020-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/" class="post-meta-item leancloud_visitors" data-flag-title="Vegetarian friendly state for React: easy-peasy" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68434464">Hooks 时代的 React 状态管理方案</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ctrlplusb/easy-peasy">easy-peasy</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apollographql/apollo-client">apollo-client</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/02/12/Web-API-Canvas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/12/Web-API-Canvas/" class="post-title-link" itemprop="url">Web API: Canvas</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-12 20:12:00" itemprop="dateCreated datePublished" datetime="2020-02-12T20:12:00+08:00">2020-02-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/02/12/Web-API-Canvas/" class="post-meta-item leancloud_visitors" data-flag-title="Web API: Canvas" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/02/12/Web-API-Canvas/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/12/Web-API-Canvas/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API">MDN Docs: Canvas</a> 底部还有封装 canvas 的库推荐</li>
+<li><a target="_blank" rel="noopener" href="http://fabricjs.com/fabric-intro-part-1#why_fabric">fabricjs</a></li>
+</ul>
+<p>看文档就会的东西 没什么好说的</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/" class="post-title-link" itemprop="url">A JavaScript library for building user interfaces: React</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-02 01:53:04" itemprop="dateCreated datePublished" datetime="2020-02-02T01:53:04+08:00">2020-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/" class="post-meta-item leancloud_visitors" data-flag-title="A JavaScript library for building user interfaces: React" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>我知道我自己的知识缺陷，但是当我需要它们的时候我可以比较快的掌握它们。<br>这些缺陷不会让我的知识和经验贬值，我可以做好很多事情，比如说：当我需要某些技术的时候学会它们。<br>— Dan Abramov</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/53587347">Dan Abramov(React 核心开发，Redux 作者) 谈他不懂的技术</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/">prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成</a></li>
+<li><a href="https://floatsyi.com/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">2020-01-21-使用-react-app-rewired-扩展-cra-样板的配置文件</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/getting-started.html">react docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/hooks-intro.html">react docs: hook</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/testing.html">react docs: test</a></li>
+<li><a target="_blank" rel="noopener" href="https://reacttraining.com/react-router/web/example/basic">react router docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://testing-library.com/docs/react-testing-library/intro">react-testing-library docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/getting-started">jest docs</a></li>
+<li><a href="https://floatsyi.com/2020/02/28/Vegetarian-friendly-state-for-React-easy-peasy/">Vegetarian friendly state for React: easy-peasy</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/react">react</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ReactTraining/react-router">react-router</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/testing-library/react-testing-library">react-testing-library</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/jest">jest</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/02/A-JavaScript-library-for-building-user-interfaces-React/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">使用 react-app-rewired 扩展 cra 样板的配置文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-21 10:07:01" itemprop="dateCreated datePublished" datetime="2020-01-21T10:07:01+08:00">2020-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="post-meta-item leancloud_visitors" data-flag-title="使用 react-app-rewired 扩展 cra 样板的配置文件" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/21/使用-react-app-rewired-扩展-cra-样板的配置文件/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/">prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/timarney/react-app-rewired">react-app-rewired</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tailwindcss/tailwindcss">tailwindcss</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/21/%E4%BD%BF%E7%94%A8-react-app-rewired-%E6%89%A9%E5%B1%95-cra-%E6%A0%B7%E6%9D%BF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/" class="post-title-link" itemprop="url">git 复杂流程 2020</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-20 08:53:33" itemprop="dateCreated datePublished" datetime="2020-01-20T08:53:33+08:00">2020-01-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/" class="post-meta-item leancloud_visitors" data-flag-title="git 复杂流程 2020" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/20/git-复杂流程-2020/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://git-scm.com/book/en/v2/images/areas.png" alt="git"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-Git-%E5%9F%BA%E7%A1%80">pro git</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/git/git">git</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/20/git-%E5%A4%8D%E6%9D%82%E6%B5%81%E7%A8%8B-2020/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/" class="post-title-link" itemprop="url">prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-19 09:01:40" itemprop="dateCreated datePublished" datetime="2020-01-19T09:01:40+08:00">2020-01-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/" class="post-meta-item leancloud_visitors" data-flag-title="prettier stylelint husky lint-staged 与 create-react-app typescript 样板集成" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/19/prettier-stylelint-husky-lint-staged-与-create-react-app-typescript-样板集成/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://prettier.io/docs/en/comparison.html">Prettier docs: Prettier vs. Linters</a></li>
+<li><a target="_blank" rel="noopener" href="https://prettier.io/docs/en/why-prettier.html">Prettier docs: Why Prettier?</a></li>
+<li><a target="_blank" rel="noopener" href="http://slides.com/ai/stylelint#/">Stylelint: Why and How to Lint CSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://prettier.io/docs/en/integrating-with-linters.html">Prettier docs: integrating-with-linters</a></li>
+<li><a target="_blank" rel="noopener" href="https://stylelint.io/#extend-a-shared-configuration">stylelint docs: extend-a-shared-configuration</a></li>
+<li><a href="https://floatsyi.com/2019/09/26/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E4%B8%8E%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/">代码规范与项目结构</a></li>
+<li><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/getting-started#creating-a-typescript-app">create-react-app docs: creating-a-typescript-app</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app">create-react-app</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/eslint/eslint">eslint</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/prettier">prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/okonet/lint-staged">lint-staged</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/typicode/husky">husky</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stylelint/stylelint">stylelint</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/stylelint-config-prettier">stylelint-config-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stylelint/stylelint-config-recommended">stylelint-config-recommended</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/hugomrdias/prettier-stylelint">stylelint-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/eslint-config-prettier">eslint-config-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/prettier/eslint-plugin-prettier">eslint-plugin-prettier</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">vscode-eslint</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">vscode-stylelint</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">vscode-prettier</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/19/prettier-stylelint-husky-lint-staged-%E4%B8%8E-create-react-app-typescript-%E6%A0%B7%E6%9D%BF%E9%9B%86%E6%88%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">搭建 gitlab 私有服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-18 10:22:56" itemprop="dateCreated datePublished" datetime="2020-01-18T10:22:56+08:00">2020-01-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-meta-item leancloud_visitors" data-flag-title="搭建 gitlab 私有服务器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/18/搭建-gitlab-私有服务器/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xce4K6t5XUs*00HfOVo2TO2*NPs6.IOoJEaGAkW3AXoEpfxJp.NG7e84FX17E8ZoF44QtfpEXuEh21dPdtO8g7IA!/r" alt="gitlab private servers"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/administration/">gitlab docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sameersbn/docker-gitlab/blob/master/README.md">docker-gitlab README.md</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/topics/docker">docker</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sameersbn/docker-gitlab">docker-gitlab</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="backtolife"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">backtolife</p>
+  <div class="site-description" itemprop="description">21 世纪两大浪漫, 五线谱与二进制.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/backtolife2021" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;backtolife2021" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codepen.io/FloatingShuYin/#" title="CodePen → https:&#x2F;&#x2F;codepen.io&#x2F;FloatingShuYin&#x2F;#" rel="noopener" target="_blank"><i class="fab fa-codepen fa-fw"></i>CodePen</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">backtolife</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"bH5pXa93c9rYkIe6zzKkty1d-gzGzoHsz","app_key":"REvpf8v4c6CK9EgLRpFomYuL","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://backtolife.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>

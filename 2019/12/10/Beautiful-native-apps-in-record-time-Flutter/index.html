@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="参考 Flutter 官网 Flutter 中文网 Dart 官网 Learn-once-write-anywhere-React-Native Flutter | 状态管理探索篇——Scoped Model（一） Flutter | 状态管理探索篇——Redux（二） Flutter | 状态管理探索篇——BLoC(三) Dart | 什么是Stream Flutter | 状态管理拓展篇——R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beautiful native apps in record time: Flutter">
+<meta property="og:url" content="http://floatsyi.com/2019/12/10/Beautiful-native-apps-in-record-time-Flutter/index.html">
+<meta property="og:site_name" content="backtolife">
+<meta property="og:description" content="参考 Flutter 官网 Flutter 中文网 Dart 官网 Learn-once-write-anywhere-React-Native Flutter | 状态管理探索篇——Scoped Model（一） Flutter | 状态管理探索篇——Redux（二） Flutter | 状态管理探索篇——BLoC(三) Dart | 什么是Stream Flutter | 状态管理拓展篇——R">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-09T20:01:08.000Z">
+<meta property="article:modified_time" content="2021-07-02T09:53:04.734Z">
+<meta property="article:author" content="backtolife">
+<meta property="article:tag" content="Flutter">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://floatsyi.com/2019/12/10/Beautiful-native-apps-in-record-time-Flutter/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Beautiful native apps in record time: Flutter | backtolife</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="backtolife" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">backtolife</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2019/12/10/Beautiful-native-apps-in-record-time-Flutter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Beautiful native apps in record time: Flutter
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-10 04:01:08" itemprop="dateCreated datePublished" datetime="2019-12-10T04:01:08+08:00">2019-12-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2019/12/10/Beautiful-native-apps-in-record-time-Flutter/" class="post-meta-item leancloud_visitors" data-flag-title="Beautiful native apps in record time: Flutter" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/12/10/Beautiful-native-apps-in-record-time-Flutter/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/10/Beautiful-native-apps-in-record-time-Flutter/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://flutter.dev/">Flutter 官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://flutterchina.club/get-started/install/">Flutter 中文网</a></li>
+<li><a target="_blank" rel="noopener" href="https://dart.dev/">Dart 官网</a></li>
+<li><a href="https://floatsyi.com/2019/12/07/Learn-once-write-anywhere-React-Native/">Learn-once-write-anywhere-React-Native</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5b97fa0d5188255c5546dcf8">Flutter | 状态管理探索篇——Scoped Model（一）</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5ba26c086fb9a05ce57697da">Flutter | 状态管理探索篇——Redux（二）</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5bb6f344f265da0aa664d68a">Flutter | 状态管理探索篇——BLoC(三)</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5baa4b90e51d450e6d00f12e">Dart | 什么是Stream</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5bcea438e51d4536c65d2232">Flutter | 状态管理拓展篇——RxDart(四)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jacobaraujo7/bloc-pattern/blob/master/README.md">bloc-pattern</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/rxdart">RxDart</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter">Vscode: Dart-Code.flutter</a></li>
+<li><a target="_blank" rel="noopener" href="https://flutter.dev/docs/development/tools/sdk/releases#windows">Flutter SDK</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Solido/awesome-flutter">awesome-flutter</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/OpenFlutter/Flutter-Notebook">OpenFlutter/Flutter-Notebook</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jacobaraujo7/bloc-pattern/blob/master/README.md">bloc-pattern</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Flutterando/slidy">slidy</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/rxdart">RxDart</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/LilySny/counter-using-bloc_pattern">counter-using-bloc_pattern</a></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="配置-android-开发环境"><a href="#配置-android-开发环境" class="headerlink" title="配置 android 开发环境"></a>配置 android 开发环境</h2><p>参考 <a href="https://floatsyi.com/2019/12/07/Learn-once-write-anywhere-React-Native/">Learn-once-write-anywhere-React-Native</a></p>
+<h2 id="vscode-的-flutter-插件-必装"><a href="#vscode-的-flutter-插件-必装" class="headerlink" title="vscode 的 flutter 插件(必装)"></a>vscode 的 flutter 插件(必装)</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter">Vscode: Dart-Code.flutter</a></li>
+</ul>
+<h2 id="安装-Flutter-SDK"><a href="#安装-Flutter-SDK" class="headerlink" title="安装 Flutter SDK"></a>安装 Flutter SDK</h2><ol>
+<li>下载 <a target="_blank" rel="noopener" href="https://flutter.dev/docs/development/tools/sdk/releases#windows">Flutter SDK</a> Stable channel (Windows)， 并解压到合适的目录</li>
+<li>按快捷键 <code>win + x + a</code> 打开 powershell， 执行以下命令， 以添加环境变量<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$flutterPath</span>=<span class="string">&quot;X:\Support\Other\flutter\bin&quot;</span> <span class="comment"># 改为你的 Flutter 解压路径</span></span><br><span class="line"><span class="variable">$userPath</span>=[<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;Path&quot;</span>, <span class="string">&quot;User&quot;</span>) + <span class="string">&quot;;<span class="variable">$flutterPath</span>&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$userPath</span>&quot;</span>, <span class="string">&quot;User&quot;</span>)</span><br><span class="line"><span class="variable">$env:PATH</span>=<span class="string">&quot;<span class="variable">$env:PATH</span>;<span class="variable">$flutterPath</span>&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$env:PATH</span>&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>继续执行以下命令, 以设置镜像<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;PUB_HOSTED_URL&#x27;</span>, <span class="string">&#x27;https://pub.flutter-io.cn&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;FLUTTER_STORAGE_BASE_URL&#x27;</span>, <span class="string">&#x27;https://storage.flutter-io.cn&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Dart"><a href="#Dart" class="headerlink" title="Dart"></a>Dart</h3><p>dart 已经包含在 flutter sdk 中， 因此只要添加环境变量即可<br>  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dartPath</span>=<span class="string">&quot;X:\Support\Other\flutter\bin\cache\dart-sdk\bin&quot;</span> <span class="comment"># 改为你的 Flutter 解压路径</span></span><br><span class="line"><span class="variable">$env:PATH</span>=<span class="string">&quot;<span class="variable">$env:PATH</span>;<span class="variable">$dartPath</span>&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$env:PATH</span>&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="dart-包管理-pub"><a href="#dart-包管理-pub" class="headerlink" title="dart 包管理 pub"></a>dart 包管理 pub</h4><p>pub 使用请参考 <a target="_blank" rel="noopener" href="https://dart.dev/guides/packages#importing-libraries-from-packages">How to use packages</a></p>
+<ol>
+<li>为将来安装在全局的软件包添加环境变量, 请执行以下命令<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$pubCachePath</span>=<span class="string">&quot;X:\Support\Other\flutter\.pub-cache\bin&quot;</span></span><br><span class="line"><span class="variable">$env:PATH</span>=<span class="string">&quot;<span class="variable">$env:PATH</span>;<span class="variable">$pubCachePath</span>&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$env:PATH</span>&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>按快捷键 <code>win + x + u + i</code> 注销登录，并重新登录以刷新环境变量</li>
+<li>执行以下命令以验证所有安装<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flutter -<span class="literal">-version</span></span><br><span class="line">dart -<span class="literal">-version</span></span><br><span class="line">pub -<span class="literal">-version</span></span><br></pre></td></tr></table></figure>
+<h4 id="dart-语法"><a href="#dart-语法" class="headerlink" title="dart 语法"></a>dart 语法</h4>dart 语法请参考 <a target="_blank" rel="noopener" href="https://dart.dev/guides/language/language-tour">A tour of the Dart language</a><br><a target="_blank" rel="noopener" href="https://dart.dev/">Dart 官网</a> 有个 Repl 可以练习.</li>
+</ol>
+<h4 id="dart-代码样式规范"><a href="#dart-代码样式规范" class="headerlink" title="dart 代码样式规范"></a>dart 代码样式规范</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://dart.dev/guides/language/effective-dart#the-guides">Effective Dart</a></li>
+</ul>
+<h2 id="状态管理-BLoC"><a href="#状态管理-BLoC" class="headerlink" title="状态管理 BLoC"></a>状态管理 BLoC</h2><p>推荐使用 <a target="_blank" rel="noopener" href="https://github.com/jacobaraujo7/bloc-pattern/blob/master/README.md">bloc-pattern</a> + <a target="_blank" rel="noopener" href="https://github.com/ReactiveX/rxdart">Rxdart</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5b97fa0d5188255c5546dcf8">Flutter | 状态管理探索篇——Scoped Model（一）</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5ba26c086fb9a05ce57697da">Flutter | 状态管理探索篇——Redux（二）</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5bb6f344f265da0aa664d68a">Flutter | 状态管理探索篇——BLoC(三)</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5baa4b90e51d450e6d00f12e">Dart | 什么是Stream</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5bcea438e51d4536c65d2232">Flutter | 状态管理拓展篇——RxDart(四)</a></li>
+</ul>
+<h2 id="flutter-包管理-slidy"><a href="#flutter-包管理-slidy" class="headerlink" title="flutter 包管理 slidy"></a>flutter 包管理 slidy</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Flutterando/slidy">slidy</a></li>
+</ul>
+<h2 id="DI-Dependency-Injection-Bloc-Pattern"><a href="#DI-Dependency-Injection-Bloc-Pattern" class="headerlink" title="DI(Dependency Injection): Bloc Pattern"></a>DI(Dependency Injection): Bloc Pattern</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/jacobaraujo7/bloc-pattern/blob/master/README.md">bloc-pattern</a></li>
+</ul>
+<h2 id="Hello-World-CountApp"><a href="#Hello-World-CountApp" class="headerlink" title="Hello World: CountApp"></a>Hello World: CountApp</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/LilySny/counter-using-bloc_pattern">counter-using-bloc_pattern</a></li>
+</ul>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>slidy 构建的一个 mvc 模板， 这是很高规格的应用了， 小应用一般用不了这么复杂<br><a target="_blank" rel="noopener" href="https://github.com/Flutterando/slidy/tree/master/example">https://github.com/Flutterando/slidy/tree/master/example</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>组件 布局 交互 标准库这些<br>看官网吧</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://flutter.dev/">Flutter 官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://flutterchina.club/get-started/install/">Flutter 中文网</a></li>
+<li><a target="_blank" rel="noopener" href="https://dart.dev/">Dart 官网</a></li>
+</ul>
+<!--
+  $flutterPath="X:\Support\Other\flutter\bin" # 改为你的 Flutter 解压路径
+  $userPath=[Environment]::GetEnvironmentVariable("Path", "User") + ";$flutterPath"
+  [Environment]::SetEnvironmentVariable("PATH", "$userPath", "User")
+  $env:PATH="$env:PATH;$flutterPath"
+  [Environment]::SetEnvironmentVariable("PATH", "$env:PATH", "Machine")
+-->
+<!--
+  $dartPath="X:\Support\Other\flutter\bin\cache\dart-sdk\bin"
+  $env:PATH="$env:PATH;$dartPath"
+  [Environment]::SetEnvironmentVariable("PATH", "$env:PATH", "Machine")
+-->
+<!--
+  [Environment]::SetEnvironmentVariable('PUB_HOSTED_URL', 'https://pub.flutter-io.cn', 'User')
+  [Environment]::SetEnvironmentVariable('FLUTTER_STORAGE_BASE_URL', 'https://storage.flutter-io.cn', 'User')
+-->
+<!--
+  $pubCachePath="X:\Support\Other\flutter\.pub-cache\bin"
+  $env:PATH="$env:PATH;$pubCachePath"
+  [Environment]::SetEnvironmentVariable("PATH", "$env:PATH", "Machine")
+-->
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Flutter/" rel="tag"># Flutter</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/07/Learn-once-write-anywhere-React-Native/" rel="prev" title="Learn once, write anywhere: React Native">
+      <i class="fa fa-chevron-left"></i> Learn once, write anywhere: React Native
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/13/%E4%BD%BF%E7%94%A8-Flutter-%E8%A7%A3%E5%86%B3%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%9C%80%E6%B1%82/" rel="next" title="使用 Flutter 解决一个小需求">
+      使用 Flutter 解决一个小需求 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-android-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-number">3.</span> <span class="nav-text">配置 android 开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-%E7%9A%84-flutter-%E6%8F%92%E4%BB%B6-%E5%BF%85%E8%A3%85"><span class="nav-number">4.</span> <span class="nav-text">vscode 的 flutter 插件(必装)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Flutter-SDK"><span class="nav-number">5.</span> <span class="nav-text">安装 Flutter SDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dart"><span class="nav-number">5.1.</span> <span class="nav-text">Dart</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dart-%E5%8C%85%E7%AE%A1%E7%90%86-pub"><span class="nav-number">5.1.1.</span> <span class="nav-text">dart 包管理 pub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dart-%E8%AF%AD%E6%B3%95"><span class="nav-number">5.1.2.</span> <span class="nav-text">dart 语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dart-%E4%BB%A3%E7%A0%81%E6%A0%B7%E5%BC%8F%E8%A7%84%E8%8C%83"><span class="nav-number">5.1.3.</span> <span class="nav-text">dart 代码样式规范</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86-BLoC"><span class="nav-number">6.</span> <span class="nav-text">状态管理 BLoC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flutter-%E5%8C%85%E7%AE%A1%E7%90%86-slidy"><span class="nav-number">7.</span> <span class="nav-text">flutter 包管理 slidy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DI-Dependency-Injection-Bloc-Pattern"><span class="nav-number">8.</span> <span class="nav-text">DI(Dependency Injection): Bloc Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World-CountApp"><span class="nav-number">9.</span> <span class="nav-text">Hello World: CountApp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">10.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">11.</span> <span class="nav-text">其他</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="backtolife"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">backtolife</p>
+  <div class="site-description" itemprop="description">21 世纪两大浪漫, 五线谱与二进制.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/backtolife2021" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;backtolife2021" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codepen.io/FloatingShuYin/#" title="CodePen → https:&#x2F;&#x2F;codepen.io&#x2F;FloatingShuYin&#x2F;#" rel="noopener" target="_blank"><i class="fab fa-codepen fa-fw"></i>CodePen</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">backtolife</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"bH5pXa93c9rYkIe6zzKkty1d-gzGzoHsz","app_key":"REvpf8v4c6CK9EgLRpFomYuL","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://backtolife.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://floatsyi.com/2019/12/10/Beautiful-native-apps-in-record-time-Flutter/";
+    this.page.identifier = "2019/12/10/Beautiful-native-apps-in-record-time-Flutter/";
+    this.page.title = "Beautiful native apps in record time: Flutter";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://backtolife.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
