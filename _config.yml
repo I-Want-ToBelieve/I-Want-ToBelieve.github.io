@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: doublethinkio
+title: backtolife
 subtitle: ''
 description: '21 世纪两大浪漫, 五线谱与二进制.'
-keywords: [doublethinkio, blogs]
-author: doublethinkio
+keywords: [backtolife, blogs]
+author: backtolife
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -104,8 +104,8 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment https://github.com/hexojs/hexo-deployer-git
 deploy:
   type: git
-  repo: git@github.com:doublethinkio/doublethinkio.github.io.git
-  branch: master
+  repo: git@github.com:backtolife2021/backtolife2021.github.io.git
+  branch: gh-pages
 
 # Feed
 # Docs: https://github.com/hexojs/hexo-generator-feed
@@ -179,7 +179,7 @@ theme_config:
   # Key is the link label showing to end users.
   # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
   social:
-    GitHub: https://github.com/doublethinkio || fab fa-github
+    GitHub: https://github.com/backtolife2021|| fab fa-github
     CodePen: https://codepen.io/FloatingShuYin/# || fab fa-codepen
     #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
     #Weibo: https://weibo.com/yourname || fab fa-weibo
@@ -219,7 +219,7 @@ theme_config:
   # Disqus
   disqus:
     enable: true
-    shortname: FloatShuYin
+    shortname: backtolife
     count: true
     #post_meta_order: 0
 
