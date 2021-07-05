@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -273,29 +273,29 @@
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/git/git">git</a></li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="复杂流程"><a href="#复杂流程" class="headerlink" title="复杂流程"></a>复杂流程</h2><h3 id="常规开发步骤"><a href="#常规开发步骤" class="headerlink" title="常规开发步骤"></a>常规开发步骤</h3><ol>
 <li><p>clone 远程分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone uri</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone uri</span><br></pre></td></tr></table></figure></li>
 <li><p>阅读 README.md 文档, 确保项目可运行并通过测试</p>
 </li>
 <li><p>新建并切换到本地开发分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b DEV_doublethink</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b DEV_doublethink</span><br></pre></td></tr></table></figure></li>
 <li><p>添加新功能后，确保项目可运行并通过测试</p>
 </li>
 <li><p>(add 工作目录(working directory)中的已修改文件(modified file)到暂存区(staging area)): 暂存文件差异(stage fixes)<br>commit 暂存区(staging area)到本地 git 仓库(.git repository)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;tpye(scope): subject&quot;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;tpye(scope): subject&quot;</span><br></pre></td></tr></table></figure></li>
 <li><p>创建远程(仓库)分支并提交本地(仓库)分支到远程(仓库)分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin DEV_doublethink:DEV_doublethink</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin DEV_doublethink:DEV_doublethink</span><br></pre></td></tr></table></figure></li>
 <li><p>在 git web 页面中提交 mr,等待 mr</p>
 </li>
 <li><p>mr 完成后切换到本地 master 分支并拉取远程 master 分支最新代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure></li>
 <li><p>切换到本地开发分支 DEV_doublethink， rebase 本地 master 分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout DEV_doublethink</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout DEV_doublethink</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure></li>
 <li><p>删除远程 DEV_doublethink 分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin -d DEV_doublethink</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin -d DEV_doublethink</span><br></pre></td></tr></table></figure></li>
 <li><p>回到第 4 步.</p>
 </li>
 </ol>
@@ -427,7 +427,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -440,7 +440,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

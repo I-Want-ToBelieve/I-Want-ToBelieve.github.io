@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="参考 nginx.docs  资源nginx安装1brew install nginx 1234567891011&#x3D;&#x3D;&gt; nginxDocroot is: &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;var&#x2F;wwwThe default port has been set in &#x2F;home&#x2F;l">
+  <meta name="description" content="参考 nginx.docs  资源nginx安装1brew install nginx  1234567891011&#x3D;&#x3D;&gt; nginxDocroot is: &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;var&#x2F;wwwThe default port has been set in &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;etc&#x2F;nginx&#x2F;nginx.conf to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP,reverse,mail and a generic TCP&#x2F;UDP proxy server:nginx">
 <meta property="og:url" content="http://floatsyi.com/2019/11/21/HTTP-reverse-mail-and-a-generic-TCP-UDP-proxy-server-nginx/index.html">
 <meta property="og:site_name" content="backtolife">
-<meta property="og:description" content="参考 nginx.docs  资源nginx安装1brew install nginx 1234567891011&#x3D;&#x3D;&gt; nginxDocroot is: &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;var&#x2F;wwwThe default port has been set in &#x2F;home&#x2F;l">
+<meta property="og:description" content="参考 nginx.docs  资源nginx安装1brew install nginx  1234567891011&#x3D;&#x3D;&gt; nginxDocroot is: &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;var&#x2F;wwwThe default port has been set in &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;etc&#x2F;nginx&#x2F;nginx.conf to">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-11-21T07:06:19.000Z">
 <meta property="article:modified_time" content="2021-07-02T09:53:04.734Z">
@@ -265,8 +265,10 @@
         <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="http://nginx.org/en/docs/">nginx.docs</a></li>
 </ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;&gt; nginx</span><br><span class="line">Docroot is: &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;var&#x2F;www</span><br><span class="line"></span><br><span class="line">The default port has been set in &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;etc&#x2F;nginx&#x2F;nginx.conf to 8080 so that</span><br><span class="line">nginx can run without sudo.</span><br><span class="line"></span><br><span class="line">nginx will load all files in &#x2F;home&#x2F;linuxbrew&#x2F;.linuxbrew&#x2F;etc&#x2F;nginx&#x2F;servers&#x2F;.</span><br><span class="line"></span><br><span class="line">Warning: nginx provides a launchd plist which can only be used on macOS!</span><br><span class="line">You can manually execute the service instead with:</span><br><span class="line">  nginx</span><br></pre></td></tr></table></figure>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">==&gt; nginx</span><br><span class="line">Docroot is: /home/linuxbrew/.linuxbrew/var/www</span><br><span class="line"></span><br><span class="line">The default port has been set in /home/linuxbrew/.linuxbrew/etc/nginx/nginx.conf to 8080 so that</span><br><span class="line">nginx can run without sudo.</span><br><span class="line"></span><br><span class="line">nginx will load all files in /home/linuxbrew/.linuxbrew/etc/nginx/servers/.</span><br><span class="line"></span><br><span class="line">Warning: nginx provides a launchd plist which can only be used on macOS!</span><br><span class="line">You can manually execute the service instead with:</span><br><span class="line">  nginx</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -373,7 +375,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -386,7 +388,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

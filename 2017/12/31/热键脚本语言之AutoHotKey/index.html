@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -290,13 +290,13 @@
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>AutoHotKey是一款免费的、Windows平台下开放源代码的热键脚本语言，是为游戏操纵杆和鼠标创建的热键，是自动按键。也可以通过命令调用系统接口及程序，并创建基于简单语言的图形化界面的执行程序。</p>
 <p>简而言之,就是你可以用AutoHotKey来封装你在使用计算机时的频繁操作,然后给他定义热键,当你按下你定义的热键时,这些频繁操作将自动执行.</p>
 <p>需要说在前面的是,AutoHotKey是一门脚本语言,有些脚本你直接拿来就可以用,而有些个性化的需求就需要你自己改写代码了.不过不用担心,AutoHotKey的语法非常简单,你肯定可以轻易学会.</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><p><strong>下载</strong></p>
 <ol>
 <li>进入<a target="_blank" rel="noopener" href="https://www.autohotkey.com/" title="AutoHotKey官网">AutoHotKey官网</a></li>
 <li>点击绿色的 <strong>Download</strong> 按钮</li>
-<li>标题为 <strong>Other Releases</strong> 下的 *<em>AutoHotkey 1.1.</em> - previously known as AutoHotkey_L**  就是了.点击即可下载.</li>
+<li>标题为 <strong>Other Releases</strong> 下的 <em><em>AutoHotkey 1.1.</em> - previously known as AutoHotkey_L</em>*  就是了.点击即可下载.</li>
 </ol>
 <p><strong>安装</strong></p>
 <ol>
@@ -331,7 +331,8 @@
 <li><p>复制以下代码并粘贴到你脚本文档中</p>
 </li>
 </ol>
-<figure class="highlight ahk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">WindowToCenter(WinTitle)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">    WinGetPos,</span>,, Width, Height, <span class="variable">%WinTitle%</span></span><br><span class="line"><span class="built_in">    WinMove,</span> <span class="variable">%WinTitle%</span>,, (<span class="built_in">A_ScreenWidth</span>/<span class="number">2</span>)-(Width/<span class="number">2</span>), (<span class="built_in">A_ScreenHeight</span>/<span class="number">2</span>)-(Height/<span class="number">2</span>)</span><br><span class="line"><span class="built_in">    WinSet,</span> Transparent, <span class="number">220</span>, <span class="variable">%WinTitle%</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title">#r::</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Send,</span> #&#123;r&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">WinWait,</span> 运行, , <span class="number">3</span></span><br><span class="line">if <span class="built_in">ErrorLevel</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">    MsgBox,</span> WinWait timed out.</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">WindowToCenter(运行)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight ahk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">WindowToCenter(WinTitle)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">    WinGetPos,</span>,, Width, Height, <span class="variable">%WinTitle%</span></span><br><span class="line"><span class="built_in">    WinMove,</span> <span class="variable">%WinTitle%</span>,, (<span class="built_in">A_ScreenWidth</span>/<span class="number">2</span>)-(Width/<span class="number">2</span>), (<span class="built_in">A_ScreenHeight</span>/<span class="number">2</span>)-(Height/<span class="number">2</span>)</span><br><span class="line"><span class="built_in">    WinSet,</span> Transparent, <span class="number">220</span>, <span class="variable">%WinTitle%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#r::</span></span><br><span class="line"><span class="built_in"></span></span><br><span class="line"><span class="built_in">Send,</span> #&#123;r&#125;</span><br><span class="line"><span class="built_in"></span></span><br><span class="line"><span class="built_in">WinWait,</span> 运行, , <span class="number">3</span></span><br><span class="line">if <span class="built_in">ErrorLevel</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">    MsgBox,</span> WinWait timed out.</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">WindowToCenter(运行)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <ol start="4">
 <li><p>按CTRL+S 保存当前文档 <strong>&lt;=&gt;</strong> 然后再右键选中该脚本 <strong>&lt;=&gt;</strong> 选择 Run Script</p>
 </li>
@@ -446,7 +447,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -459,7 +460,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

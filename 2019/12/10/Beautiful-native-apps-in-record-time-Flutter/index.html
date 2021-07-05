@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -285,7 +285,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/rxdart">RxDart</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/LilySny/counter-using-bloc_pattern">counter-using-bloc_pattern</a></li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="配置-android-开发环境"><a href="#配置-android-开发环境" class="headerlink" title="配置 android 开发环境"></a>配置 android 开发环境</h2><p>参考 <a href="https://floatsyi.com/2019/12/07/Learn-once-write-anywhere-React-Native/">Learn-once-write-anywhere-React-Native</a></p>
 <h2 id="vscode-的-flutter-插件-必装"><a href="#vscode-的-flutter-插件-必装" class="headerlink" title="vscode 的 flutter 插件(必装)"></a>vscode 的 flutter 插件(必装)</h2><ul>
@@ -294,9 +294,7 @@
 <h2 id="安装-Flutter-SDK"><a href="#安装-Flutter-SDK" class="headerlink" title="安装 Flutter SDK"></a>安装 Flutter SDK</h2><ol>
 <li>下载 <a target="_blank" rel="noopener" href="https://flutter.dev/docs/development/tools/sdk/releases#windows">Flutter SDK</a> Stable channel (Windows)， 并解压到合适的目录</li>
 <li>按快捷键 <code>win + x + a</code> 打开 powershell， 执行以下命令， 以添加环境变量<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$flutterPath</span>=<span class="string">&quot;X:\Support\Other\flutter\bin&quot;</span> <span class="comment"># 改为你的 Flutter 解压路径</span></span><br><span class="line"><span class="variable">$userPath</span>=[<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;Path&quot;</span>, <span class="string">&quot;User&quot;</span>) + <span class="string">&quot;;<span class="variable">$flutterPath</span>&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$userPath</span>&quot;</span>, <span class="string">&quot;User&quot;</span>)</span><br><span class="line"><span class="variable">$env:PATH</span>=<span class="string">&quot;<span class="variable">$env:PATH</span>;<span class="variable">$flutterPath</span>&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$env:PATH</span>&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-<li>继续执行以下命令, 以设置镜像<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;PUB_HOSTED_URL&#x27;</span>, <span class="string">&#x27;https://pub.flutter-io.cn&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;FLUTTER_STORAGE_BASE_URL&#x27;</span>, <span class="string">&#x27;https://storage.flutter-io.cn&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>继续执行以下命令, 以设置镜像<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;PUB_HOSTED_URL&#x27;</span>, <span class="string">&#x27;https://pub.flutter-io.cn&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;FLUTTER_STORAGE_BASE_URL&#x27;</span>, <span class="string">&#x27;https://storage.flutter-io.cn&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="Dart"><a href="#Dart" class="headerlink" title="Dart"></a>Dart</h3><p>dart 已经包含在 flutter sdk 中， 因此只要添加环境变量即可<br>  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dartPath</span>=<span class="string">&quot;X:\Support\Other\flutter\bin\cache\dart-sdk\bin&quot;</span> <span class="comment"># 改为你的 Flutter 解压路径</span></span><br><span class="line"><span class="variable">$env:PATH</span>=<span class="string">&quot;<span class="variable">$env:PATH</span>;<span class="variable">$dartPath</span>&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$env:PATH</span>&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br></pre></td></tr></table></figure></p>
 <h4 id="dart-包管理-pub"><a href="#dart-包管理-pub" class="headerlink" title="dart 包管理 pub"></a>dart 包管理 pub</h4><p>pub 使用请参考 <a target="_blank" rel="noopener" href="https://dart.dev/guides/packages#importing-libraries-from-packages">How to use packages</a></p>
@@ -461,7 +459,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -474,7 +472,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

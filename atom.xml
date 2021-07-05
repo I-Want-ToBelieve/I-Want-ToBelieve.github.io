@@ -6,7 +6,7 @@
   <link href="http://floatsyi.com/atom.xml" rel="self"/>
   
   <link href="http://floatsyi.com/"/>
-  <updated>2021-07-02T09:53:04.738Z</updated>
+  <updated>2021-07-05T10:10:18.612Z</updated>
   <id>http://floatsyi.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文档站点的分析及选型</title>
+    <link href="http://floatsyi.com/2021/07/05/%E6%96%87%E6%A1%A3%E7%AB%99%E7%82%B9%E7%9A%84%E5%88%86%E6%9E%90%E5%8F%8A%E9%80%89%E5%9E%8B/"/>
+    <id>http://floatsyi.com/2021/07/05/%E6%96%87%E6%A1%A3%E7%AB%99%E7%82%B9%E7%9A%84%E5%88%86%E6%9E%90%E5%8F%8A%E9%80%89%E5%9E%8B/</id>
+    <published>2021-07-05T03:12:08.000Z</published>
+    <updated>2021-07-05T10:10:18.612Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一个组件库一般是有官方的文档站点的， 我们的组件库现在是没有官方文档站点的，因此我们的组件库应该要有官方文档站点。&lt;/p&gt;
+&lt;p&gt;那么怎么做？</summary>
+        
+      
+    
+    
+    
+    
+    <category term="docs" scheme="http://floatsyi.com/tags/docs/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -636,30 +660,6 @@
     <category term="初级后端" scheme="http://floatsyi.com/tags/%E5%88%9D%E7%BA%A7%E5%90%8E%E7%AB%AF/"/>
     
     <category term="转型计划" scheme="http://floatsyi.com/tags/%E8%BD%AC%E5%9E%8B%E8%AE%A1%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Securely build, share and run any application, anywhere: docker</title>
-    <link href="http://floatsyi.com/2019/12/29/Securely-build-share-and-run-any-application-anywhere-docker/"/>
-    <id>http://floatsyi.com/2019/12/29/Securely-build-share-and-run-any-application-anywhere-docker/</id>
-    <published>2019-12-29T06:24:53.000Z</published>
-    <updated>2021-07-02T09:53:04.734Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://floatsyi.com/2019/12/29/The-Package-Manager-for-Windows-choco-and-scoop/&quot;&gt;The Package Manager for Windows: choco and scoop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docker_practice.gitee.io/zh-cn/&quot;&gt;Docker — 从入门到实践&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.docker.com/&quot;&gt;docker.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;资源&quot;&gt;&lt;a href=&quot;#资源&quot; class=&quot;headerlink&quot; title=&quot;资源&quot;&gt;&lt;/a&gt;资源&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/topics/docker&quot;&gt;Docker&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    
-    <category term="docker" scheme="http://floatsyi.com/tags/docker/"/>
     
   </entry>
   

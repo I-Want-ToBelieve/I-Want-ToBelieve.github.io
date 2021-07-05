@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -270,7 +270,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/nondanee/UnblockNeteaseMusic">nondanee/UnblockNeteaseMusic</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/oldj/SwitchHosts">oldj/SwitchHosts</a></li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>UWP 版本使用 host 转发的方法：</p>
 <ol>
@@ -281,7 +281,7 @@
 <li><p>执行 <code>scoop bucket add extras;scoop install switchhosts</code> 以下载安装 <a target="_blank" rel="noopener" href="https://github.com/oldj/SwitchHosts">oldj/SwitchHosts</a></p>
 </li>
 <li><p>执行 <code>sudo start &quot;$env:SCOOP/apps/switchhosts/current/SwitchHosts!.exe&quot;</code> 以管理员权限打开 switchhosts， 并新建以下规则</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># netease music</span><br><span class="line">127.0.0.1 music.163.com</span><br><span class="line">127.0.0.1 interface.music.163.com</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># netease music</span><br><span class="line">127.0.0.1 music.163.com</span><br><span class="line">127.0.0.1 interface.music.163.com</span><br></pre></td></tr></table></figure></li>
 <li><p>执行 <code>ping music.163.com</code> 获取 cdn 服务器的 ip 地址</p>
 </li>
 <li><p>将此 <code>npx @nondanee/unblockneteasemusic -p 80 -f 59.111.181.35</code> 命令中的 59.111.181.35 替换为上一步获取的 ip 地址并执行</p>
@@ -290,6 +290,7 @@
 <p><strong>推荐使用</strong> docker: <code>docker run --name unblockneteasemusic -e NODE_ENV=production -d -p 80:8080 nondanee/unblockneteasemusic -f 59.111.181.35</code></p>
 <p>或者 docker-compose -f ./unblockneteasemusic.yml up -d<br>unblockneteasemusic.yml:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">unblockneteasemusic:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nondanee/unblockneteasemusic</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">NODE_ENV:</span> <span class="string">production</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">entrypoint:</span> <span class="string">node</span> <span class="string">app.js</span> <span class="string">-f</span> <span class="number">59.111</span><span class="number">.181</span><span class="number">.35</span></span><br></pre></td></tr></table></figure>
+
 <ol start="7">
 <li>打开网易云音乐 uwp 以验证转发服务工作正常</li>
 </ol>
@@ -399,7 +400,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -412,7 +413,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

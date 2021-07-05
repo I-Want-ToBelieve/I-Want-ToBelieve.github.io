@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"floatsyi.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="资源 npm 官网 yarn 官网  安装 node 版本管理与 npm 仓库镜像源  安装 yarn 1npm install yarn -g 代理设置代理 123456#npmnpm config set proxy http:&#x2F;&#x2F;127.0.0.1:1080npm config set https-proxy http:&#x2F;&#x2F;127.0.0.1:1080# yarnyarn config se">
+  <meta name="description" content="资源 npm 官网 yarn 官网  安装 node 版本管理与 npm 仓库镜像源  安装 yarn 1npm install yarn -g  代理设置代理 123456#npmnpm config set proxy http:&#x2F;&#x2F;127.0.0.1:1080npm config set https-proxy http:&#x2F;&#x2F;127.0.0.1:1080# yarnyarn config s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node 包管理工具: npm 与 yarn">
 <meta property="og:url" content="http://floatsyi.com/2019/10/30/node-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-npm-%E4%B8%8E-yarn/index.html">
 <meta property="og:site_name" content="backtolife">
-<meta property="og:description" content="资源 npm 官网 yarn 官网  安装 node 版本管理与 npm 仓库镜像源  安装 yarn 1npm install yarn -g 代理设置代理 123456#npmnpm config set proxy http:&#x2F;&#x2F;127.0.0.1:1080npm config set https-proxy http:&#x2F;&#x2F;127.0.0.1:1080# yarnyarn config se">
+<meta property="og:description" content="资源 npm 官网 yarn 官网  安装 node 版本管理与 npm 仓库镜像源  安装 yarn 1npm install yarn -g  代理设置代理 123456#npmnpm config set proxy http:&#x2F;&#x2F;127.0.0.1:1080npm config set https-proxy http:&#x2F;&#x2F;127.0.0.1:1080# yarnyarn config s">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-10-30T13:41:15.000Z">
 <meta property="article:modified_time" content="2021-07-02T09:53:04.734Z">
@@ -273,15 +273,21 @@
 </ul>
 <p>安装 yarn</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install yarn -g</span><br></pre></td></tr></table></figure>
+
 <h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>设置代理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#npm</span></span><br><span class="line">npm config <span class="built_in">set</span> proxy http://127.0.0.1:1080</span><br><span class="line">npm config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span><br><span class="line"><span class="comment"># yarn</span></span><br><span class="line">yarn config <span class="built_in">set</span> proxy http://127.0.0.1:1080</span><br><span class="line">yarn config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+
 <p>删除代理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#npm</span></span><br><span class="line">npm config delete proxy</span><br><span class="line">npm config delete https-proxy</span><br><span class="line"><span class="comment"># yarn</span></span><br><span class="line">yarn config delete proxy</span><br><span class="line">yarn config delete https-proxy</span><br></pre></td></tr></table></figure>
+
 <h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p>ref: <a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors">https://npm.taobao.org/mirrors</a></p>
 <p>nvm</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node</span><br><span class="line"><span class="built_in">export</span> NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org -g</span><br><span class="line">npm config <span class="built_in">set</span> disturl https://npm.taobao.org/dist -g</span><br><span class="line">npm config <span class="built_in">set</span> electron_mirror https://npm.taobao.org/mirrors/electron/ -g</span><br><span class="line">npm config <span class="built_in">set</span> sass_binary_site https://npm.taobao.org/mirrors/node-sass/ -g</span><br><span class="line">npm config <span class="built_in">set</span> phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/ -g</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yarn config <span class="built_in">set</span> registry https://registry.npm.taobao.org -g</span><br><span class="line">yarn config <span class="built_in">set</span> disturl https://npm.taobao.org/dist -g</span><br><span class="line">yarn config <span class="built_in">set</span> electron_mirror https://npm.taobao.org/mirrors/electron/ -g</span><br><span class="line">yarn config <span class="built_in">set</span> sass_binary_site https://npm.taobao.org/mirrors/node-sass/ -g</span><br><span class="line">yarn config <span class="built_in">set</span> phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/ -g</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -389,7 +395,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -402,7 +408,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

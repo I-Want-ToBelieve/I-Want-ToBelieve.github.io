@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -195,6 +195,151 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2021/07/05/%E6%96%87%E6%A1%A3%E7%AB%99%E7%82%B9%E7%9A%84%E5%88%86%E6%9E%90%E5%8F%8A%E9%80%89%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/05/%E6%96%87%E6%A1%A3%E7%AB%99%E7%82%B9%E7%9A%84%E5%88%86%E6%9E%90%E5%8F%8A%E9%80%89%E5%9E%8B/" class="post-title-link" itemprop="url">文档站点的分析及选型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-05 11:12:08 / 修改时间：18:10:18" itemprop="dateCreated datePublished" datetime="2021-07-05T11:12:08+08:00">2021-07-05</time>
+            </span>
+
+          
+            <span id="/2021/07/05/%E6%96%87%E6%A1%A3%E7%AB%99%E7%82%B9%E7%9A%84%E5%88%86%E6%9E%90%E5%8F%8A%E9%80%89%E5%9E%8B/" class="post-meta-item leancloud_visitors" data-flag-title="文档站点的分析及选型" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/07/05/%E6%96%87%E6%A1%A3%E7%AB%99%E7%82%B9%E7%9A%84%E5%88%86%E6%9E%90%E5%8F%8A%E9%80%89%E5%9E%8B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/05/文档站点的分析及选型/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一个组件库一般是有官方的文档站点的， 我们的组件库现在是没有官方文档站点的，因此我们的组件库应该要有官方文档站点。</p>
+<p>那么怎么做？ 我们可以参考现成的流行方案。</p>
+<p>那么现在有哪些流行方案呢？根据我在互联网的粗略检索，我认为现成的流行方案大致可以分为以下两种：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/reactjs">react</a> 系列的 <a target="_blank" rel="noopener" href="https://docusaurus.io/">docusaurus</a></p>
+<p>​    <img src="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/45NBuzDIW489QBoVep5mcZ9B5MRbR*al8IGo9Amg1fIWJ708HTHgnJXduPcHeXu9xHbvbFQm9I0.L.kVO6YGU.ssRmRYJAxB6n6y2sNBBes!/r" alt="https://docusaurus.io/"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/vuejs/vue">vue</a> 系列的 <a target="_blank" rel="noopener" href="https://vuepress.vuejs.org/zh/">vuepress</a></p>
+<p>​    <img src="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/45NBuzDIW489QBoVep5mcZ9B5MRbR*al8IGo9Amg1fKKnOuDu*JyPIklh5PEqJacGSeHT5u4KPN8SDA4vsbK0NCgRxsI9B6G5plll3EoNEE!/r" alt="image-20210705140403492"></p>
+</li>
+</ul>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>从这两个项目的官网上可以看到， 一个文档站点由以下几个主要部分组成：</p>
+<ul>
+<li>顶部导航栏</li>
+<li>侧边栏大纲</li>
+<li>文章主体</li>
+</ul>
+<p>而顶部导航栏除去导航功能外，还包括<a target="_blank" rel="noopener" href="https://semver.org/lang/zh-CN/">语义化版本</a>、 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/orphaned/Web/Localization">本地化和国际化</a>、 项目仓库地址、主题以及站点搜索。</p>
+<h2 id="侧边栏生成"><a href="#侧边栏生成" class="headerlink" title="侧边栏生成"></a>侧边栏生成</h2><p>侧边栏大纲部分是根据文章标题等级自动生成的，其生成算法大概同下:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> heading = <span class="string">&#x27;H1&#x27;</span> | <span class="string">&#x27;H2&#x27;</span> | <span class="string">&#x27;H3&#x27;</span> | <span class="string">&#x27;H4&#x27;</span> | <span class="string">&#x27;H5&#x27;</span> | <span class="string">&#x27;H6&#x27;</span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">const</span> getHeadingList = [...document.querySelectorAll(<span class="string">&#x27;h1, h2, h3, h4, h5, h6&#x27;</span>)].map(<span class="function">(<span class="params">it</span>) =&gt;</span> &#123;</span><br><span class="line"> <span class="comment">// do something</span></span><br><span class="line"> <span class="keyword">return</span> it.nodeName</span><br><span class="line">&#125;)</span><br><span class="line">  </span><br><span class="line"><span class="keyword">const</span> logCount = (<span class="function">(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">  time = <span class="number">0</span></span></span></span><br><span class="line"><span class="params"><span class="function"></span>) =&gt;</span> <span class="function">(<span class="params">message = <span class="string">&#x27;&#x27;</span></span>) =&gt;</span> <span class="built_in">void</span> <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;message&#125;</span><span class="subst">$&#123;++time&#125;</span>`</span>))()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> heading2Menu = <span class="function">(<span class="params">headings: heading[]</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// O(n)</span></span><br><span class="line">  <span class="keyword">const</span> toTree = <span class="function">(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">    ref = &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">      <span class="keyword">type</span>: <span class="string">&#x27;root&#x27;</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">      result: [],</span></span></span><br><span class="line"><span class="params"><span class="function">      rootLevel: <span class="number">0</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">      prevLevel: <span class="number">0</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">      headings: [...headings],</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;</span></span></span><br><span class="line"><span class="params"><span class="function">  </span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; <span class="keyword">type</span>, result, headings, rootLevel, prevLevel &#125; = ref</span><br><span class="line"></span><br><span class="line">    logCount(<span class="string">`headings.length: <span class="subst">$&#123;headings.length&#125;</span>, toTree() count:`</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> isRoot = <span class="keyword">type</span> === <span class="string">&#x27;root&#x27;</span></span><br><span class="line">    <span class="keyword">const</span> _result: result = isRoot ? result : []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (headings.length !== <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> heading = headings[<span class="number">0</span>]</span><br><span class="line">      <span class="keyword">const</span> level = <span class="built_in">Number</span>(heading.slice(<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!isRoot &amp;&amp; (level &lt;= rootLevel || level &lt;= prevLevel)) <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (isRoot) rootLevel = level</span><br><span class="line"></span><br><span class="line">      headings.shift()</span><br><span class="line"></span><br><span class="line">      _result.push(&#123;</span><br><span class="line">        <span class="attr">name</span>: heading,</span><br><span class="line">        <span class="attr">childs</span>: toTree(&#123;</span><br><span class="line">          <span class="attr">type</span>: <span class="string">&#x27;child&#x27;</span>,</span><br><span class="line">          result,</span><br><span class="line">          rootLevel,</span><br><span class="line">          <span class="attr">prevLevel</span>: level,</span><br><span class="line">          headings,</span><br><span class="line">        &#125;),</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> toTree()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后是文章主体。我们知道开发文档一般采用 <a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 文档格式进行编写，而站点网站的主要功能就是根据 <a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 文档生成静态 HTML。</p>
+<h2 id="markdown-解析器"><a href="#markdown-解析器" class="headerlink" title="markdown 解析器"></a><a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 解析器</h2><p>根据 <a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 文档生成静态 HTML，这是  <a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 解析器所做的工作。</p>
+<p>无论是 <a target="_blank" rel="noopener" href="https://docusaurus.io/">docusaurus</a> 所采用的 <a target="_blank" rel="noopener" href="https://github.com/jonschlinkert/remarkable">remarkable</a> 解析器，还是 <a target="_blank" rel="noopener" href="https://vuepress.vuejs.org/zh/">vuepress</a> 所采用的 <a target="_blank" rel="noopener" href="https://github.com/markdown-it/markdown-it">markdown-it</a> 解析器，它们都是 <a target="_blank" rel="noopener" href="https://github.com/commonmark/commonmark-spec">commonmark-spec</a> 的实现，　因此架构上大同小异。</p>
+<h3 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h3><p><a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 解析器一般由 parser 和 render 两大部分组成。</p>
+<p>parser 的工作大概就是载入  <a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 文件然后逐个字符读取，根据读取到的不同字符串应用不同的规则生成 token, 然后将该 token push 到最后要返回的 tokens 数组中。</p>
+<p>render 的工作大概就是拿到 parser 的解析结果既 tokens，根据不同的 token 应用不同的规则生成 HTML string。</p>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>这一时半会说不清楚，请参考: <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903834041450510">https://juejin.cn/post/6844903834041450510</a></p>
+<h2 id="语义化版本"><a href="#语义化版本" class="headerlink" title="语义化版本"></a><a target="_blank" rel="noopener" href="https://semver.org/lang/zh-CN/">语义化版本</a></h2><blockquote>
+<p> 版本格式：主版本号.次版本号.修订号，版本号递增规则如下：</p>
+<ul>
+<li>主版本号：当你做了不兼容的 API 修改，</li>
+<li> 次版本号：当你做了向下兼容的功能性新增，</li>
+<li>修订号：当你做了向下兼容的问题修正。</li>
+<li>先行版本号及版本编译信息可以加到“主版本号.次版本号.修订号”的后面，作为延伸。</li>
+</ul>
+</blockquote>
+<p>组件库有很多版本因此其文档也需要版本化，更多请参考　<a target="_blank" rel="noopener" href="https://docusaurus.io/zh-CN/docs/versioning">https://docusaurus.io/zh-CN/docs/versioning</a></p>
+<h2 id="本地化和国际化"><a href="#本地化和国际化" class="headerlink" title="本地化和国际化"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/orphaned/Web/Localization">本地化和国际化</a></h2><blockquote>
+<p>本地化（通常缩写为 L10n）能够使网站、Web应用或任何其他形式的内容适用于特定语言的范围和文化圈。国际化（通常缩写为 I18n）被设计用来使网站或应用程序尽可能的实现本地化。</p>
+</blockquote>
+<p>没什么好说的　请参考　<a target="_blank" rel="noopener" href="https://docusaurus.io/zh-CN/docs/i18n/crowdin">https://docusaurus.io/zh-CN/docs/i18n/crowdin</a>　与　<a target="_blank" rel="noopener" href="https://docusaurus.io/zh-CN/docs/i18n/git">https://docusaurus.io/zh-CN/docs/i18n/git</a>        </p>
+<h2 id="站点搜索"><a href="#站点搜索" class="headerlink" title="站点搜索"></a>站点搜索</h2><p>一个好的站点搜索可以让我们快速定位到我们要找的文档内容，大大提高我们的检索效率。</p>
+<p>请参考 <a target="_blank" rel="noopener" href="https://www.algolia.com/">algolia</a></p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>主题分为站点主题和代码主题。</p>
+<h3 id="站点主题"><a href="#站点主题" class="headerlink" title="站点主题"></a>站点主题</h3><p> <a target="_blank" rel="noopener" href="https://docusaurus.io/">docusaurus</a> 提供了白天与黑夜两种模式，可以在导航栏右侧的主题按钮点击进行切换。</p>
+<p>而 vue 则有官方和社区提供的主题包可供导入使用。 </p>
+<p>除此之外，主题还有布局和功能上的变化。　</p>
+<p>更多请参考　<a target="_blank" rel="noopener" href="https://docusaurus.io/zh-CN/docs/api/themes">https://docusaurus.io/zh-CN/docs/api/themes</a>　和　<a target="_blank" rel="noopener" href="https://vuepress.vuejs.org/zh/theme/">https://vuepress.vuejs.org/zh/theme/</a></p>
+<h3 id="代码主题"><a href="#代码主题" class="headerlink" title="代码主题"></a>代码主题</h3><p>由于 <a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 最终被解析渲染成 HTML，　因此开源社区主流的代码高亮库，如 <a target="_blank" rel="noopener" href="https://github.com/highlightjs/highlight.js">highlight.js</a> 、 <a target="_blank" rel="noopener" href="https://github.com/PrismJS/prism">prism</a> 、<a target="_blank" rel="noopener" href="https://github.com/shikijs/shiki">shiki</a> 等就可以应用在此处。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/highlightjs/highlight.js">highlight.js</a> 和 <a target="_blank" rel="noopener" href="https://github.com/PrismJS/prism">prism</a> 都是在代码文本中插入标签包裹需要高亮的元素并通过 CSS 文件来设置高亮样式，而 <a target="_blank" rel="noopener" href="https://github.com/shikijs/shiki">shiki</a>，一个基于 TextMate 语法的代码高亮器。它直接生成带样式的包裹元素，所以不需要引入额外的 CSS 文件。</p>
+</blockquote>
+<p>更多请参考 <a target="_blank" rel="noopener" href="https://cn.sli.dev/custom/highlighters.html#highlighters">https://cn.sli.dev/custom/highlighters.html#highlighters</a></p>
+<p>一般 <a target="_blank" rel="noopener" href="https://www.markdown.xyz/getting-started/">markdown</a> 解析器都提供了代码主题的配置选型，如下所示: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Remarkable &#125; <span class="keyword">from</span> <span class="string">&#x27;remarkable&#x27;</span></span><br><span class="line"><span class="keyword">import</span> hljs <span class="keyword">from</span> <span class="string">&#x27;highlight.js&#x27;</span> <span class="comment">// https://highlightjs.org/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Actual default values</span></span><br><span class="line"><span class="keyword">const</span> md = <span class="keyword">new</span> Remarkable(&#123;</span><br><span class="line">  highlight (str, lang) &#123;</span><br><span class="line">    <span class="keyword">if</span> (lang &amp;&amp; hljs.getLanguage(lang)) &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> hljs.highlight(lang, str).value;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (err) &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> hljs.highlightAuto(str).value;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span> <span class="comment">// use external default escaping</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="PWA"><a href="#PWA" class="headerlink" title="PWA"></a>PWA</h2><blockquote>
+<p>PWA（Progressive Web Apps，渐进式 Web 应用）运用现代的 Web API 以及传统的渐进式增强策略来创建跨平台 Web 应用程序。这些应用无处不在、功能丰富，使其具有与原生应用相同的用户体验优势。这组文档和指南告诉您有关 PWA 的所有信息。</p>
+</blockquote>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>最后是站点的部署，一般部署到项目源码仓库免费的 <a target="_blank" rel="noopener" href="https://pages.github.com/">github pages</a> 上即可。</p>
+<p>请参考：　<a target="_blank" rel="noopener" href="https://docusaurus.io/zh-CN/docs/deployment">https://docusaurus.io/zh-CN/docs/deployment</a></p>
+<h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><p><a target="_blank" rel="noopener" href="https://docusaurus.io/">docusaurus</a> 与 <a target="_blank" rel="noopener" href="https://vuepress.vuejs.org/zh/">vuepress</a> 都是非常优秀的开源文档站点项目，但由于开发团队主要使用 <a target="_blank" rel="noopener" href="https://github.com/reactjs">react</a> 技术栈，最后选用了 <a target="_blank" rel="noopener" href="https://docusaurus.io/">docusaurus</a> 。</p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docusaurus.io/zh-CN/docs#comparison-with-other-tools">docusaurus: 与其他工具的对比</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2021/07/02/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -256,12 +401,16 @@
       
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
 <p> issues: <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git/issues/199">https://github.com/hexojs/hexo-deployer-git/issues/199</a></p>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
@@ -1108,107 +1257,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="backtolife">
-      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="backtolife">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">搭建 gitlab 私有服务器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-18 10:22:56" itemprop="dateCreated datePublished" datetime="2020-01-18T10:22:56+08:00">2020-01-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
-              </span>
-
-          
-            <span id="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-meta-item leancloud_visitors" data-flag-title="搭建 gitlab 私有服务器" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/18/搭建-gitlab-私有服务器/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="http://r.photo.store.qq.com/psc?/V12iDrZG1mzmnh/uMeul31pGB4ZvQm8Ou4xce4K6t5XUs*00HfOVo2TO2*NPs6.IOoJEaGAkW3AXoEpfxJp.NG7e84FX17E8ZoF44QtfpEXuEh21dPdtO8g7IA!/r" alt="gitlab private servers"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/administration/">gitlab docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/sameersbn/docker-gitlab/blob/master/README.md">docker-gitlab README.md</a></li>
-</ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/topics/docker">docker</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/sameersbn/docker-gitlab">docker-gitlab</a></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/18/%E6%90%AD%E5%BB%BA-gitlab-%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1280,7 +1328,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1293,7 +1341,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

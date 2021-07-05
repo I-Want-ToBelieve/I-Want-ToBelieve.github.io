@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -273,9 +273,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/facebook/react">react</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/facebook/react-native">react-native</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/yarnpkg/yarn">yarn</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-native-cli">react-native-cli</a><a id="more"></a>
-
-</li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-native-cli">react-native-cli</a><span id="more"></span></li>
 </ul>
 <h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>如果不需要使用模拟器而是物理机开发就不必了</p>
 <ul>
@@ -295,7 +293,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/lukesampson/scoop/wiki/Switching-Ruby-And-Python-Versions">Scoop: Switching Ruby and Python Versions</a></li>
 </ul>
 <ol start="3">
-<li>安装 jdk<br><del>- <a target="_blank" rel="noopener" href="https://github.com/FloatingShuYin/development-environment-manual/blob/master/java.md#%E5%AE%89%E8%A3%85-jdk">development-environment-manual: java</a></del><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install ojdkbuild8-full -g</span><br></pre></td></tr></table></figure></li>
+<li>安装 jdk<br><del>- <a target="_blank" rel="noopener" href="https://github.com/FloatingShuYin/development-environment-manual/blob/master/java.md#%E5%AE%89%E8%A3%85-jdk">development-environment-manual: java</a></del><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install ojdkbuild8-full -g</span><br></pre></td></tr></table></figure></li>
 <li>安装 Android Studio<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install android<span class="literal">-studio</span></span><br></pre></td></tr></table></figure></li>
 <li>安装 Android SDK</li>
 </ol>
@@ -304,10 +302,9 @@
 </ul>
 <ol start="6">
 <li>添加环境变量<br>按快捷键 <code>win + x + a</code> 以管理员权限打开 powershell， 执行以下命令：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$env:ANDROID_HOME</span>=<span class="string">&quot;<span class="variable">$env:LOCALAPPDATA</span>\Android\Sdk&quot;</span></span><br><span class="line"><span class="variable">$env:PATH</span>=<span class="string">&quot;<span class="variable">$env:PATH</span>;<span class="variable">$env:ANDROID_HOME</span>\platform-tools&quot;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;ANDROID_HOME&quot;</span>, <span class="string">&quot;<span class="variable">$env:ANDROID_HOME</span>&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;PATH&quot;</span>, <span class="string">&quot;<span class="variable">$env:PATH</span>&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-<li>安装 <a target="_blank" rel="noopener" href="https://github.com/yarnpkg/yarn">yarn</a> 和 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-native-cli">react-native-cli</a><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> yarn react<span class="literal">-native</span><span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
-<h2 id="在物理机上运行"><a href="#在物理机上运行" class="headerlink" title="在物理机上运行"></a>在物理机上运行</h2></li>
+<li>安装 <a target="_blank" rel="noopener" href="https://github.com/yarnpkg/yarn">yarn</a> 和 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-native-cli">react-native-cli</a><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> yarn react<span class="literal">-native</span><span class="literal">-cli</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<ul>
+<h2 id="在物理机上运行"><a href="#在物理机上运行" class="headerlink" title="在物理机上运行"></a>在物理机上运行</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://reactnative.cn/docs/running-on-device/">reactnative running-on-device</a></li>
 </ul>
 <h2 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h2><ol>
@@ -320,11 +317,12 @@
 </ul>
 <ol start="4">
 <li>运行<br>usb 链接物理机 然后编译安装软件包<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> helloWorld</span><br><span class="line">yarn android</span><br></pre></td></tr></table></figure>
-如果出现 <code>Failed to install the following Android SDK packages as some licences have not been accepted</code> 错误<br>则执行<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Invoke-Expression</span> <span class="string">&quot;<span class="variable">$env:ANDROID_HOME</span>/tools/bin/sdkmanager --licenses&quot;</span></span><br></pre></td></tr></table></figure>
-热重载<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn start</span><br></pre></td></tr></table></figure>
-<h2 id="放弃"><a href="#放弃" class="headerlink" title="放弃"></a>放弃</h2></li>
+如果出现 <code>Failed to install the following Android SDK packages as some licences have not been accepted</code> 错误<br>则执行<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Invoke-Expression</span> <span class="string">&quot;<span class="variable">$env:ANDROID_HOME</span>/tools/bin/sdkmanager --licenses&quot;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<ul>
+<p>热重载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn start</span><br></pre></td></tr></table></figure>
+
+<h2 id="放弃"><a href="#放弃" class="headerlink" title="放弃"></a>放弃</h2><ul>
 <li>成熟的工具因为 GFW 用不了， 如 <a target="_blank" rel="noopener" href="https://expo.io/">https://expo.io/</a></li>
 <li>好吧， 既然成熟的工具用不了， 就用官方出的 react-native-cli 吧<br>结果十月份的 <a target="_blank" rel="noopener" href="https://github.com/react-native-community/cli/issues/853">bug</a>， 现在都到十二月了还没修复，<br>每次编译还要自己去<code>node_modules</code>下改源码</li>
 <li>改源码就改源码吧， 结果想找个类似  <code>electron</code> 的 <code>open-file-dialog</code> 组件， 没有！！！</li>
@@ -437,7 +435,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -450,7 +448,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

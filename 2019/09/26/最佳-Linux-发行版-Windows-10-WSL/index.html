@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -280,7 +280,7 @@
 <li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">vscode</a></li>
 <li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a></li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="安装-wsl-及其必要条件"><a href="#安装-wsl-及其必要条件" class="headerlink" title="安装 wsl 及其必要条件"></a>安装 wsl 及其必要条件</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10">安装 wsl</a></li>
@@ -289,35 +289,52 @@
 <li><a href="https://floatsyi.com/2019/09/27/Windows-Terminal/">安装 Windows Terminal</a></li>
 </ul>
 <h2 id="添加包管理工具-apt-的镜像源"><a href="#添加包管理工具-apt-的镜像源" class="headerlink" title="添加包管理工具 apt 的镜像源"></a>添加包管理工具 apt 的镜像源</h2><ol>
-<li>按快捷键 <code>win +  Q</code> 然后键入 <code>wsl</code> 并回车, 以运行 <code>wsl</code>.</li>
-<li>选中 <code>wsl</code> 并执行以下命令以备份 <code>sources.list</code>(仓库源配置文件)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/apt</span><br><span class="line">sudo mv sources.list sources.list.bak</span><br></pre></td></tr></table></figure></li>
-<li>下载 sources.list<br>注意: 下载地址在这里获取 <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/repogen/">repository file generator</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/apt</span><br><span class="line">sudo curl https://mirrors.ustc.edu.cn/repogen/conf/ubuntu-https-4-bionic -o sources.list</span><br></pre></td></tr></table></figure></li>
-<li>更新<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></li>
-<li>安装 pip3<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure></li>
-<li>执行以下命令,以下载安装 <a target="_blank" rel="noopener" href="https://github.com/martin68/apt-smart">apt-smart</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install apt-smart</span><br></pre></td></tr></table></figure></li>
-<li>执行以下命令, 以验证安装:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-smart -V</span><br></pre></td></tr></table></figure></li>
-<li>执行以下命令, 以使用最佳的可用镜像(不一定可信, 最好自己 <code>apt-smart -l</code> 权衡一下, 然后 <code>apt-smart -c the_best_mirror_url</code> 以应用)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-smart -a</span><br></pre></td></tr></table></figure>
-<h3 id="更新索引"><a href="#更新索引" class="headerlink" title="更新索引"></a>更新索引</h3></li>
+<li><p>按快捷键 <code>win +  Q</code> 然后键入 <code>wsl</code> 并回车, 以运行 <code>wsl</code>.</p>
+</li>
+<li><p>选中 <code>wsl</code> 并执行以下命令以备份 <code>sources.list</code>(仓库源配置文件)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/apt</span><br><span class="line">sudo mv sources.list sources.list.bak</span><br></pre></td></tr></table></figure></li>
+<li><p>下载 sources.list<br>注意: 下载地址在这里获取 <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/repogen/">repository file generator</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/apt</span><br><span class="line">sudo curl https://mirrors.ustc.edu.cn/repogen/conf/ubuntu-https-4-bionic -o sources.list</span><br></pre></td></tr></table></figure></li>
+<li><p>更新</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></li>
+<li><p>安装 pip3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure></li>
+<li><p>执行以下命令,以下载安装 <a target="_blank" rel="noopener" href="https://github.com/martin68/apt-smart">apt-smart</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install apt-smart</span><br></pre></td></tr></table></figure></li>
+<li><p>执行以下命令, 以验证安装:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-smart -V</span><br></pre></td></tr></table></figure></li>
+<li><p>执行以下命令, 以使用最佳的可用镜像(不一定可信, 最好自己 <code>apt-smart -l</code> 权衡一下, 然后 <code>apt-smart -c the_best_mirror_url</code> 以应用)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-smart -a</span><br></pre></td></tr></table></figure></li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-smart -u</span><br></pre></td></tr></table></figure>
+<h3 id="更新索引"><a href="#更新索引" class="headerlink" title="更新索引"></a>更新索引</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-smart -u</span><br></pre></td></tr></table></figure>
+
 <h2 id="包管理工具-brew"><a href="#包管理工具-brew" class="headerlink" title="包管理工具 brew"></a>包管理工具 brew</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>安装 build-essential curl file git 以及 ruby</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install build-essential curl file git ruby</span><br></pre></td></tr></table></figure>
+
 <h3 id="安装-Homebrew-on-Linux"><a href="#安装-Homebrew-on-Linux" class="headerlink" title="安装 Homebrew-on-Linux"></a>安装 <a target="_blank" rel="noopener" href="https://docs.brew.sh/Homebrew-on-Linux">Homebrew-on-Linux</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="添加-brew-路径到环境变量"><a href="#添加-brew-路径到环境变量" class="headerlink" title="添加 brew 路径到环境变量"></a>添加 brew 路径到环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span> -d ~/.linuxbrew &amp;&amp; <span class="built_in">eval</span> $(~/.linuxbrew/bin/brew shellenv)</span><br><span class="line"><span class="built_in">test</span> -d /home/linuxbrew/.linuxbrew &amp;&amp; <span class="built_in">eval</span> $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)</span><br><span class="line"><span class="built_in">test</span> -r ~/.bash_profile &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;eval \$(<span class="subst">$(brew --prefix)</span>/bin/brew shellenv)&quot;</span> &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;eval \$(<span class="subst">$(brew --prefix)</span>/bin/brew shellenv)&quot;</span> &gt;&gt;~/.profile</span><br></pre></td></tr></table></figure>
+
 <h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install hello</span><br></pre></td></tr></table></figure>
+
 <h2 id="安装-fish-shell"><a href="#安装-fish-shell" class="headerlink" title="安装 fish shell"></a>安装 fish shell</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install fish</span><br></pre></td></tr></table></figure>
+
 <p><strong>安装完成后关闭当前终端, 然后按快捷键 <code>win +  Q</code> 然后键入 <code>Windows Terminal</code> 并回车, 以运行 <code>Windows Terminal</code>.</strong></p>
 <h3 id="安装-oh-my-fish"><a href="#安装-oh-my-fish" class="headerlink" title="安装 oh-my-fish"></a>安装 <a target="_blank" rel="noopener" href="https://github.com/oh-my-fish/oh-my-fish">oh-my-fish</a></h3><ol>
 <li>选中 Windows Terminal, 并执行以下命令, 以安装<a target="_blank" rel="noopener" href="https://github.com/oh-my-fish/oh-my-fish">oh-my-fish</a></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https:&#x2F;&#x2F;get.oh-my.fish | fish</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.oh-my.fish | fish</span><br></pre></td></tr></table></figure>
+
 <h4 id="安装-fish-plugin-linuxbrew"><a href="#安装-fish-plugin-linuxbrew" class="headerlink" title="安装 fish-plugin-linuxbrew"></a>安装 <a target="_blank" rel="noopener" href="https://github.com/liamdawson/fish-plugin-linuxbrew.git">fish-plugin-linuxbrew</a></h4><p><a target="_blank" rel="noopener" href="https://github.com/liamdawson/fish-plugin-linuxbrew.git">fish-plugin-linuxbrew</a> 是为 fish shell 创建的 linuxbrew 的插件, 作用是将 linuxbrew 的所在路径暴露在 fish shell 的环境变量中, 以满足在 fish shell 中调用 brew 的需求.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">omf install https:&#x2F;&#x2F;github.com&#x2F;liamdawson&#x2F;fish-plugin-linuxbrew.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">omf install https://github.com/liamdawson/fish-plugin-linuxbrew.git</span><br></pre></td></tr></table></figure>
+
 <h4 id="安装-fish-shell-主题"><a href="#安装-fish-shell-主题" class="headerlink" title="安装 fish shell 主题"></a>安装 <a target="_blank" rel="noopener" href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md">fish shell 主题</a></h4><p>执行以下命令, 以下载安装 bobthefish 主题, 并启用 theme_powerline_fonts 与 theme_nerd_fonts, 然后将 theme_color_scheme 改为 base16.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">omf install bobthefish</span><br><span class="line">set -g theme_powerline_fonts yes;set -g theme_nerd_fonts yes;set -g theme_color_scheme base16</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">omf install bobthefish</span><br><span class="line">set -g theme_powerline_fonts yes;set -g theme_nerd_fonts yes;set -g theme_color_scheme base16</span><br></pre></td></tr></table></figure>
+
 <p>更多主题相关设置请查看 <a target="_blank" rel="noopener" href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md">fish shell 主题</a></p>
 <h4 id="更换-fish-shell-关键字主题"><a href="#更换-fish-shell-关键字主题" class="headerlink" title="更换 fish shell 关键字主题"></a>更换 fish shell 关键字主题</h4><p>在终端窗口键入 <code>fish_config</code> 以使用默认浏览器打开 fish web 配置页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fish_config</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fish_config</span><br></pre></td></tr></table></figure>
+
 <h4 id="node-版本管理与-npm-仓库镜像源"><a href="#node-版本管理与-npm-仓库镜像源" class="headerlink" title="node 版本管理与 npm 仓库镜像源"></a>node 版本管理与 npm 仓库镜像源</h4><ul>
 <li><a href="https://floatsyi.com/2019/09/27/node-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E4%B8%8E-npm-%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F%E6%BA%90/#%E5%9C%A8%20liunx(wsl/mac)%20%E4%B8%8B%E4%BD%BF%E7%94%A8%20brew%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">node 版本管理与 npm 仓库镜像源 (wsl)</a></li>
 </ul>
@@ -429,7 +446,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -442,7 +459,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

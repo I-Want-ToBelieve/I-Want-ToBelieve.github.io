@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -195,6 +195,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2019/11/21/HTTP-reverse-mail-and-a-generic-TCP-UDP-proxy-server-nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="backtolife">
+      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="backtolife">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/21/HTTP-reverse-mail-and-a-generic-TCP-UDP-proxy-server-nginx/" class="post-title-link" itemprop="url">HTTP,reverse,mail and a generic TCP/UDP proxy server:nginx</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-21 15:06:19" itemprop="dateCreated datePublished" datetime="2019-11-21T15:06:19+08:00">2019-11-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
+              </span>
+
+          
+            <span id="/2019/11/21/HTTP-reverse-mail-and-a-generic-TCP-UDP-proxy-server-nginx/" class="post-meta-item leancloud_visitors" data-flag-title="HTTP,reverse,mail and a generic TCP/UDP proxy server:nginx" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/11/21/HTTP-reverse-mail-and-a-generic-TCP-UDP-proxy-server-nginx/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/21/HTTP-reverse-mail-and-a-generic-TCP-UDP-proxy-server-nginx/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://nginx.org/en/docs/">nginx.docs</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">==&gt; nginx</span><br><span class="line">Docroot is: /home/linuxbrew/.linuxbrew/var/www</span><br><span class="line"></span><br><span class="line">The default port has been set in /home/linuxbrew/.linuxbrew/etc/nginx/nginx.conf to 8080 so that</span><br><span class="line">nginx can run without sudo.</span><br><span class="line"></span><br><span class="line">nginx will load all files in /home/linuxbrew/.linuxbrew/etc/nginx/servers/.</span><br><span class="line"></span><br><span class="line">Warning: nginx provides a launchd plist which can only be used on macOS!</span><br><span class="line">You can manually execute the service instead with:</span><br><span class="line">  nginx</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2019/11/15/node-module-boilerplate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,6 +374,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/facebook/jest">jest</a></li>
 </ul>
 <h2 id="node-module-boilerplate"><a href="#node-module-boilerplate" class="headerlink" title="node-module-boilerplate"></a><a target="_blank" rel="noopener" href="https://github.com/FloatingShuYin/node-module-boilerplate">node-module-boilerplate</a></h2><h3 id="使用-npm-初始化项目"><a href="#使用-npm-初始化项目" class="headerlink" title="使用 npm 初始化项目"></a>使用 npm 初始化项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> x:/git.workspace/node-module-boilerplate</span><br><span class="line">npm init --scope=floatsyi</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用-rollup-构建工具-构建现代化-node-package"><a href="#使用-rollup-构建工具-构建现代化-node-package" class="headerlink" title="使用 rollup 构建工具, 构建现代化 node package"></a>使用 <a target="_blank" rel="noopener" href="https://www.rollupjs.org/guide/en/">rollup</a> 构建工具, 构建现代化 node package</h3><ol>
 <li><p>使用 npm 添加开发时依赖: rollup</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i rollup -D</span><br></pre></td></tr></table></figure></li>
@@ -389,10 +482,13 @@
 <h2 id="bable-jest"><a href="#bable-jest" class="headerlink" title="bable-jest"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/babel-jest">bable-jest</a></h2><p>安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D babel-jest</span><br></pre></td></tr></table></figure>
 
+
 <p><code>.babelrc</code><br>参考: <a href="https://floatsyi.com/2019/11/13/JavaScript-compiler-Babel/">JavaScript compiler: Babel</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;env&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &#123;</span><br><span class="line">      &quot;presets&quot;: [</span><br><span class="line">        [</span><br><span class="line">          &quot;@babel&#x2F;preset-env&quot;,</span><br><span class="line">          &#123;</span><br><span class="line">            &quot;targets&quot;: &#123;</span><br><span class="line">              &quot;node&quot;: &quot;current&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;modules&quot;: &quot;auto&quot;,</span><br><span class="line">            &quot;useBuiltIns&quot;: &quot;usage&quot;,</span><br><span class="line">            &quot;corejs&quot;: &#123;</span><br><span class="line">              &quot;version&quot;: 3,</span><br><span class="line">              &quot;proposals&quot;: true</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;env&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &#123;</span><br><span class="line">      &quot;presets&quot;: [</span><br><span class="line">        [</span><br><span class="line">          &quot;@babel/preset-env&quot;,</span><br><span class="line">          &#123;</span><br><span class="line">            &quot;targets&quot;: &#123;</span><br><span class="line">              &quot;node&quot;: &quot;current&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;modules&quot;: &quot;auto&quot;,</span><br><span class="line">            &quot;useBuiltIns&quot;: &quot;usage&quot;,</span><br><span class="line">            &quot;corejs&quot;: &#123;</span><br><span class="line">              &quot;version&quot;: 3,</span><br><span class="line">              &quot;proposals&quot;: true</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><code>package.json</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;cross-env BABEL_ENV=test jest&quot;</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -487,17 +583,23 @@
 </ul>
 <h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a><a target="_blank" rel="noopener" href="https://github.com/babel/babel">babel</a></h2><p>安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D @babel/core @babel/preset-env @babel/cli</span><br></pre></td></tr></table></figure>
+
 <p><code>.babelrc</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;env&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;production&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;presets&quot;</span>: [</span><br><span class="line">        [</span><br><span class="line">          <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">&quot;modules&quot;</span>: <span class="literal">false</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;ignore&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;node_modules/**&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>安装 <a target="_blank" rel="noopener" href="https://github.com/kentcdodds/cross-env">cross-env</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D cross-env</span><br></pre></td></tr></table></figure>
+
 <p><code>package.json</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;rollup --config&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;build:prod&quot;</span>: <span class="string">&quot;cross-env BABEL_ENV=production npm run build&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
 <h2 id="Polyfill-core-js"><a href="#Polyfill-core-js" class="headerlink" title="Polyfill: core-js"></a>Polyfill: <a target="_blank" rel="noopener" href="https://github.com/zloirock/core-js">core-js</a></h2><p>安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D core-js@3</span><br></pre></td></tr></table></figure>
+
 <p><code>.babelrc</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;env&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;production&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;presets&quot;</span>: [</span><br><span class="line">        [</span><br><span class="line">          <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">&quot;modules&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="attr">&quot;useBuiltIns&quot;</span>: <span class="string">&quot;usage&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;corejs&quot;</span>: &#123;</span><br><span class="line">              <span class="attr">&quot;version&quot;</span>: <span class="number">3</span>,</span><br><span class="line">              <span class="attr">&quot;proposals&quot;</span>: <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="babel-jest"><a href="#babel-jest" class="headerlink" title="babel-jest"></a><a target="_blank" rel="noopener" href="https://github.com/facebook/jest#using-babel">babel-jest</a></h2><ul>
 <li><a href="https://floatsyi.com/2019/11/14/bable-jest/">bable-jest</a></li>
 </ul>
@@ -594,10 +696,13 @@
 </ul>
 <h2 id="jest"><a href="#jest" class="headerlink" title="jest"></a><a target="_blank" rel="noopener" href="https://github.com/facebook/jest">jest</a></h2><p>安装 jest</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev jest</span><br></pre></td></tr></table></figure>
+
 <p>jest.config.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For a detailed explanation regarding each configuration property, visit:</span></span><br><span class="line"><span class="comment">// https://jestjs.io/docs/en/configuration.html</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  collectCoverage: <span class="literal">true</span>,</span><br><span class="line">  testEnvironment: <span class="string">&#x27;node&#x27;</span>,</span><br><span class="line">  testMatch: [<span class="string">&#x27;&lt;rootDir&gt;/__tests__/**/*spec.js&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For a detailed explanation regarding each configuration property, visit:</span></span><br><span class="line"><span class="comment">// https://jestjs.io/docs/en/configuration.html</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">collectCoverage</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">testEnvironment</span>: <span class="string">&#x27;node&#x27;</span>,</span><br><span class="line">  <span class="attr">testMatch</span>: [<span class="string">&#x27;&lt;rootDir&gt;/__tests__/**/*spec.js&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><code>package.json</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;jest&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 <h2 id="babel-jest"><a href="#babel-jest" class="headerlink" title="babel-jest"></a><a target="_blank" rel="noopener" href="https://github.com/facebook/jest#using-babel">babel-jest</a></h2><ul>
 <li><a href="https://floatsyi.com/2019/11/14/bable-jest/">bable-jest</a></li>
@@ -700,18 +805,24 @@
 <h2 id="travis-ci-持续集成"><a href="#travis-ci-持续集成" class="headerlink" title="travis-ci 持续集成"></a><a target="_blank" rel="noopener" href="https://travis-ci.com/getting_started">travis-ci</a> 持续集成</h2><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>.travis.yml</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">cache:</span></span><br><span class="line">  <span class="attr">directories:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">~/.npm</span></span><br><span class="line"><span class="attr">notifications:</span></span><br><span class="line">  <span class="attr">email:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;node&#x27;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;lts/*&#x27;</span></span><br><span class="line"><span class="attr">install:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">npm@5</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">greenkeeper-lockfile@1</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">include:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">stage:</span> <span class="string">test</span></span><br><span class="line">      <span class="attr">script:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build:prod</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">lint:fix</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">test</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">report-coverage</span></span><br><span class="line">      <span class="attr">before_script:</span> <span class="string">greenkeeper-lockfile-update</span></span><br><span class="line">      <span class="attr">after_script:</span> <span class="string">greenkeeper-lockfile-upload</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">stage:</span> <span class="string">deploy</span></span><br><span class="line">      <span class="attr">node_js:</span> <span class="string">&#x27;node&#x27;</span></span><br><span class="line">      <span class="attr">if:</span> <span class="string">branch</span> <span class="string">=</span> <span class="string">master</span></span><br><span class="line">      <span class="attr">script:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">deploy</span></span><br></pre></td></tr></table></figure>
 
+
 <h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/job-lifecycle">https://docs.travis-ci.com/user/job-lifecycle</a></li>
 </ul>
 <h2 id="使用-jest-生成代码覆盖率报告-并用-codecov-上传"><a href="#使用-jest-生成代码覆盖率报告-并用-codecov-上传" class="headerlink" title="使用 jest 生成代码覆盖率报告, 并用 codecov 上传"></a>使用 <a target="_blank" rel="noopener" href="https://github.com/facebook/jest">jest</a> 生成代码覆盖率报告, 并用 <a target="_blank" rel="noopener" href="https://codecov.io/">codecov</a> 上传</h2><p>安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i <span class="built_in">test</span> -D</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install codecov --save-dev</span><br></pre></td></tr></table></figure>
+
 <p><code>jest.config.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For a detailed explanation regarding each configuration property, visit:</span></span><br><span class="line"><span class="comment">// https://jestjs.io/docs/en/configuration.html</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  collectCoverage: <span class="literal">true</span>,</span><br><span class="line">  testEnvironment: <span class="string">&#x27;node&#x27;</span>,</span><br><span class="line">  testMatch: [<span class="string">&#x27;&lt;rootDir&gt;/__tests__/**/*spec.js&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For a detailed explanation regarding each configuration property, visit:</span></span><br><span class="line"><span class="comment">// https://jestjs.io/docs/en/configuration.html</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">collectCoverage</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">testEnvironment</span>: <span class="string">&#x27;node&#x27;</span>,</span><br><span class="line">  <span class="attr">testMatch</span>: [<span class="string">&#x27;&lt;rootDir&gt;/__tests__/**/*spec.js&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><code>package.json</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;jest&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;report-coverage&quot;</span>: <span class="string">&quot;codecov&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><code>.travis.yml</code></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">test</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">report-coverage</span></span><br></pre></td></tr></table></figure>
+
 
 
       
@@ -1011,15 +1122,21 @@
 </ul>
 <p>安装 yarn</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install yarn -g</span><br></pre></td></tr></table></figure>
+
 <h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>设置代理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#npm</span></span><br><span class="line">npm config <span class="built_in">set</span> proxy http://127.0.0.1:1080</span><br><span class="line">npm config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span><br><span class="line"><span class="comment"># yarn</span></span><br><span class="line">yarn config <span class="built_in">set</span> proxy http://127.0.0.1:1080</span><br><span class="line">yarn config <span class="built_in">set</span> https-proxy http://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+
 <p>删除代理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#npm</span></span><br><span class="line">npm config delete proxy</span><br><span class="line">npm config delete https-proxy</span><br><span class="line"><span class="comment"># yarn</span></span><br><span class="line">yarn config delete proxy</span><br><span class="line">yarn config delete https-proxy</span><br></pre></td></tr></table></figure>
+
 <h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p>ref: <a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors">https://npm.taobao.org/mirrors</a></p>
 <p>nvm</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node</span><br><span class="line"><span class="built_in">export</span> NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org -g</span><br><span class="line">npm config <span class="built_in">set</span> disturl https://npm.taobao.org/dist -g</span><br><span class="line">npm config <span class="built_in">set</span> electron_mirror https://npm.taobao.org/mirrors/electron/ -g</span><br><span class="line">npm config <span class="built_in">set</span> sass_binary_site https://npm.taobao.org/mirrors/node-sass/ -g</span><br><span class="line">npm config <span class="built_in">set</span> phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/ -g</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yarn config <span class="built_in">set</span> registry https://registry.npm.taobao.org -g</span><br><span class="line">yarn config <span class="built_in">set</span> disturl https://npm.taobao.org/dist -g</span><br><span class="line">yarn config <span class="built_in">set</span> electron_mirror https://npm.taobao.org/mirrors/electron/ -g</span><br><span class="line">yarn config <span class="built_in">set</span> sass_binary_site https://npm.taobao.org/mirrors/node-sass/ -g</span><br><span class="line">yarn config <span class="built_in">set</span> phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/ -g</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -1137,106 +1254,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://floatsyi.com/2019/10/13/Vue-3-Pre-Alpha-%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="backtolife">
-      <meta itemprop="description" content="21 世纪两大浪漫, 五线谱与二进制.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="backtolife">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/13/Vue-3-Pre-Alpha-%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">Vue 3 Pre-Alpha 源码调试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-13 06:08:54" itemprop="dateCreated datePublished" datetime="2019-10-13T06:08:54+08:00">2019-10-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-02 17:53:04" itemprop="dateModified" datetime="2021-07-02T17:53:04+08:00">2021-07-02</time>
-              </span>
-
-          
-            <span id="/2019/10/13/Vue-3-Pre-Alpha-%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/" class="post-meta-item leancloud_visitors" data-flag-title="Vue 3 Pre-Alpha 源码调试" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/10/13/Vue-3-Pre-Alpha-%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/13/Vue-3-Pre-Alpha-源码调试/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-next">vue-next</a></li>
-</ul>
-<h2 id="Vue-3-Pre-Alpha-源码调试步骤"><a href="#Vue-3-Pre-Alpha-源码调试步骤" class="headerlink" title="Vue 3 Pre-Alpha 源码调试步骤"></a>Vue 3 Pre-Alpha 源码调试步骤</h2><ol>
-<li><p>clone 源码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;vuejs&#x2F;vue-next.git</span><br></pre></td></tr></table></figure></li>
-<li><p>下载依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd vue-next</span><br><span class="line">yarn</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/10/13/Vue-3-Pre-Alpha-%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1308,7 +1325,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1321,7 +1338,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">104</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
