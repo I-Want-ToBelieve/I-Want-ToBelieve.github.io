@@ -9,7 +9,8 @@
     "server": "hexo server",
     "new": "hexo new --",
     "push": "git add . && git commit -m 'update' && git push",
-    "one": "yarn push && yarn deploy"
+    "one": "yarn push && yarn deploy",
+    "update:theme": "cd ./themes/next &&  git init && git remote add origin https://github.com/theme-next/hexo-theme-next.git && git pull origin main --rebase"
   },
   "hexo": {
     "version": "5.4.0"
